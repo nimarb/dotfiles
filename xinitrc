@@ -14,9 +14,19 @@ fi
 #start network manager
 /usr/bin/nm-applet --sm-disable &
 
+#set up dual screens
+IN="LVDS1"
+EXT="DP1"
+#if (xrandr | grep "$EXT" | grep "+")
+if (xrandr | grep "$EXT" | grep " connected")
+    then
+    xrandr --output $EXT --auto --output $IN --off
+    else
+        if (xrandr | grep "$EXT" | grep " disconnected")
+            then
+            xrandr --output $IN --auto --output $EXT --off
+        fi
+fi
+
 #start awesome
 exec awesome
-# exec gnome-session
-# exec startkde
-# exec startxfce4
-# ...or the Window Manager of your choice
