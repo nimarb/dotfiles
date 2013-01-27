@@ -92,7 +92,7 @@ end
 battext = wibox.widget.textbox()
 vicious.register(battext, vicious.widgets.bat, "BAT: $1$2%", 32, "BAT0")
 
---CPU Freq Widget
+-- CPU Freq Widget
 cpufreqtxt = wibox.widget.textbox()
 vicious.register(cpufreqtxt, vicious.widgets.cpufreq, "CPU: $2Ghz ", 9, "cpu0")
 

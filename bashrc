@@ -10,3 +10,4 @@ PS1='[\u@\h \W]\$ '
 
 #sudo tab completion
 complete -cf sudo
+
