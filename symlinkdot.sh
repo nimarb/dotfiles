@@ -20,15 +20,14 @@ echo "...done"
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
 for file in $files; do
 	    echo "Moving any existing dotfiles from ~ to $olddir"
-		    mv ~/.$file ~/$olddir/
+		    mv ~/.$file $olddir/
 			    echo "Creating symlink to $file in home dir"
 				    ln -s $dir/$file ~/.$file
 				done
 
 # move awesome config file to .config/awesome/rc.lua
 echo "Moving awesomeWM config file to $olddir"
-mv ~/.config/awesome/$awesomecfg ~/$olddir
+mv ~/.config/awesome/$awesomecfg $olddir/
 echo "Creating symlink for awesomeWM config file"
 ln -s $dir/$awesomecfg ~/.config/awesome/$awesomecfg
 
-echo "Completed successfully! :)"
