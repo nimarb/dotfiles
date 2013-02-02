@@ -25,9 +25,16 @@ for file in $files; do
 				    ln -s $dir/$file ~/.$file
 				done
 
-# move awesome config file to .config/awesome/rc.lua
-echo "Moving awesomeWM config file to $olddir"
-mv ~/.config/awesome/$awesomecfg $olddir/
-echo "Creating symlink for awesomeWM config file"
-ln -s $dir/$awesomecfg ~/.config/awesome/$awesomecfg
+# move awesome config file to .config/awesome/rc.lua if awesomeWM is installed!
+if [ -d ~/.config/awesome ]; then
+	echo "Moving awesomeWM config file to $olddir"
+	mv ~/.config/awesome/$awesomecfg $olddir/
+	echo "Creating symlink for awesomeWM config file"
+	ln -s $dir/$awesomecfg ~/.config/awesome/$awesomecfg
+fi
+
+# if awesome is not installed, let the user know!
+if [ ! -d ~/.config/awesome ]; then
+	echo "awesomeWM appears not to be installed on this pc, config was not copied"
+fi
 
