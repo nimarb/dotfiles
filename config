@@ -30,7 +30,7 @@
 #
 #mpd_port = "6600"
 #
-#mpd_music_dir = ""
+mpd_music_dir = "/home/nb/Music/"
 #
 #mpd_connection_timeout = "5"
 #
@@ -254,7 +254,7 @@
 ##   not available.
 ##
 #
-#song_columns_list_format = "(7f)[green]{l} (25)[cyan]{a} (40)[]{t|f} (30)[red]{b}"
+song_columns_list_format = "(7f)[green]{l} (25)[cyan]{a} (40)[]{t|f} (30)[red]{b} (10)[]{g}"
 #
 ##### various settings #####
 #
@@ -388,13 +388,13 @@
 #
 #jump_to_now_playing_song_at_start = "yes"
 #
-#ask_before_clearing_main_playlist = "no"
+ask_before_clearing_main_playlist = "yes"
 #
 #clock_display_seconds = "no"
 #
 #display_volume_level = "yes"
 #
-#display_bitrate = "no"
+display_bitrate = "yes"
 #
 #display_remaining_time = "no"
 #
@@ -486,6 +486,6 @@
 #visualizer_color = "yellow"
 #
 #window_border_color = "green"
-#
+
 #active_window_border = "red"
 #

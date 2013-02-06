@@ -6,7 +6,7 @@
 # create vars
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc xinitrc"    # list of files/folders to symlink in homedir
+files="bashrc vimrc xinitrc mpd.conf"    # list of files/folders to symlink in homedir
 awesomecfg="rc.lua"				# awesome wm config file
 ncmpcppcfg="config"				# ncmpcpp config file
 
