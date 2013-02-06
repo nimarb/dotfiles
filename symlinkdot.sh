@@ -8,6 +8,7 @@ dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 files="bashrc vimrc xinitrc"    # list of files/folders to symlink in homedir
 awesomecfg="rc.lua"				# awesome wm config file
+ncmpcppcfg="config"				# ncmpcpp config file
 
 # create folder dotfiles_old in homedir and change to dotfiles
 echo "Creating $olddir to backup existing dotfiles in ~"
@@ -36,5 +37,15 @@ fi
 # if awesome is not installed, let the user know!
 if [ ! -d ~/.config/awesome ]; then
 	echo "awesomeWM appears not to be installed on this pc, config was not copied"
+fi
+
+# if ncmpcpp folder is created, try to move the config, too
+if [ -d ~/.ncmpcpp ]; then
+	if [ -f ~/.ncmpcpp/$ncmpcppcfg ]; then
+		echo "Moving old ncmpcpp config to $olddir"
+		mv ~/.ncmpcpp/$ncmpcppcfg $olddir
+	fi
+	echo "Creating symlink for ncmpcpp config file"
+	ln -s $dir/$ncmpcppcfg ~/.ncmpcpp/$ncmpcppcfg
 fi
 
