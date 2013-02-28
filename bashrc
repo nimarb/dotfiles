@@ -11,3 +11,4 @@ PS1='[\u@\h \W]\$ '
 #sudo tab completion
 complete -cf sudo
 
+alias mpd='mpd ~/.mpd.conf'

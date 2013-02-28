@@ -28,5 +28,9 @@ if (xrandr | grep "$EXT" | grep " connected")
         fi
 fi
 
+#enable scroll wheel simulation for middle mouse thinkbutton
+xinput set-int-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 8 1
+xinput set-int-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 8 2
+
 #start awesome
 exec awesome
