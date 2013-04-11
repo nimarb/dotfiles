@@ -1,5 +1,6 @@
 #/bin/bash
 
+#for correct echo execution RUN WITH "sudo sh -c ./powersave.sh" OR AS ROOT (careful!)!
 #powersaving config files
 audio="/etc/modprobe.d/audio_power_save.conf"
 nmiwatchdog="/etc/sysctl.d/disable_watchdog.conf"
@@ -12,7 +13,7 @@ usbsuspend="/etc/udev/rules.d/usb_power_save.rules"
 #intel hd audio power saving
 if [ ! -d $audio ]; then
 	sudo touch $audio
-	sudo echo "options snd_hda_intel power_save=1" > $audio
+	sudo "echo "options snd_hda_intel power_save=1" > $audio"
 	echo "Created Audio power save config"
 fi	
 
@@ -26,7 +27,7 @@ fi
 #pci runtime power management
 if [ ! -d $pciruntime ]; then
 	sudo touch $pciruntime
-	sudo echo 'ACTION=="add", SUBSYSTEM=="pci", ATTR{power/control}="auto"'
+	sudo echo 'ACTION=="add", SUBSYSTEM=="pci", ATTR{power/control}="auto"' > $pciruntime
 	echo "Enabled PCI Runtime Power Management"
 fi
 
