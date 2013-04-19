@@ -34,3 +34,6 @@ xinput set-int-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 8 2
 
 #start awesome
 exec awesome
+
+#start e17
+#exec enlightenment_start
