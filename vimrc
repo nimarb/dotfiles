@@ -32,4 +32,4 @@ filetype indent on
 imap jj <Esc>
 set tabpagemax=20
 set background=dark
-
+colorscheme solarized

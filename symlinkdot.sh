@@ -6,9 +6,10 @@
 # create vars
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc xinitrc mpd.conf"    # list of files/folders to symlink in homedir
+files="bashrc vimrc xinitrc mpd.conf Xresources"    # list of files/folders to symlink in homedir
 awesomecfg="rc.lua"				# awesome wm config file
 ncmpcppcfg="config"				# ncmpcpp config file
+solarized="solarized.vim"		#solarized vim colourscheme
 
 # create folder dotfiles_old in homedir and change to dotfiles
 echo "Creating $olddir to backup existing dotfiles in ~"
@@ -25,6 +26,18 @@ for file in $files; do
 			    echo "Creating symlink to $file in home dir"
 				    ln -s $dir/$file ~/.$file
 				done
+
+#copying vim solarized color scheme
+if [ ! -d ~/.vim/colors ]; then
+	if [ ! -d ~/.vim ]; then
+		mkdir ~/.vim
+	fi
+	mkdir ~/.vim/colors
+fi
+if [ ! -a ~/.vim/colors/$solarized ]; then
+	echo "Creating syslink for $solarized"
+	ln -s $dir/$solarized ~/.vim/colors/$solarized
+fi
 
 # move awesome config file to .config/awesome/rc.lua if awesomeWM is installed!
 if [ -d ~/.config/awesome ]; then
