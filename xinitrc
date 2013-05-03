@@ -14,6 +14,9 @@ fi
 #start network manager
 /usr/bin/nm-applet --sm-disable &
 
+#load Xresources file
+xrdb ~/.Xresources
+
 #set up dual screens
 IN="LVDS1"
 EXT="DP1"
