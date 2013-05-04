@@ -96,6 +96,23 @@ vicious.register(battext, vicious.widgets.bat, "BAT: $1$2%", 32, "BAT0")
 cpufreqtxt = wibox.widget.textbox()
 vicious.register(cpufreqtxt, vicious.widgets.cpufreq, "CPU: $2Ghz ", 9, "cpu0")
 
+
+--Volume Widget
+coldef = "</span>"
+white = "<span color='#d7d7d7'>"
+gray = "<span color='#9e9c9a'>"
+volumewidget = wibox.widget.textbox()
+vicious.register(volumewidget, vicious.widgets.volume,
+function (widget, args)
+	if (args[2] ~= "♩" ) then
+		return gray .. "Vol " .. coldef .. white .. args[1] .. " " .. coldef
+	else
+	    return gray .. "Vol " .. coldef .. white .. "mute " .. coldef
+	end
+end, 1, "PCM")
+
+
+
 -- {{{ Menu
 -- Create a laucher widget and a main menu
 myawesomemenu = {
@@ -199,6 +216,7 @@ for s = 1, screen.count() do
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
 	right_layout:add(cpufreqtxt)
+	right_layout:add(volumewidget)
 	right_layout:add(battext)
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
@@ -268,6 +286,20 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
+
+	-- Volume Widget
+	    awful.key({ modkey }, "Up", function ()
+				awful.util.spawn("amixer set PCM playback 1%+", false )
+				vicious.force({ volumewidget })
+			end),
+		awful.key({ modkey }, "Down", function ()
+			awful.util.spawn("amixer set PCM playback 1%-", false )
+			vicious.force({ volumewidget })
+		end),
+		awful.key({ modkey }, "m", function ()
+			awful.util.spawn("amixer set Master playback toggle", false )
+			vicious.force({ volumewidget })
+		end),
 
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
