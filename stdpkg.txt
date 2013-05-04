@@ -1,6 +1,7 @@
 openssh
 autossh
 vim
+vim-systemd
 w3m
 htop
 powertop
