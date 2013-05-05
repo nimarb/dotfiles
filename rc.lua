@@ -96,8 +96,7 @@ vicious.register(battext, vicious.widgets.bat, "BAT: $1$2%", 32, "BAT0")
 cpufreqtxt = wibox.widget.textbox()
 vicious.register(cpufreqtxt, vicious.widgets.cpufreq, "CPU: $2Ghz ", 9, "cpu0")
 
-
---Volume Widget
+-- Volume Widget
 coldef = "</span>"
 white = "<span color='#d7d7d7'>"
 gray = "<span color='#9e9c9a'>"
@@ -105,13 +104,11 @@ volumewidget = wibox.widget.textbox()
 vicious.register(volumewidget, vicious.widgets.volume,
 function (widget, args)
 	if (args[2] ~= "♩" ) then
-		return gray .. "Vol " .. coldef .. white .. args[1] .. " " .. coldef
+		return gray .. "VOL: " .. coldef .. white .. args[1] .. " " .. coldef
 	else
-	    return gray .. "Vol " .. coldef .. white .. "mute " .. coldef
+	    return gray .. "VOL: " .. coldef .. white .. "mute " .. coldef
 	end
 end, 1, "PCM")
-
-
 
 -- {{{ Menu
 -- Create a laucher widget and a main menu
