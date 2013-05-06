@@ -298,6 +298,41 @@ globalkeys = awful.util.table.join(
 			vicious.force({ volumewidget })
 		end),
 
+	-- Volume controls with for dedicated keys
+	    awful.key({}, "XF86AudioRaiseVolume", function ()
+				awful.util.spawn("amixer set PCM playback 1%+", false )
+				vicious.force({ volumewidget })
+			end),
+		awful.key({}, "XF86AudioLowerVolume", function ()
+			awful.util.spawn("amixer set PCM playback 1%-", false )
+			vicious.force({ volumewidget })
+		end),
+		awful.key({}, "XF86AudioMute", function ()
+			awful.util.spawn("amixer set Master playback toggle", false )
+			vicious.force({ volumewidget })
+		end),
+
+	-- ncmpcpp controls
+		awful.key({}, "XF86AudioStop", function ()
+			awful.util.spawn("ncmpcpp stop", false )
+			vicious.force({ volumewidget })
+		end),
+
+		awful.key({}, "XF86AudioPlay", function ()
+			awful.util.spawn("ncmpcpp toggle", false )
+			vicious.force({ volumewidget })
+		end),
+
+		awful.key({}, "XF86AudioPrev", function ()
+			awful.util.spawn("ncmpcpp prev", false )
+			vicious.force({ volumewidget })
+		end),
+
+		awful.key({}, "XF86AudioNext", function ()
+			awful.util.spawn("ncmpcpp next", false )
+			vicious.force({ volumewidget })
+		end),
+
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
 
