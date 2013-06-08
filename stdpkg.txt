@@ -19,12 +19,13 @@ base-devel
 gnu-netcat
 curl
 wget
+sudo
 
 mesa
 ttf-dejavu
 mpd
 xorg-server
-xorg-init
+xorg-xinit
 xorg-server-utils
 sxiv
 zathura
