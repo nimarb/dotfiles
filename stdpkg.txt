@@ -20,7 +20,7 @@ gnu-netcat
 curl
 wget
 sudo
-
+#pkgs which are dependant on a graphic env
 mesa
 ttf-dejavu
 mpd
