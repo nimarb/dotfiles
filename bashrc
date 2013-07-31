@@ -13,3 +13,6 @@ complete -cf sudo
 
 #alias from mpd if it is installed as user
 alias mpd='mpd ~/.mpd.conf'
+
+#alias to always use more safe rm (asks when deleting 3 files or more)
+alias rm='rm -I'
