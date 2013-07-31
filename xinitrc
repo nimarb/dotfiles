@@ -39,7 +39,7 @@ xinput set-int-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 8 2
 exec awesome
 
 #Execute shell script which starts gpg-agent
-eval $(gpg-agent --daemon) &
+eval $(gpg-agent --daemon --enable-ssh-support) &
 
 #start e17
 #exec enlightenment_start
