@@ -17,5 +17,8 @@ alias mpd='mpd ~/.mpd.conf'
 #alias to always use more safe rm (asks when deleting 3 files or more)
 alias rm='rm -I'
 
+#alias for easyer pacman update
+alias pacdate='sudo pacman -Syu'
+
 #creating an awk calculator invoked by clc ARGS
 clc () { awk "BEGIN{ pi = 4.0*atan2(1.0,1.0); deg = pi/180.0; print $* }" ;}

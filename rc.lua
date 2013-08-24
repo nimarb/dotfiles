@@ -108,7 +108,12 @@ function (widget, args)
 	else
 	    return gray .. "VOL: " .. coldef .. white .. "mute " .. coldef
 	end
-end, 1, "PCM")
+end, 1, "Master")
+
+
+-- CPU Temperature Widget
+local tempwidget = wibox.widget.textbox()
+vicious.register(tempwidget, vicious.widgets.thermal, "$1°C ", 20, { "coretemp.0", "core"} )
 
 -- {{{ Menu
 -- Create a laucher widget and a main menu
@@ -213,6 +218,7 @@ for s = 1, screen.count() do
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
 	right_layout:add(cpufreqtxt)
+	right_layout:add(tempwidget)
 	right_layout:add(volumewidget)
 	right_layout:add(battext)
     right_layout:add(mytextclock)
@@ -286,11 +292,11 @@ globalkeys = awful.util.table.join(
 
 	-- Volume Widget
 	    awful.key({ modkey }, "Up", function ()
-				awful.util.spawn("amixer set PCM playback 1%+", false )
+				awful.util.spawn("amixer set Master playback 1%+", false )
 				vicious.force({ volumewidget })
 			end),
 		awful.key({ modkey }, "Down", function ()
-			awful.util.spawn("amixer set PCM playback 1%-", false )
+			awful.util.spawn("amixer set Master playback 1%-", false )
 			vicious.force({ volumewidget })
 		end),
 		awful.key({ modkey }, "m", function ()
@@ -300,11 +306,11 @@ globalkeys = awful.util.table.join(
 
 	-- Volume controls with for dedicated keys
 	    awful.key({}, "XF86AudioRaiseVolume", function ()
-				awful.util.spawn("amixer set PCM playback 1%+", false )
+				awful.util.spawn("amixer set Master playback 1%+", false )
 				vicious.force({ volumewidget })
 			end),
 		awful.key({}, "XF86AudioLowerVolume", function ()
-			awful.util.spawn("amixer set PCM playback 1%-", false )
+			awful.util.spawn("amixer set Master playback 1%-", false )
 			vicious.force({ volumewidget })
 		end),
 		awful.key({}, "XF86AudioMute", function ()
