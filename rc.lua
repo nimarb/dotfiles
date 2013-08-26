@@ -290,6 +290,9 @@ globalkeys = awful.util.table.join(
 
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
+	-- Useful Awesome WM widgets (Filemanager etc)
+	awful.key({ modkey }, "e",				 function() awful.util.spawn_with_shell("xterm -e ranger") end),
+
 	-- Volume Widget
 	    awful.key({ modkey }, "Up", function ()
 				awful.util.spawn("amixer set Master playback 1%+", false )
