@@ -292,6 +292,7 @@ globalkeys = awful.util.table.join(
 
 	-- Useful Awesome WM widgets (Filemanager etc)
 	awful.key({ modkey }, "e",				 function() awful.util.spawn_with_shell("xterm -e ranger") end),
+	awful.key({ modkey }, "l",				 function() awful.util.spawn("xlock -mode blank -bg black -fg green")		end),
 
 	-- Volume Widget
 	    awful.key({ modkey }, "Up", function ()
