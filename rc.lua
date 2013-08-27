@@ -100,7 +100,7 @@ local volumewidget = wibox.widget.textbox()
 vicious.register(volumewidget, vicious.widgets.volume,
 function (widget, args)
 	if (args[2] ~= "♩" ) then
-		return gray .. "VOL(" .. coldef .. white .. args[1] .. ") " .. coldef
+		return gray .. "VOL(" .. coldef .. white .. args[1] .. "%) " .. coldef
 	else
 	    return gray .. "VOL(" .. coldef .. white .. "mute) " .. coldef
 	end
