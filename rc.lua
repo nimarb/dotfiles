@@ -89,18 +89,14 @@ end
 -- }}}
 
 -- Batt widget
-battext = wibox.widget.textbox()
-vicious.register(battext, vicious.widgets.bat, "BAT: $1$2%", 32, "BAT0")
-
--- CPU Freq Widget
-cpufreqtxt = wibox.widget.textbox()
-vicious.register(cpufreqtxt, vicious.widgets.cpufreq, "CPU: $2Ghz ", 9, "cpu0")
+local battext = wibox.widget.textbox()
+vicious.register(battext, vicious.widgets.bat, "BAT: $1$2% Trem: $3", 61, "BAT0")
 
 -- Volume Widget
 coldef = "</span>"
 white = "<span color='#d7d7d7'>"
 gray = "<span color='#9e9c9a'>"
-volumewidget = wibox.widget.textbox()
+local volumewidget = wibox.widget.textbox()
 vicious.register(volumewidget, vicious.widgets.volume,
 function (widget, args)
 	if (args[2] ~= "♩" ) then
@@ -110,10 +106,13 @@ function (widget, args)
 	end
 end, 1, "Master")
 
+-- CPU Usage Widget
+local cpuusagewidget = wibox.widget.textbox()
+vicious.register(cpuusagewidget, vicious.widgets.cpu, "CPU($1%|", 11)
 
 -- CPU Temperature Widget
-local tempwidget = wibox.widget.textbox()
-vicious.register(tempwidget, vicious.widgets.thermal, "$1°C ", 20, { "coretemp.0", "core"} )
+local cputempwidget = wibox.widget.textbox()
+vicious.register(cputempwidget, vicious.widgets.thermal, "$1°C) ", 37, { "coretemp.0", "core"} )
 
 -- {{{ Menu
 -- Create a laucher widget and a main menu
@@ -217,8 +216,8 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
-	right_layout:add(cpufreqtxt)
-	right_layout:add(tempwidget)
+	right_layout:add(cpuusagewidget)
+	right_layout:add(cputempwidget)
 	right_layout:add(volumewidget)
 	right_layout:add(battext)
     right_layout:add(mytextclock)

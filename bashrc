@@ -23,5 +23,8 @@ alias pacdate='sudo pacman -Syu'
 #alias for untaring things
 alias untar='tar -xvf'
 
+#powertop alias
+alias pwrtp='sudo powertop'
+
 #creating an awk calculator invoked by clc ARGS
 clc () { awk "BEGIN{ pi = 4.0*atan2(1.0,1.0); deg = pi/180.0; print $* }" ;}
