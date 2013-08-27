@@ -90,7 +90,7 @@ end
 
 -- Batt widget
 local battext = wibox.widget.textbox()
-vicious.register(battext, vicious.widgets.bat, "BAT: $1$2% Trem: $3", 61, "BAT0")
+vicious.register(battext, vicious.widgets.bat, "BAT($1$2%|$3) ", 61, "BAT0")
 
 -- Volume Widget
 coldef = "</span>"
