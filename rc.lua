@@ -88,31 +88,33 @@ for s = 1, screen.count() do
 end
 -- }}}
 
--- Batt widget
-local battext = wibox.widget.textbox()
-vicious.register(battext, vicious.widgets.bat, "BAT($1$2%|$3) ", 61, "BAT0")
-
--- Volume Widget
+-- Define Colours to be used in widgets
 coldef = "</span>"
 white = "<span color='#d7d7d7'>"
 gray = "<span color='#9e9c9a'>"
+
+-- Batt widget
+local battext = wibox.widget.textbox()
+vicious.register(battext, vicious.widgets.bat, gray .. "BAT(" .. coldef .. white .. "$1$2%|$3" .. coldef .. ") ", 61, "BAT0")
+
+-- Volume Widget
 local volumewidget = wibox.widget.textbox()
 vicious.register(volumewidget, vicious.widgets.volume,
 function (widget, args)
 	if (args[2] ~= "♩" ) then
-		return gray .. "VOL(" .. coldef .. white .. args[1] .. "%) " .. coldef
+		return gray .. "VOL(" .. coldef .. white .. args[1] .. "%" .. coldef .. ") " 
 	else
-	    return gray .. "VOL(" .. coldef .. white .. "mute) " .. coldef
+	    return gray .. "VOL(" .. coldef .. white .. "mute" .. coldef .. ") " 
 	end
 end, 1, "Master")
 
 -- CPU Usage Widget
 local cpuusagewidget = wibox.widget.textbox()
-vicious.register(cpuusagewidget, vicious.widgets.cpu, "CPU($1%|", 11)
+vicious.register(cpuusagewidget, vicious.widgets.cpu, gray .. "CPU(" .. coldef .. white .. "$1%|" .. coldef, 11)
 
 -- CPU Temperature Widget
 local cputempwidget = wibox.widget.textbox()
-vicious.register(cputempwidget, vicious.widgets.thermal, "$1°C) ", 37, { "coretemp.0", "core"} )
+vicious.register(cputempwidget, vicious.widgets.thermal, white .. "$1°C" .. coldef .. ") ", 37, { "coretemp.0", "core"} )
 
 -- {{{ Menu
 -- Create a laucher widget and a main menu
