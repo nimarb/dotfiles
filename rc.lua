@@ -138,7 +138,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- }}}
 
 -- {{{ Wibox
--- Create a textclock widget
+-- Create a textclock (date) widget
 mytextclock = awful.widget.textclock()
 
 -- Create a wibox for each screen and add it
@@ -293,7 +293,7 @@ globalkeys = awful.util.table.join(
 
 	-- Useful Awesome WM widgets (Filemanager etc)
 	awful.key({ modkey }, "e",				 function() awful.util.spawn_with_shell("xterm -e ranger") end),
-	awful.key({ modkey }, "l",				 function() awful.util.spawn("xlock -mode blank -bg black -fg green")		end),
+	awful.key({ modkey }, "o",				 function() awful.util.spawn("xlock -mode blank -bg black -fg green")		end),
 
 	-- Volume Widget
 	    awful.key({ modkey }, "Up", function ()
