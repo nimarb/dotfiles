@@ -293,6 +293,7 @@ globalkeys = awful.util.table.join(
 
 	-- Useful Awesome WM widgets (Filemanager etc)
 	awful.key({ modkey }, "e",				 function() awful.util.spawn_with_shell("xterm -e ranger") end),
+	awful.key({ "Control", "Alt", "Del"}, 	 function() awful.util.spawn_with_shell("xterm -e htop") end),
 	awful.key({ modkey }, "o",				 function() awful.util.spawn("i3lock -d")		end),
 	awful.key({ modkey }, "s",				 function() awful.client.movetoscreen() end),
 
