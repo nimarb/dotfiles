@@ -36,4 +36,4 @@ clc () { awk "BEGIN{ pi = 4.0*atan2(1.0,1.0); deg = pi/180.0; print $* }" ;}
 export EDITOR=vim
 
 # alias for todo.txt todo app
-alias t='todo.sh'
+alias t='todo.sh -cAt'
