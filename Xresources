@@ -75,3 +75,7 @@
 !! white dark/light
 *color7:                S_base2
 *color15:               S_base3
+
+!! font set for xterm
+xterm*faceName: Inconsolata-g:size=12:antialias=true
+xterm*font: 7x13
