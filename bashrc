@@ -37,3 +37,6 @@ export EDITOR=vim
 
 # alias for todo.txt todo app
 alias t='todo.sh -cAt'
+
+# simple youtube play
+yplay () { vlc $(youtube-dl -g $*) ;} 
