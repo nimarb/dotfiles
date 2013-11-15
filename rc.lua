@@ -106,7 +106,7 @@ function (widget, args)
 	else
 	    return gray .. "VOL(" .. coldef .. white .. "mute" .. coldef .. ") " 
 	end
-end, 1, "Master")
+end, 1, "PCM")
 
 -- CPU Usage Widget
 local cpuusagewidget = wibox.widget.textbox()
@@ -299,29 +299,29 @@ globalkeys = awful.util.table.join(
 
 	-- Volume Widget
 	    awful.key({ modkey }, "Up", function ()
-				awful.util.spawn("amixer set Master playback 1%+", false )
+				awful.util.spawn("amixer set PCM playback 1%+", false )
 				vicious.force({ volumewidget })
 			end),
 		awful.key({ modkey }, "Down", function ()
-			awful.util.spawn("amixer set Master playback 1%-", false )
+			awful.util.spawn("amixer set PCM playback 1%-", false )
 			vicious.force({ volumewidget })
 		end),
 		awful.key({ modkey }, "m", function ()
-			awful.util.spawn("amixer set Master playback toggle", false )
+			awful.util.spawn("amixer set PCM playback toggle", false )
 			vicious.force({ volumewidget })
 		end),
 
 	-- Volume controls with for dedicated keys
 	    awful.key({}, "XF86AudioRaiseVolume", function ()
-				awful.util.spawn("amixer set Master playback 1%+", false )
+				awful.util.spawn("amixer set PCM playback 1%+", false )
 				vicious.force({ volumewidget })
 			end),
 		awful.key({}, "XF86AudioLowerVolume", function ()
-			awful.util.spawn("amixer set Master playback 1%-", false )
+			awful.util.spawn("amixer set PCM playback 1%-", false )
 			vicious.force({ volumewidget })
 		end),
 		awful.key({}, "XF86AudioMute", function ()
-			awful.util.spawn("amixer set Master playback toggle", false )
+			awful.util.spawn("amixer set PCM playback toggle", false )
 			vicious.force({ volumewidget })
 		end),
 
