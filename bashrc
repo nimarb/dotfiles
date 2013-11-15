@@ -40,3 +40,10 @@ alias t='todo.sh -cAt'
 
 # simple youtube play
 yplay () { vlc $(youtube-dl -g $*) ;} 
+
+# show active network connections
+alias conns='ss -tan'
+alias connsd='ss -ta'
+
+# grep pdf's
+pdfgrep () { find . -name '*.pdf' -exec bash -c "pdftotext '{}' - | grep --with-filename --label='{}' --color '$*'" \; ;}
