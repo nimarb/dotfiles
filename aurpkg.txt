@@ -1,3 +1,0 @@
-#howdoi
-#https://aur.archlinux.org/packages/python2-howdoi/
-https://aur.archlinux.org/packages/py/python2-howdoi/python2-howdoi.tar.gz
