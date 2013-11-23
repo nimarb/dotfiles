@@ -17,7 +17,7 @@ runtime! archlinux.vim
 set wrapscan
 filetype plugin on
 syntax on
-set tabstop=4
+"set tabstop=4
 set shiftwidth=4
 set showcmd
 set number
@@ -28,6 +28,10 @@ set history=100
 set mouse=a
 set hlsearch
 set smartcase
+set smarttab
+set backupcopy=yes
+set backupdir=$HOME/.vim/backup
+set backupskip=/tmp/*
 filetype indent on
 imap jj <Esc>
 set tabpagemax=20
