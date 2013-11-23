@@ -20,16 +20,3 @@ gnu-netcat
 curl
 wget
 sudo
-#pkgs which are dependant on a graphic env
-mesa
-ttf-dejavu
-mpd
-xorg-server
-xorg-xinit
-xorg-server-utils
-sxiv
-zathura
-zathura-pdf-poppler
-zathura-djvu
-virtualbox
-
