@@ -29,8 +29,8 @@ set mouse=a
 set hlsearch
 set smartcase
 set smarttab
-set backupcopy=yes
-set backupdir=$HOME/.vim/backup
+"set backupcopy=yes
+"set backupdir=$HOME/.vim/backup
 set backupskip=/tmp/*
 filetype indent on
 imap jj <Esc>
