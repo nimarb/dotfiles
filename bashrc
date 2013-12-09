@@ -39,7 +39,7 @@ export EDITOR=vim
 alias t='todo.sh -cAt'
 
 # simple youtube play
-yplay () { vlc $(youtube-dl -g $*) ;} 
+yplay () { vlc $(youtube-dl -ig $*) ;} 
 
 # show active network connections
 alias conns='ss -tan'
