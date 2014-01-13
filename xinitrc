@@ -11,35 +11,42 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
-#start network manager
+# start network manager
 /usr/bin/nm-applet --sm-disable &
 
-#load Xresources file
+# load Xresources file
 xrdb ~/.Xresources
 
-#set up dual screens
+# set up dual screens/single screen
 IN="LVDS1"
-EXT="DP1"
-#if (xrandr | grep "$EXT" | grep "+")
-if (xrandr | grep "$EXT" | grep " connected")
+EXTDP="DP1"
+EXTVGA="VGA1"
+if (xrandr | grep "$EXTDP" | grep " connected")
     then
-    xrandr --output $EXT --auto --output $IN --off
-    else
-        if (xrandr | grep "$EXT" | grep " disconnected")
-            then
-            xrandr --output $IN --auto --output $EXT --off
-        fi
+		if (xrandr | grep "$EXTVGA" | grep " connected")
+		then
+			xrandr --output $IN --off --output $EXTDP --rate 60 --auto --output $EXTVGA --left-of $EXTDP --rate 60
+		else
+    		xrandr --output $EXT --rate 60 --auto --output $IN --off --output $EXTVGA --off
+		fi
+	else
+		if (xrandr | grep "$EXTVGA" | grep " connected")
+		then
+			xrandr --output $IN --auto --output $EXTVGA --rate 60 --auto --left-of $IN
+		else
+			xrandr --output $IN --auto --output $EXTVGA --off
+		fi
 fi
 
-#enable scroll wheel simulation for middle mouse thinkbutton
+# enable scroll wheel simulation for middle mouse thinkbutton
 xinput set-int-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 8 1
 xinput set-int-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 8 2
 
-#start awesome
+# start awesome
 exec awesome
 
-#Execute shell script which starts gpg-agent
+# Execute shell script which starts gpg-agent
 eval $(gpg-agent --daemon) &
 
-#start e17
+# start e17
 #exec enlightenment_start
