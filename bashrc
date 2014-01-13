@@ -8,31 +8,31 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
-#sudo tab completion
+# sudo tab completion
 complete -cf sudo
 
-#alias from mpd if it is installed as user
+# alias from mpd if it is installed as user
 alias mpd='mpd ~/.mpd.conf'
 
-#alias to always use more safe rm (asks when deleting 3 files or more)
+# alias to always use more safe rm (asks when deleting 3 files or more)
 alias rm='rm -I'
 
-#alias for easyer pacman update
+# alias for easyer pacman update
 alias pacdate='sudo pacman -Syu'
 
-#alias for untaring things
+# alias for untaring things
 alias untar='tar -xvf'
 
-#powertop alias
+# powertop alias
 alias pwrtp='sudo powertop'
 
-#make ls output readable for humans
+# make ls output readable for humans
 alias lsl='ls -lh'
 
-#creating an awk calculator invoked by clc ARGS
+# creating an awk calculator invoked by clc ARGS
 clc () { awk "BEGIN{ pi = 4.0*atan2(1.0,1.0); deg = pi/180.0; print $* }" ;}
 
-#editor to vim
+# editor to vim
 export EDITOR=vim
 
 # alias for todo.txt todo app
@@ -47,3 +47,10 @@ alias connsd='ss -ta'
 
 # grep pdf's
 pdfgrep () { find . -name '*.pdf' -exec bash -c "pdftotext '{}' - | grep --with-filename --label='{}' --color '$*'" \; ;}
+
+# restart service
+alias sysrestart='sudo systemctl restart'
+# start service
+alias sysstart='sudo systemctl start'
+# service status
+alias sysstatus='sudo systemctl status'
