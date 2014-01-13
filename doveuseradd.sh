@@ -20,7 +20,7 @@ function validate_username() {
     then
         echo "Invalid username, please ensure user@domain.tld format ($RC)"
         exit 1
-        fi
+	fi
 }
          
  
@@ -32,9 +32,9 @@ function get_username() {
  
 function get_password() {
     echo -n "Password: "
-    read password1
+    read -r password1
     echo -n "Password (again): "
-    read password2
+    read -r password2
  
     if [ "${password1}" != "${password2}" ]
     then
