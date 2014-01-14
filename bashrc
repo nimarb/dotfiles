@@ -46,7 +46,7 @@ alias conns='ss -tan'
 alias connsd='ss -ta'
 
 # grep pdf's
-pdfgrep () { find . -name '*.pdf' -exec bash -c "pdftotext '{}' - | grep --with-filename --label='{}' --color '$*'" \; ;}
+pdfgrep () { find . -name '*.pdf' -exec bash -c "pdftotext '{}' - | grep -i --with-filename --label='{}' --color '$*'" \; ;}
 
 # restart service
 alias sysrestart='sudo systemctl restart'
