@@ -2,7 +2,7 @@
 # shell script to set default sound device to usb DAC, if attached
 # gets called through udev rule upon usb attachment/detachment
 
-usbdac=$(runuser -l nb -c 'asoundconf list' | sed -n '3{p;q}')
+usbdac=$(runuser -l nb -c 'asoundconf list' | sed -n '2{p;q}')
 intelhda="PCH"
 
 if [[ "attached" == "$1" ]]; then
