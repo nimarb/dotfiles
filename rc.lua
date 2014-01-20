@@ -296,6 +296,7 @@ globalkeys = awful.util.table.join(
 	awful.key({ modkey, "Control" }, "s",	 function() awful.util.spawn_with_shell("xterm -e htop") end),
 	awful.key({ modkey }, "o",				 function() awful.util.spawn("i3lock -d")		end),
 	awful.key({ modkey }, "s",				 function() awful.client.movetoscreen() end),
+	awful.key({ modkey}, '#',				 function() awful.client.spawn("terminology")	end),
 
 	-- Volume Widget
 	    awful.key({ modkey }, "Up", function ()
