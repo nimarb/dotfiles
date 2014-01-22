@@ -38,6 +38,12 @@ export EDITOR=vim
 # alias for todo.txt todo app
 alias t='todo.sh -cAt'
 
+# pacman install alias
+alias pacget='sudo pacman -S'
+
+# pacman search alias
+alias pacs='pacman -Ss'
+
 # simple youtube play
 yplay () { vlc $(youtube-dl -ig $*) ;} 
 
