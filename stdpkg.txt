@@ -20,3 +20,5 @@ gnu-netcat
 curl
 wget
 sudo
+iftop
+bwm-ng
