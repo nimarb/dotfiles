@@ -48,6 +48,9 @@ alias connsd='ss -ta'
 # grep pdf's
 pdfgrep () { find . -name '*.pdf' -exec bash -c "pdftotext '{}' - | grep -i --with-filename --label='{}' --color '$*'" \; ;}
 
+# gs pdfmerge
+pdfgsmerge () { gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -sOutputFile=merged.pdf $* ;}
+
 # restart service
 alias sysrestart='sudo systemctl restart'
 # start service
