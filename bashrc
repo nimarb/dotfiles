@@ -42,7 +42,7 @@ alias t='todo.sh -cAt'
 alias pacget='sudo pacman -S'
 
 # pacman search alias
-alias pacs='pacman -Ss'
+alias pacs='pacsearch'
 
 # simple youtube play
 yplay () { vlc $(youtube-dl -ig $*) ;} 
