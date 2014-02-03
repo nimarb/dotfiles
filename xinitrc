@@ -25,11 +25,14 @@ if (xrandr | grep "$EXTDP" | grep " connected")
     then
 		if (xrandr | grep "$EXTVGA" | grep " connected")
 		then
+			xrandr --output $IN --off
 			xrandr --output $IN --off --output $EXTDP --rate 60 --auto --output $EXTVGA --left-of $EXTDP --rate 60
 		else
-    		xrandr --output $EXT --rate 60 --auto --output $IN --off --output $EXTVGA --off
+			xrandr --output $EXTVGA --off
+    		xrandr --output $EXTDP --rate 60 --auto --output $IN --off 
 		fi
 	else
+		xrandr --output $EXTDP --off
 		if (xrandr | grep "$EXTVGA" | grep " connected")
 		then
 			xrandr --output $IN --auto --output $EXTVGA --rate 60 --auto --left-of $IN
