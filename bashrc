@@ -66,3 +66,9 @@ alias sysstatus='sudo systemctl status'
 
 # alias for redshift, a screen temp adjuster like f.lux
 alias flux='redshift-gtk &'
+
+if [ "$TERMINOLOGY" = "1" ]
+then
+	t ls
+fi
+
