@@ -8,8 +8,9 @@ dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 files="bashrc vimrc xinitrc mpd.conf Xresources"    # list of files/folders to symlink in homedir
 awesomecfg="rc.lua"				# awesome wm config file
+awesometheme="theme.lua"		# awesome wm theme file
 ncmpcppcfg="config"				# ncmpcpp config file
-solarized="solarized.vim"		#solarized vim colourscheme
+solarized="solarized.vim"		# solarized vim colourscheme
 
 # create folder dotfiles_old in homedir and change to dotfiles
 echo "Creating $olddir to backup existing dotfiles in ~"
@@ -45,11 +46,15 @@ if [ -d ~/.config/awesome ]; then
 	mv ~/.config/awesome/$awesomecfg $olddir/
 	echo "Creating symlink for awesomeWM config file"
 	ln -s $dir/$awesomecfg ~/.config/awesome/$awesomecfg
-fi
 
-# if awesome is not installed, let the user know!
-if [ ! -d ~/.config/awesome ]; then
-	echo "awesomeWM appears not to be installed on this pc, config was not copied"
+	# move awesome wm theme file to backup dir and create symlink if installed
+	echo "Moving awesomeWM theme file to $olddir"
+	mv ~/.config/awesome/themes/default$awesometheme $olddir/
+	echo "Creating symlink for awesomeWM theme file"
+	ln -s $dir/$awesometheme ~/.config/awesome/themes/default/$awesometheme
+else
+	# if awesome is not installed, let the user know!
+	echo "awesomeWM appears not to be installed on this pc, config&theme were not copied"
 fi
 
 # if ncmpcpp folder is created, try to move the config, too
