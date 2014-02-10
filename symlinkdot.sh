@@ -51,6 +51,9 @@ if [ -d ~/.config/awesome ]; then
 	echo "Moving awesomeWM theme file to $olddir"
 	mv ~/.config/awesome/themes/default$awesometheme $olddir/
 	echo "Creating symlink for awesomeWM theme file"
+	if [ ! -d ~/.config/awesome/themes/default ]; then
+		mkdir -p ~/.config/awesome/themes/default
+	fi
 	ln -s $dir/$awesometheme ~/.config/awesome/themes/default/$awesometheme
 else
 	# if awesome is not installed, let the user know!
