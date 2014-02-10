@@ -342,6 +342,12 @@ globalkeys = awful.util.table.join(
 
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
+	-- for Multi-Monitor setups
+	awful.key({ modkey }, "F1", 			 function() awful.screen.focus(1)			end),
+	awful.key({ modkey }, "F2", 			 function() awful.screen.focus(2)			end),
+	awful.key({ modkey }, "F3", 			 function() awful.screen.focus(3)			end),
+
+
 	-- Useful Awesome WM widgets (Filemanager etc)
 	awful.key({ modkey }, "e",				 function() awful.util.spawn_with_shell("xterm -e ranger") end),
 	awful.key({ modkey, "Control" }, "s",	 function() awful.util.spawn_with_shell("xterm -e htop") end),
