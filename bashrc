@@ -16,7 +16,7 @@ alias mpd='mpd ~/.mpd.conf'
 
 # alias to always use more safe rm/mv (asks when deleting more than 3 things)
 alias rm='rm -I'
-alias mv='mv -I'
+alias mv='mv -i'
 
 # alias for easyer pacman update
 alias pacdate='sudo pacman -Syu'
@@ -64,6 +64,8 @@ alias sysrestart='sudo systemctl restart'
 alias sysstart='sudo systemctl start'
 # service status
 alias sysstatus='sudo systemctl status'
+# reload daemons
+alias sysreload='sudo systemctl daemon-reload'
 
 # alias for redshift, a screen temp adjuster like f.lux
 alias flux='redshift-gtk &'
