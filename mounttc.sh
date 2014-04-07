@@ -5,7 +5,7 @@ user=nb
 cryptdev=$(echo "$2" | awk -F/ '{print $NF}')
 cryptpath="$2"
 loopdev=$(losetup -f)
-mountpt=/media/"$cryptdev"
+mountpt=/mnt/"$cryptdev"
 
 # must be run as root
 if [[ $EUID != 0 ]]; then
