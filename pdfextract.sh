@@ -7,5 +7,5 @@
 gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER \
    -dFirstPage=${1} \
    -dLastPage=${2} \
-   -sOutputFile=${3%.pdf}_p${1}-p${2}.pdf \
-   ${3}
+   -sOutputFile="${3%.pdf}_p${1}-p${2}.pdf" \
+   "${3}"
