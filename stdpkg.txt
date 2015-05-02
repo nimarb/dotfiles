@@ -26,3 +26,4 @@ ncdu
 ethtool
 iw
 scrot
+tig
