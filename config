@@ -30,7 +30,7 @@
 #
 #mpd_port = "6600"
 #
-mpd_music_dir = "/home/nb/daten/music"
+mpd_music_dir = "/home/nb/daten/music/Music"
 #
 #mpd_connection_timeout = "5"
 #
@@ -451,7 +451,7 @@ display_bitrate = "yes"
 #
 external_editor = "vim"
 #
-use_console_editor = "vim"
+#use_console_editor = "vim"
 #
 ##### colors definitions #####
 #
