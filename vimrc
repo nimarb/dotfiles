@@ -38,3 +38,7 @@ set tabpagemax=20
 set background=dark
 colorscheme solarized
 "set verbose=20
+"
+autocmd! bufwritepost .vimrc source %
+set pastetoggle=<F2>
+set clipboard=unnamed
