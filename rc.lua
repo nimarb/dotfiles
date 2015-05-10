@@ -333,24 +333,24 @@ globalkeys = awful.util.table.join(
 			vicious.force({ volumewidget })
 		end),
 
-	-- ncmpcpp controls
+	-- mpd controls using mpc
 		awful.key({}, "XF86AudioStop", function ()
-			awful.util.spawn("ncmpcpp stop", false )
+			awful.util.spawn("mpc stop", false )
 			vicious.force({ volumewidget })
 		end),
 
 		awful.key({}, "XF86AudioPlay", function ()
-			awful.util.spawn("ncmpcpp toggle", false )
+			awful.util.spawn("mpc toggle", false )
 			vicious.force({ volumewidget })
 		end),
 
 		awful.key({}, "XF86AudioPrev", function ()
-			awful.util.spawn("ncmpcpp prev", false )
+			awful.util.spawn("mpc prev", false )
 			vicious.force({ volumewidget })
 		end),
 
 		awful.key({}, "XF86AudioNext", function ()
-			awful.util.spawn("ncmpcpp next", false )
+			awful.util.spawn("mpc next", false )
 			vicious.force({ volumewidget })
 		end),
 
