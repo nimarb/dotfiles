@@ -4,6 +4,7 @@
 IN="LVDS1"
 EXTDP="DP1"
 EXTVGA="VGA1"
+EXTHDMI="HDMI1"
 if (xrandr | grep "$EXTDP" | grep " connected")
     then
 	    if (xrandr | grep "$EXTVGA" | grep " connected")
@@ -23,4 +24,8 @@ if (xrandr | grep "$EXTDP" | grep " connected")
 		    xrandr --output $EXTVGA --off
 		    xrandr --output $IN --rate 60 --auto 
 	    fi
+fi
+if (xrandr | grep "$EXTHDMI" | grep " connected")
+then
+    xrandr --output $EXTHDMI --rate 60 --auto
 fi
