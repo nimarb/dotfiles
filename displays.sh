@@ -28,4 +28,5 @@ fi
 if (xrandr | grep "$EXTHDMI" | grep " connected")
 then
     xrandr --output $EXTHDMI --rate 60 --auto
+    xrandr --output $IN --off
 fi
