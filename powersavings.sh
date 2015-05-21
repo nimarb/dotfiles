@@ -51,13 +51,14 @@ if [ ! -a $usbsuspend ]; then
 	echo "Enabled USB Auto Suspend with 2sec delay"
 fi
 
-# disable USB Auto Suspend for Logitech Devices, Microsoft Devices and Apple Devices
+# disable USB Auto Suspend for Logitech Devices, Microsoft Devices, Apple Devices and Sony Devices
 if [ ! -a $localrules ]; then
 	sudo touch $localrules
 	sudo echo 'ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="074b", TEST=="power/control", ATTR{power/control}="on"' > $localrules
 	sudo echo 'ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="046d", ATTR{idProduct}=="c051", TEST=="power/control", ATTR{power/control}="on"' >> $localrules
 	sudo echo 'ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="05ac", TEST=="power/control", ATTR{power/control}="on"' >> $localrules
-	echo "Disabled USB Auto Suspend for Logitech, Apple and MS devices"
+	sudo echo 'ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", TEST=="power/control", ATTR{power/control}="on"' >> $localrules
+	echo "Disabled USB Auto Suspend for Logitech, Apple, Microsoft and Sony devices"
 fi
 
 # sata power management
