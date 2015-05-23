@@ -75,5 +75,3 @@ then
 	t ls
 fi
 
-# to use gpg-agent with ssh support
-export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
