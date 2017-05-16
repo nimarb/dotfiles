@@ -1,0 +1,13 @@
+[user]
+    email = l.nimar.b@gmail.com
+    name = Nimar
+
+[transfer]
+    fsckObjects = true
+
+[fetch]
+    fsckObjects = true
+
+[fetch]
+    fsckObjects = true
+
