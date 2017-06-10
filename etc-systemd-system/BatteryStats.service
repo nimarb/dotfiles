@@ -1,0 +1,9 @@
+[Unit]
+Description=Logs the battery health to ~/batstats.txt
+Wants=five-minute-timer.timer
+
+[Service]
+ExecStart=/home/nb/dotfiles/readbat.sh
+
+[Install]
+WantedBy=five-minute-timer.target

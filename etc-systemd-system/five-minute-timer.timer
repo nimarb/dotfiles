@@ -1,0 +1,9 @@
+[Unit]
+Description=Five Minute Timer
+
+[Timer]
+OnCalendar=*:0/15
+Unit=five-minute-timer.target
+
+[Install]
+WantedBy=timers.target
