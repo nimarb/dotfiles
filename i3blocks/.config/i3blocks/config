@@ -98,18 +98,18 @@ interval=10
 # Battery indicator
 #
 # The battery instance defaults to 0.
-#[battery]
+[battery]
 #color=#FCE94F
-#command=/home/ghost/.config/i3blocks/bat.sh
-#label=BAT
-#label=⚡
-#instance=1
-#interval=15
+command=cat /sys/devices/platform/smapi/BAT0/remaining_percent
+label=BAT
+label=⚡
+instance=1
+interval=15
 
 # Date Time
 #
 [time]
-command=date "+%Y-%m-%d %I:%M:%S"
+command=date "+%m-%d %I:%M:%S"
 interval=1
 
 # Generic media player support
