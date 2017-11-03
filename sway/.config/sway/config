@@ -186,6 +186,13 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #
+# Volume controls
+#
+    bindsym XF86AudioRaiseVolume exec amixer -q set PCM 2dB+ unmute
+    bindsym XF86AudioLowerVolume exec amixer -q set PCM 2dB- unmute
+    bindsym XF86AudioMute exec amixer -q set PCM toggle
+
+#
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
