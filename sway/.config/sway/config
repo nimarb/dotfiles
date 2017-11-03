@@ -69,8 +69,8 @@ output * bg /usr/share/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     # exit sway (logs you out of your wayland session)
     bindsym $mod+Shift+e exit
 
-    # lock the current screen
-    bindsym $mod+l exec swaylock -i /home/nb/pics/jpn-yarigatake.jpg --scaling=fill
+    # lock the screen
+    bindsym $mod+p exec swaylock -i /home/nb/pics/jpn-yarigatake.jpg --scaling=fill
 
 #
 # Moving around:
