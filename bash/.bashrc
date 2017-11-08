@@ -45,6 +45,9 @@ alias pacget='sudo pacman -S'
 # pacman search alias
 alias pacs='pacsearch'
 
+# catkin make on arch
+alias catm='catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so'
+
 # simple youtube play
 yplay () { vlc $(youtube-dl -ig $*) ;} 
 
@@ -66,12 +69,17 @@ alias sysstart='sudo systemctl start'
 alias sysstatus='sudo systemctl status'
 # reload daemons
 alias sysreload='sudo systemctl daemon-reload'
+# go sleep 
+alias susp='systemctl suspend'
 
 # alias for redshift, a screen temp adjuster like f.lux
 alias flux='redshift-gtk &'
 
-if [ "$TERMINOLOGY" = "1" ]
-then
-	t ls
-fi
+# for ros
+source /opt/ros/kinetic/setup.bash
+
+#if [ "$TERMINOLOGY" = "1" ]
+#then
+#	t ls
+#fi
 
