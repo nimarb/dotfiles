@@ -21,7 +21,7 @@ set $menu dmenu_run
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/sway/)
-output * bg /usr/share/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+#output * bg /usr/share/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # Example configuration:
 #
@@ -191,6 +191,13 @@ bindsym $mod+r mode "resize"
     bindsym XF86AudioRaiseVolume exec amixer -q set PCM 2dB+ unmute
     bindsym XF86AudioLowerVolume exec amixer -q set PCM 2dB- unmute
     bindsym XF86AudioMute exec amixer -q set PCM toggle
+
+#
+# Music Player controls
+#
+    bindsym XF86AudioPlay exec playerctl play-pause
+    bindsym XF86AudioNext exec playerctl next
+    bindsym XF86AudioPrec exec playerctl prev
 
 #
 # Status Bar:
