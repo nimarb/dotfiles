@@ -33,6 +33,10 @@ alias lsl='ls -lh'
 # creating an awk calculator invoked by clc ARGS
 clc () { awk "BEGIN{ pi = 4.0*atan2(1.0,1.0); deg = pi/180.0; print $* }" ;}
 
+# hex/dec conversion shortcut
+alias h2d='printf "%d\n"'
+alias d2h='printf "%x\n"'
+
 # editor to vim
 export EDITOR=vim
 
