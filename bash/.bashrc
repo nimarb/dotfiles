@@ -45,6 +45,9 @@ alias pacget='sudo pacman -S'
 # pacman search alias
 alias pacs='pacsearch'
 
+# git shortcuts
+alias gits='git status'
+
 # catkin make on arch
 alias catm='catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so'
 
@@ -77,6 +80,7 @@ alias flux='redshift-gtk &'
 
 # for ros
 source /opt/ros/kinetic/setup.bash
+unset PYTHONPATH
 
 #if [ "$TERMINOLOGY" = "1" ]
 #then
