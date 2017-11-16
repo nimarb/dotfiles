@@ -42,3 +42,4 @@ colorscheme solarized
 autocmd! bufwritepost .vimrc source %
 set pastetoggle=<F2>
 set clipboard=unnamed
+set wildmenu
