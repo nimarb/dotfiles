@@ -1,5 +1,4 @@
 {
-    "vim.disableAnnoyingNeovimMessage": true,
     "window.zoomLevel": 0,
     "vim.easymotion": true,
     "vim.incsearch": true,
@@ -13,6 +12,8 @@
         }
     ],
     "C_Cpp.intelliSenseEngine": "Default",
+    "C_Cpp.loggingLevel": "Information",
     "editor.fontFamily": "'Noto Mono', 'Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback'",
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "python.linting.flake8Enabled": true
 }
