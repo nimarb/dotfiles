@@ -11,6 +11,11 @@ PS1='[\u@\h \W]\$ '
 # sudo tab completion
 complete -cf sudo
 
+# history file
+shopt -s histappend
+HISTSIZE=2000
+HISTFILESIZE=10000
+
 # alias from mpd if it is installed as user
 alias mpd='mpd ~/.mpd.conf'
 
@@ -36,6 +41,7 @@ clc () { awk "BEGIN{ pi = 4.0*atan2(1.0,1.0); deg = pi/180.0; print $* }" ;}
 # hex/dec conversion shortcut
 alias h2d='printf "%d\n"'
 alias d2h='printf "%x\n"'
+alias h2b='printf "\$*" | xxd -b | cut -d" " -f2'
 
 # editor to vim
 export EDITOR=vim
@@ -67,6 +73,10 @@ pdfgrep () { find . -name '*.pdf' -exec bash -c "pdftotext '{}' - | grep -i --wi
 
 # gs pdfmerge !!DOES NOT WORK WITH SPACES IN FILENAME?!!
 pdfgsmerge () { gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -sOutputFile=merged.pdf $* ;}
+
+# pretty print json output
+ppjson () { echo "$1" | python -m json.tool ;}
+alias prettyjson='python -m json.tool'
 
 # restart service
 alias sysrestart='sudo systemctl restart'
