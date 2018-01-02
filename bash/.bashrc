@@ -52,6 +52,10 @@ alias t='todo.sh -cAt'
 # pacman install alias
 alias pacget='sudo pacman -S'
 
+# aur commands
+alias aurget='pacaur --noedit -y'
+alias aurdate='pacaur -k'
+
 # pacman search alias
 alias pacs='pacsearch'
 
@@ -93,8 +97,10 @@ alias susp='systemctl suspend'
 alias flux='redshift-gtk &'
 
 # for ros
-source /opt/ros/kinetic/setup.bash
-unset PYTHONPATH
+if [ "$HOSTNAME" = "arch-tp" ]; then 
+    source /opt/ros/kinetic/setup.bash
+    unset PYTHONPATH
+fi
 
 #if [ "$TERMINOLOGY" = "1" ]
 #then
