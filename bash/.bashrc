@@ -46,6 +46,9 @@ alias h2b='printf "\$*" | xxd -b | cut -d" " -f2'
 # editor to vim
 export EDITOR=vim
 
+# enable QT5 wayland backend
+export QT_QPA_PLATFORM=wayland-egl
+
 # alias for todo.txt todo app
 alias t='todo.sh -cAt'
 
