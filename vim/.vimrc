@@ -36,7 +36,11 @@ filetype indent on
 imap jj <Esc>
 set tabpagemax=20
 set background=dark
+let g:solarized_termcolors=256
+set background=dark
 colorscheme solarized
+set term=screen-256color
+set t_ut=
 "set verbose=20
 "
 autocmd! bufwritepost .vimrc source %
