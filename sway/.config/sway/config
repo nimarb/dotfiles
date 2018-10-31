@@ -14,9 +14,9 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term terminology
+set $term gnome-terminal
 # Your preferred application launcher
-set $menu dmenu_run
+set $menu i3-dmenu-desktop
 
 ### Output configuration
 #
@@ -61,7 +61,8 @@ set $menu dmenu_run
     # Despite the name, also works for non-floating windows.
     # Change normal to inverse to use left mouse button for resizing and right
     # mouse button for dragging.
-    floating_modifier $mod normal
+    floating_modifier $mod
+    #floating_modifier $mod normal
 
     # reload the configuration file
     bindsym $mod+Shift+c reload
@@ -70,7 +71,8 @@ set $menu dmenu_run
     bindsym $mod+Shift+e exit
 
     # lock the screen
-    bindsym $mod+p exec swaylock -i /home/nb/pics/jpn-yarigatake.jpg --scaling=fill
+    bindsym $mod+p exec i3lock -e -i /home/nimar/Pictures/Wallpapers/DSC08157.png
+    #bindsym $mod+p exec swaylock -i /home/nb/pics/jpn-yarigatake.jpg --scaling=fill
 
 #
 # Moving around:
@@ -214,10 +216,11 @@ bindsym $mod+r mode "resize"
 #
 bar {
     position top
-    status_command i3blocks
+    status_command i3status
+    #status_command i3blocks
 }
 
-include /etc/sway/config.d/*
+#include /etc/sway/config.d/*
 
-output "*" background /home/nb/Sonnenuntergang-dez16-hh.jpg fill
-
+#output "*" background /home/nimar/Pictures/Wallpapers/DSC08157.jpg fill
+exec --no-startup-id feh --bg-fill /home/nimar/Pictures/Wallpapers/DSC08157.jpg
