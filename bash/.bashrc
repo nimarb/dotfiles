@@ -11,10 +11,32 @@ PS1='[\u@\h \W]\$ '
 # sudo tab completion
 complete -cf sudo
 
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
 # history file
 shopt -s histappend
-HISTSIZE=2000
-HISTFILESIZE=10000
+HISTSIZE=10000
+HISTFILESIZE=20000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
+# make grep colourful
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 
 # alias from mpd if it is installed as user
 alias mpd='mpd ~/.mpd.conf'
@@ -22,6 +44,9 @@ alias mpd='mpd ~/.mpd.conf'
 # alias to always use more safe rm/mv (asks when deleting more than 3 things)
 alias rm='rm -I'
 alias mv='mv -i'
+
+# clones a git dir without fsck'ing contents --> for old repos & new git
+alias gitc-nofsck='git clone --config transfer.fsckobjects=false --config receive.fsckobjects=false --config fetch.fsckobjects=false'
 
 # alias for easyer pacman update
 alias pacdate='sudo pacman -Syu'
@@ -47,7 +72,7 @@ alias h2b='printf "\$*" | xxd -b | cut -d" " -f2'
 export EDITOR=vim
 
 # alias for todo.txt todo app
-alias t='todo.sh -cAt'
+alias t='todo.sh -antc'
 
 # pacman install alias
 alias pacget='sudo pacman -S'
@@ -97,6 +122,9 @@ alias susp='systemctl suspend'
 # alias for redshift, a screen temp adjuster like f.lux
 alias flux='redshift-gtk &'
 
+##################
+# COMPUTER SPECIFIC THINGS
+##################
 # for ros
 if [ "$HOSTNAME" = "arch-tp" ]; then 
     source /opt/ros/kinetic/setup.bash
@@ -107,4 +135,9 @@ fi
 #then
 #	t ls
 #fi
+
+# if cv-lab diary exists, make alias to open it
+if [ -f "~/Nextcloud/tohoku_18/cv-research-lab_diary.md" ]; then
+    alias labd='vim ~/Nextcloud/tohoku_18/cv-research/lab_diary.md'
+fi
 
