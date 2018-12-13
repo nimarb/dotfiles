@@ -27,7 +27,6 @@
         "suppressWelcomeNotice": true
     },
     "workbench.activityBar.visible": false,
-    "window.menuBarVisibility": "toggle",
     "code-runner.executorMap": {
         "javascript": "node",
         "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
@@ -68,5 +67,8 @@
         "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
         "haskell": "runhaskell",
         "nim": "nim compile --verbosity:0 --hints:off --run"
-    }
+    },
+    "editor.largeFileOptimizations": false,
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.message.update.show": false
 }
