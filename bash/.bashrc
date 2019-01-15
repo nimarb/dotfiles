@@ -109,12 +109,34 @@ pdfgrep () { find . -name '*.pdf' -exec bash -c "pdftotext '{}' - | grep -i --wi
 # gs pdfmerge !!DOES NOT WORK WITH SPACES IN FILENAME?!!
 pdfgsmerge () { gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -sOutputFile=merged.pdf $* ;}
 
+# find and grep
+function fgr {
+    NAM=""
+    GREPTYPE="-i -H"
+    if [ -n "$1" ]; then
+	test -n "$2" && NAM="-name \"$2\""
+	test -n "$3" && GREPTYPE=$3
+	CMMD="find . $NAM -not -path '*/\.*' -exec egrep --colour=auto $GREPTYPE \"$1\" {} + 2>/dev/null"
+	>&2 echo -e "Running: $CMMD\n"
+	sh -c "$CMMD"
+	echo ""
+    else
+	echo -e "Expected: fgr <search> [file filter] [grep opt]\n"
+    fi
+}
+
 # pretty print json output
 ppjson () { echo "$1" | python -m json.tool ;}
 alias prettyjson='python -m json.tool'
 
+# show disk use of subdirs sorted by size
+alias subdirsize='du -d 1 -h | sort -hr | egrep -v ^0'
+
 # find files with names which cant be used on exfat/ntfs
 findbadnames() { find . -name '*[?<>\\:*|\"]*' ;}
+
+# check dirty/writeback memory
+alias watchdiry='watch -d -n 1 grep -e Dirty: -e Writeback: /proc/meminfo'
 
 # restart service
 alias sysrestart='sudo systemctl restart'
