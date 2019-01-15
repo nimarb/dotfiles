@@ -17,8 +17,9 @@ HISTCONTROL=ignoreboth
 
 # history file
 shopt -s histappend
-HISTSIZE=10000
-HISTFILESIZE=20000
+HISTSIZE=100000
+HISTFILESIZE=200000
+HISTTIMEFORMAT='%Y-%m-%d %T: '
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -44,6 +45,9 @@ alias mpd='mpd ~/.mpd.conf'
 # alias to always use more safe rm/mv (asks when deleting more than 3 things)
 alias rm='rm -I'
 alias mv='mv -i'
+
+# make a new dir with the current date as name
+alias mdd='mkdir $(date -I)'
 
 # clones a git dir without fsck'ing contents --> for old repos & new git
 alias gitc-nofsck='git clone --config transfer.fsckobjects=false --config receive.fsckobjects=false --config fetch.fsckobjects=false'
@@ -97,6 +101,7 @@ yplay () { vlc $(youtube-dl -ig $*) ;}
 # show active network connections
 alias conns='ss -tan'
 alias connsd='ss -ta'
+alias ports='ss -tulanp'
 
 # grep pdf's
 pdfgrep () { find . -name '*.pdf' -exec bash -c "pdftotext '{}' - | grep -i --with-filename --label='{}' --color '$*'" \; ;}
@@ -107,6 +112,9 @@ pdfgsmerge () { gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepres
 # pretty print json output
 ppjson () { echo "$1" | python -m json.tool ;}
 alias prettyjson='python -m json.tool'
+
+# find files with names which cant be used on exfat/ntfs
+findbadnames() { find . -name '*[?<>\\:*|\"]*' ;}
 
 # restart service
 alias sysrestart='sudo systemctl restart'
@@ -130,11 +138,6 @@ if [ "$HOSTNAME" = "arch-tp" ]; then
     source /opt/ros/kinetic/setup.bash
     unset PYTHONPATH
 fi
-
-#if [ "$TERMINOLOGY" = "1" ]
-#then
-#	t ls
-#fi
 
 # if cv-lab diary exists, make alias to open it
 if [ -f "~/Nextcloud/tohoku_18/cv-research-lab_diary.md" ]; then
