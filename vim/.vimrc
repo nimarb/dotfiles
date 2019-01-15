@@ -43,3 +43,12 @@ autocmd! bufwritepost .vimrc source %
 set pastetoggle=<F2>
 set clipboard=unnamed
 set wildmenu
+
+" unlimited undo's by storing them in an undofile, make sure dir exists
+set undofile
+set undodir=~/.vim/undodir
+" delete undofiles older than 90 days
+let s:undos = split(globpath(&undodir, '*'), "\n")
+call filter(s:undos, 'getftime(v:val) < localtime() - (60 * 60 * 24 *90)')
+call map(s:undos, 'delete(v:val)')
+
