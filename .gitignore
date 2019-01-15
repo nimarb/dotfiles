@@ -1,0 +1,3 @@
+# ignore vim's undo directory
+vim/.vim/undodir/*
+
