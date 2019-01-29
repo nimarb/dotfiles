@@ -130,6 +130,14 @@ alias susp='systemctl suspend'
 # alias for redshift, a screen temp adjuster like f.lux
 alias flux='redshift-gtk &'
 
+if which loginctl > /dev/null && loginctl >& /dev/null; then
+    if loginctl show-user | grep KillUserProcesses | grep -q yes; then
+	echo "systemd is set to kill user processes on logoff"
+	echo "This will break screen, tmux, emacs --daemon, nohup, etc"
+	echo "To fix please set KillUserProcesses=no in /etc/systemd/login.conf"
+    fi
+fi
+
 ##################
 # COMPUTER SPECIFIC THINGS
 ##################
