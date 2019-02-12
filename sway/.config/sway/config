@@ -18,6 +18,8 @@ set $right l
 set $term gnome-terminal
 # Your preferred application launcher
 set $menu dmenu_run
+#set $menu "bash -c 'compgen -c | sort -u | fzf --no-extended --print-query | tail -n1 | xargs -r swaymsg -t command exec'"
+#set $menu ~/dotfiles/tools/sway-launcher.sh
 
 ### Output configuration
 #
@@ -30,8 +32,8 @@ set $menu dmenu_run
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
-output eDP-1 scale 2
-#output eDP-1 scale 1.5
+#output eDP-1 scale 2
+output eDP-1 scale 1.5
 
 ### Input configuration
 #
@@ -47,8 +49,10 @@ output eDP-1 scale 2
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
-input "2:14:ETPS/2_Elantech_Touchpad" {
+input "1267:32:Elan_Touchpad" {
     tap enabled
+    tap_button_map lrm
+    middle_emulation enabled
 }
 
 ### Key bindings
@@ -235,5 +239,5 @@ bar {
 
 include /etc/sway/config.d/*
 
-output "*" background /home/nb/Sonnenuntergang-dez16-hh.jpg fill
+#output "*" background /home/nb/Sonnenuntergang-dez16-hh.jpg fill
 

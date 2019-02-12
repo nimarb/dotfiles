@@ -110,7 +110,8 @@ interval=10
 # The battery instance defaults to 0.
 [battery]
 #color=#FCE94F
-command=cat /sys/devices/platform/smapi/BAT0/remaining_percent
+#command=cat /sys/devices/platform/smapi/BAT0/remaining_percent
+command=cat /sys/class/power_supply/BAT0/capacity
 label=BAT
 label=⚡
 instance=1

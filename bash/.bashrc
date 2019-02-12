@@ -79,6 +79,7 @@ export EDITOR=vim
 export QT_QPA_PLATFORM=wayland-egl
 export CLUTTER_BACKEND=wayland
 export SDL_VIDEODRIVER=wayland
+export GDK_BACKEND=wayland
 
 # alias for todo.txt todo app
 alias t='todo.sh -antc'
