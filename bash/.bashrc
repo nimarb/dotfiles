@@ -61,6 +61,17 @@ alias untar='tar -xvf'
 # powertop alias
 alias pwrtp='sudo powertop'
 
+######### Use modern alternatives of the standard unix commands ##########
+# use lsd instead of ls if available
+if $(command -v lsd >/dev/null 2>&1) ; then
+   alias ls='lsd'
+fi
+# use fd instead of find if available
+if $(command -v fd >/dev/null 2>&1) ; then
+   alias find='fd'
+fi
+#########
+
 # make ls output readable for humans
 alias lsl='ls -lh'
 
