@@ -175,6 +175,9 @@ fi
 # if cv-lab diary exists, make alias to open it
 if [[ -f ~/Nextcloud/tohoku_18/cv-research/lab_diary.md ]]; then
     alias labd='vim ~/Nextcloud/tohoku_18/cv-research/lab_diary.md'
+    alias tl='todo.sh -antc -d ~/.todo-lab.cfg'
+    export PATH=/usr/local/cuda/bin:$PATH
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 fi
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -200,4 +203,3 @@ if ! shopt -oq posix; then
 	. /etc/bash_completion
   fi
 fi
-
