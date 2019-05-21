@@ -17,8 +17,8 @@ HISTCONTROL=ignoreboth
 
 # history file
 shopt -s histappend
-HISTSIZE=100000
-HISTFILESIZE=200000
+HISTSIZE=2000000
+HISTFILESIZE=3000000
 HISTTIMEFORMAT='%Y-%m-%d %T: '
 
 # check the window size after each command and, if necessary,
