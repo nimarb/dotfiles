@@ -80,6 +80,9 @@ export QT_QPA_PLATFORM=wayland-egl
 export CLUTTER_BACKEND=wayland
 export SDL_VIDEODRIVER=wayland
 export GDK_BACKEND=wayland
+export ECORE_EVAS_ENGINE=wayland_egl
+export ELM_ENGINE=wayland_egl
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 # alias for todo.txt todo app
 alias t='todo.sh -antc'
@@ -156,7 +159,12 @@ alias sysreload='sudo systemctl daemon-reload'
 alias susp='systemctl suspend'
 
 # alias for redshift, a screen temp adjuster like f.lux
-alias flux='redshift-gtk &'
+alias flux='redshift-gtk -m wayland &'
+
+# aliases for x11 only apps (electron based) to run in wayland
+alias signal='GDK_BACKEND=x11 signal-desktop'
+alias vscode='GDK_BACKEND=x11 code'
+alias vscode='GDK_BACKEND=x11 thunderbird'
 
 if which loginctl > /dev/null && loginctl >& /dev/null; then
     if loginctl show-user | grep KillUserProcesses | grep -q yes; then
