@@ -29,6 +29,7 @@ set mouse=a
 set hlsearch
 set smartcase
 set smarttab
+set nomodeline
 "set backupcopy=yes
 "set backupdir=$HOME/.vim/backup
 set backupskip=/tmp/*
