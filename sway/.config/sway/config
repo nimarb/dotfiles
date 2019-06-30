@@ -21,6 +21,10 @@ set $menu dmenu_run
 #set $menu "bash -c 'compgen -c | sort -u | fzf --no-extended --print-query | tail -n1 | xargs -r swaymsg -t command exec'"
 #set $menu ~/dotfiles/tools/sway-launcher.sh
 
+# Images
+set $desk_bg ~/pictures/desk_bg.jpg
+set $lock_bg ~/pictures/lock_bg.jpg
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/sway/)
@@ -82,7 +86,7 @@ input "1267:32:Elan_Touchpad" {
     bindsym $mod+Shift+e exit
 
     # lock the screen
-    bindsym $mod+p exec swaylock -i /home/nb/pics/jpn-yarigatake.jpg --scaling=fill
+    bindsym $mod+p exec swaylock -i $lock_bg --scaling=fill
 
 #
 # Moving around:
@@ -234,10 +238,24 @@ bindsym $mod+r mode "resize"
 #
 bar {
     position top
-    status_command i3blocks
+    swaybar_command waybar
 }
 
 include /etc/sway/config.d/*
 
 #output "*" background /home/nb/Sonnenuntergang-dez16-hh.jpg fill
+
+#
+# Autostart of programs
+#
+    exec mako
+    exec redshift-gtk -m wayland
+    exec nm-applet --indicator
+    exec swayidle -w \
+	timeout 300 'swaylock -f -i $lock_bg --scaling=fill' \
+	timeout 600 'swaymsg "output * dpms off"' \
+	    resume 'swaymsg "output * dpms on"' \
+	before-sleep 'swaylock -f -i $lock_bg --scaling=fill' \
+	lock 'swaylock -f -i $lock_bg --scaling=fill'
+    exec swaybg -i $desk_bg -m fill
 
