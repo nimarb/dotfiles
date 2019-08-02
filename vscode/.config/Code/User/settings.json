@@ -1,5 +1,6 @@
 {
-    "window.zoomLevel": 0,
+    "editor.rulers": [80],
+    "window.zoomLevel": 4,
     "vim.easymotion": true,
     "vim.incsearch": true,
     "vim.useSystemClipboard": true,
@@ -82,4 +83,8 @@
         "plaintext"
     ],
     "terminal.integrated.scrollback": 100000000,
+    "python.linting.mypyEnabled": true,
+    "shellcheck.disableVersionCheck": true,
+    "python.dataScience.jupyterServerURI": "local",
+    "python.pythonPath": "/usr/bin/python3",
 }
