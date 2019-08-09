@@ -20,6 +20,11 @@ shopt -s histappend
 HISTSIZE=2000000
 HISTFILESIZE=3000000
 HISTTIMEFORMAT='%Y-%m-%d %T: '
+HISTIGNORE='ls:history'
+# save history immediately to file
+PROMPT_COMMAND='history -a'
+# save cmds one cmd per line
+shopt -s cmdhist
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
