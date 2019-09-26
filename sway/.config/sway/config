@@ -88,6 +88,9 @@ input "1267:32:Elan_Touchpad" {
     # lock the screen
     bindsym $mod+p exec swaylock -i $lock_bg --scaling=fill
 
+    # start the program to manage displays (e.g. for a projector)
+    bindsym $mod+o exec wdisplays
+
 #
 # Moving around:
 #
@@ -222,6 +225,13 @@ bindsym $mod+r mode "resize"
     bindsym XF86AudioPlay exec playerctl play-pause
     bindsym XF86AudioNext exec playerctl next
     bindsym XF86AudioPrev exec playerctl prev
+
+#
+# Brightness controls
+#
+
+    bindsym XF86MonBrightnessUp exec brightnessctl set +10%
+    bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 
 #
 # Status Bar:
