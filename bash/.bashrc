@@ -180,7 +180,6 @@ alias flux='redshift-gtk -m wayland &'
 # aliases for x11 only apps (electron based) to run in wayland
 alias signal='GDK_BACKEND=x11 signal-desktop'
 alias vscode='GDK_BACKEND=x11 code'
-alias thndrbrd='GDK_BACKEND=x11 thunderbird'
 
 if which loginctl > /dev/null && loginctl >& /dev/null; then
     if loginctl show-user | grep KillUserProcesses | grep -q yes; then
