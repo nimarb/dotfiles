@@ -14,8 +14,10 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-#set $term terminology
-set $term gnome-terminal
+# set $term terminology
+# set $term gnome-terminal
+set $term alacritty
+
 # Your preferred application launcher
 set $menu dmenu_run
 #set $menu "bash -c 'compgen -c | sort -u | fzf --no-extended --print-query | tail -n1 | xargs -r swaymsg -t command exec'"
