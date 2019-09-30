@@ -44,6 +44,13 @@ autocmd! bufwritepost .vimrc source %
 set pastetoggle=<F2>
 set clipboard=unnamed
 set wildmenu
+" Ex mode is dumb
+nnoremap Q <Nop>
+set lazyredraw
+
+set ruler
+set cc=80
+set colorcolumn=80
 
 " unlimited undo's by storing them in an undofile, make sure dir exists
 set undofile
