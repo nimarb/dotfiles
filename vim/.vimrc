@@ -53,3 +53,11 @@ let s:undos = split(globpath(&undodir, '*'), "\n")
 call filter(s:undos, 'getftime(v:val) < localtime() - (60 * 60 * 24 *90)')
 call map(s:undos, 'delete(v:val)')
 
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'https://github.com/alok/notational-fzf-vim'
+call plug#end()
+
+" Search paths for notational velocity
+let g:nv_search_paths = ['~/nextcloud/notes', '~/nextcloud/thoughtson', '~/nextcloud/todo', '~/nextcloud/cdtm' , '~/nextcloud/checklists', '~/progs']
+
