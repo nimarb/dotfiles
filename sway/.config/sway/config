@@ -89,10 +89,10 @@ input "1267:32:Elan_Touchpad" {
     bindsym $mod+Shift+e exit
 
     # lock the screen
-    bindsym $mod+p exec swaylock -i $lock_bg --scaling=fill
+    bindsym $mod+o exec swaylock -i $lock_bg --scaling=fill
 
     # start the program to manage displays (e.g. for a projector)
-    bindsym $mod+o exec wdisplays
+    bindsym $mod+p exec wdisplays
 
 #
 # Moving around:
