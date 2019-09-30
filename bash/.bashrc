@@ -203,3 +203,5 @@ if [ -f "~/Nextcloud/tohoku_18/cv-research-lab_diary.md" ]; then
     alias labd='vim ~/Nextcloud/tohoku_18/cv-research/lab_diary.md'
 fi
 
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
