@@ -106,11 +106,6 @@ alias t='todo.sh -antc'
 # pacman install alias
 alias pacget='sudo pacman -S'
 
-# aur commands
-alias aurget='pacaur --noedit -y'
-alias aurdate='pacaur -k'
-alias aurs='pacaur -s'
-
 # pacman search alias
 alias pacs='pacsearch'
 
