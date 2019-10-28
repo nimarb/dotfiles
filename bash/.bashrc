@@ -76,7 +76,7 @@ alias h2b='printf "\$*" | xxd -b | cut -d" " -f2'
 export EDITOR=vim
 
 # alias for todo.txt todo app
-alias t='todo.sh -antc'
+alias t='todo-txt -antc'
 
 # pacman install alias
 alias pacget='sudo pacman -S'
@@ -108,6 +108,12 @@ pdfgrep () { find . -name '*.pdf' -exec bash -c "pdftotext '{}' - | grep -i --wi
 
 # gs pdfmerge !!DOES NOT WORK WITH SPACES IN FILENAME?!!
 pdfgsmerge () { gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -sOutputFile=merged.pdf $* ;}
+
+# compresses a pdf using ghostcript
+pdfcompress() { ghostscript -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile=compressed.pdf -q -dNOPAUSE -dBATCH -dSAFER -dPDFA=2 -dPDFACompatibilityPolicy=1 -dSimulateOverprint=true -sDEVICE=pdfwrite -dCompatibilityLevel=1.3 -dPDFSETTINGS=/screen -dEmbedAllFonts=true -dSubsetFonts=true -dAutoRotatePages=/None -dColorImageDownsampleType=/Bicubic -dColorImageResolution=150 -dGrayImageDownsampleType=/Bicubic -dGrayImageResolution=150 -dMonoImageDownsampleType=/Bicubic -dMonoImageResolution=150 $1 ;}
+
+# extracts pages out of a pdf
+pdfextract() { gs -dBATCH -sOutputFile=extracted_p$2-p$3.pdf -dFirstPage=$2 -dLastPage=$3 -sDEVICE=pdfwrite $1 ;}
 
 # pretty print json output
 ppjson () { echo "$1" | python -m json.tool ;}
@@ -152,3 +158,5 @@ if [ -f "~/Nextcloud/tohoku_18/cv-research-lab_diary.md" ]; then
     alias labd='vim ~/Nextcloud/tohoku_18/cv-research/lab_diary.md'
 fi
 
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
