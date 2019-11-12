@@ -252,7 +252,13 @@ bindsym $mod+r mode "resize"
 #        inactive_workspace #32323200 #32323200 #5c5c5c
 #    }
 #}
+
+# showing window title in swaybar:
+#   swaymsg -t subscribe -m '["window"]' | jq -r '.container.name'
 #
+# Disable title bars of window
+default_border pixel 2
+
 bar {
     position top
     swaybar_command waybar
@@ -261,6 +267,7 @@ bar {
 include /etc/sway/config.d/*
 
 #output "*" background /home/nb/Sonnenuntergang-dez16-hh.jpg fill
+
 
 #
 # Autostart of programs
