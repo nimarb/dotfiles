@@ -101,7 +101,7 @@ export ELM_ENGINE=wayland_egl
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # alias for todo.txt todo app
-alias t='todo-txt -antc'
+alias t='todo.sh -antc'
 
 # pacman install alias
 alias pacget='sudo pacman -S'
@@ -111,6 +111,8 @@ alias pacs='pacsearch'
 
 # git shortcuts
 alias gits='git status'
+alias guncommit='git reset --soft HEAD~'
+
 
 # catkin make on arch
 alias catm='catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so'
