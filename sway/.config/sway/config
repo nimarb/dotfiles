@@ -238,7 +238,7 @@ bindsym $mod+r mode "resize"
 #
     bindsym XF86AudioPlay exec playerctl play-pause
     bindsym XF86AudioNext exec playerctl next
-    bindsym XF86AudioPrev exec playerctl prev
+    bindsym XF86AudioPrev exec playerctl previous
 
 #
 # Brightness controls
