@@ -47,6 +47,11 @@ function gen_ssha512() {
     local password=$1
     doveadm pw -s SSHA512 -p "$password"
 }
+
+function gen_argon2id() {
+    local password=$1
+    doveadm pw -s ARGON2ID -p "$password"
+}
  
 function check_dovecot_user() {
     grep -iq $username $USERSFILE; RC=$?
@@ -85,7 +90,8 @@ function check_postfix_virtual() {
 check_root
 get_username
 get_password
-password=$(gen_ssha512)
+# password=$(gen_ssha512)
+password=$(gen_argon2id)
 check_dovecot_user
 check_postfix_maps
 
