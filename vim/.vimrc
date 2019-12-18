@@ -66,5 +66,5 @@ Plug 'https://github.com/alok/notational-fzf-vim'
 call plug#end()
 
 " Search paths for notational velocity
-let g:nv_search_paths = ['~/nextcloud/notes', '~/nextcloud/thoughtson', '~/nextcloud/todo', '~/nextcloud/cdtm' , '~/nextcloud/checklists', '~/progs']
+let g:nv_search_paths = ['~/nextcloud/notes', '~/nextcloud/thoughtson', '~/nextcloud/todo', '~/nextcloud/checklists', '~/nextcloud/cdtm']
 
