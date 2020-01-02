@@ -144,6 +144,9 @@ if which loginctl > /dev/null && loginctl >& /dev/null; then
     fi
 fi
 
+# Activate fuzzy searching of commands
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 ##################
 # COMPUTER SPECIFIC THINGS
 ##################
@@ -158,5 +161,8 @@ if [ -f "~/Nextcloud/tohoku_18/cv-research-lab_diary.md" ]; then
     alias labd='vim ~/Nextcloud/tohoku_18/cv-research/lab_diary.md'
 fi
 
+# Activate GAM
+if [ "HOSTNAME" = "that-pc" ]; then
+    gam() { "/home/nb/bin/gam/gam" "$@" ; }
+fi
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
