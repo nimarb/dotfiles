@@ -6,7 +6,21 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
     "modules-center": ["sway/window"],
-    "modules-right": ["idle_inhibitor", "custom/todotxt_pom", "pulseaudio", "network", "cpu", "memory", "disk", "temperature", "backlight", "battery", "clock", "tray"],
+    "modules-right": [
+			"idle_inhibitor",
+			"custom/todotxt_pom",
+			"pulseaudio",
+			"network",
+			"cpu",
+			"memory",
+			"disk#root",
+			"disk#home",
+			"temperature",
+			"backlight",
+			"battery",
+			"clock",
+			"tray"
+		    ],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -54,10 +68,15 @@
     "memory": {
         "format": "{}% "
     },
-    "disk": {
+    "disk#root": {
 	"interval": 30,
-	"format": "{percentage_used}% used on {path}",
-	"path": "/home/"
+	"format": "{path}: {free} free",
+	"path": "/"
+    },
+    "disk#home": {
+    	"interval": 30,
+	"format": "{path}: {free} free",
+	"path": "/home"
     },
     "temperature": {
         // "thermal-zone": 2,
