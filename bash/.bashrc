@@ -164,7 +164,7 @@ alias subdirsize='du -d 1 -h | sort -hr | egrep -v ^0'
 findbadnames() { find . -name '*[?<>\\:*|\"]*' ;}
 
 # check dirty/writeback memory
-alias watchdiry='watch -d -n 1 grep -e Dirty: -e Writeback: /proc/meminfo'
+alias watchdirty='watch -d -n 1 grep -e Dirty: -e Writeback: /proc/meminfo'
 
 # restart service
 alias sysrestart='sudo systemctl restart'
