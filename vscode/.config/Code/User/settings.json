@@ -82,4 +82,6 @@
         "plaintext"
     ],
     "terminal.integrated.scrollback": 100000000,
+    "python.dataScience.askForKernelRestart": false,
+    "markdown.extension.toc.levels": "2..6",
 }
