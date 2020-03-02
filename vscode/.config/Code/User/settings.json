@@ -84,4 +84,6 @@
     "terminal.integrated.scrollback": 100000000,
     "python.dataScience.askForKernelRestart": false,
     "markdown.extension.toc.levels": "2..6",
+    "breadcrumbs.enabled": false,
+    "editor.rulers": [80, 88, 120],
 }
