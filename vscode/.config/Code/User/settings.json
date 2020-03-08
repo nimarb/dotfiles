@@ -85,5 +85,10 @@
     "python.dataScience.askForKernelRestart": false,
     "markdown.extension.toc.levels": "2..6",
     "breadcrumbs.enabled": false,
-    "editor.rulers": [80, 88, 120],
+    "editor.rulers": [
+        80,
+        88,
+        120
+    ],
+    "python.linting.mypyEnabled": true,
 }
