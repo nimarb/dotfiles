@@ -19,10 +19,14 @@ set $right l
 set $term alacritty
 
 # Your preferred application launcher
-#set $menu "bash -c 'compgen -c | sort -u | fzf --no-extended --print-query | tail -n1 | xargs -r swaymsg -t command exec'"
-#set $menu ~/dotfiles/tools/sway-launcher.sh
-set $menu exec alacritty --class 'launcher' --command bash -c 'compgen -c | sort -u | fzf | xargs -r swaymsg -t command exec'
-for_window [app_id="^launcher$"] floating enable, border none, resize set width 25 ppt height 100 ppt, move position 0 px 0 px
+# The commended out launcher works without `sway-launcher-desktop` in PATH
+#set $menu exec alacritty --class 'launcher' --command bash -c 'compgen -c | sort -u | fzf | xargs -r swaymsg -t command exec'
+#for_window [app_id="^launcher$"] floating enable, border none, resize set width 25 ppt height 100 ppt, move position 0 px 0 px
+
+# More elaborate launcher
+set $menu exec alacritty --class 'launcher' --command env TERMINAL_COMMAND="alacritty --command" sway-launcher-desktop
+for_window [app_id="^launcher$"] floating enable, border pixel 5, sticky enable, resize set width 25 ppt height 100 ppt, move position 0 px 0 px
+
 
 # Images
 set $desk_bg ~/pictures/desk_bg.jpg
