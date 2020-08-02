@@ -92,6 +92,7 @@ alias h2b='printf "\$*" | xxd -b | cut -d" " -f2'
 export EDITOR=vim
 
 # enable QT5 wayland backend
+# export QT_QPA_PLATFORM_PLUGIN_PATH=/usr/lib/qt/plugins
 export QT_QPA_PLATFORM=wayland-egl
 export CLUTTER_BACKEND=wayland
 export SDL_VIDEODRIVER=wayland
@@ -99,6 +100,12 @@ export GDK_BACKEND=wayland
 export ECORE_EVAS_ENGINE=wayland_egl
 export ELM_ENGINE=wayland_egl
 export _JAVA_AWT_WM_NONREPARENTING=1
+
+# for good appindicatior support (tray icons)
+export XDG_CURRENT_DESKTOP=Unity
+
+# make firefox accept links to wayland instance when triggered from x11
+export MOZ_DBUS_REMOTE=1
 
 # alias for todo.txt todo app
 alias t='todo.sh -antc'
@@ -117,13 +124,23 @@ alias guncommit='git reset --soft HEAD~'
 # catkin make on arch
 alias catm='catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so'
 
-# simple youtube play
-yplay () { vlc $(youtube-dl -ig $*) ;} 
+# simple youtube play. Since yt 4k you need to stream vid and audio seperately
+yplay() {
+    YTDL_OUT=$(youtube-dl "$1" --get-url);
+    URLS=($(echo "$YTDL_OUT" | tr ',' '\n'))
+    vlc "${URLS[0]}" --input-slave "${URLS[1]}"
+}
+
+# search youtube and play best audio version with mpv
+function yta() {
+    mpv --keep-open --loop --ytdl-format=bestaudio ytdl://ytsearch:"$*"
+}
 
 # show active network connections
 alias conns='ss -tan'
 alias connsd='ss -ta'
 alias ports='ss -tulanp'
+alias procports='sudo ss -tulanp'
 
 # grep pdf's
 pdfgrep () { find . -name '*.pdf' -exec bash -c "pdftotext '{}' - | grep -i --with-filename --label='{}' --color '$*'" \; ;}
@@ -187,6 +204,7 @@ alias signal='GDK_BACKEND=x11 signal-desktop'
 alias vscode='GDK_BACKEND=x11 code'
 alias vsnote='GDK_BACKEND=x11 code ~/nextcloud/notes'
 alias vsthought='GDK_BACKEND=x11 code ~/nextcloud/thoughtson'
+alias virtualbox='GDK_BACKEND=x11 virtualbox'
 
 if which loginctl > /dev/null && loginctl >& /dev/null; then
     if loginctl show-user | grep KillUserProcesses | grep -q yes; then
