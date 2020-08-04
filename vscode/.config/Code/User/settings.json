@@ -69,6 +69,12 @@
         "nim": "nim compile --verbosity:0 --hints:off --run"
     },
     "editor.largeFileOptimizations": false,
+    "editor.suggestSelection": "first",
+    "editor.rulers": [
+        80,
+        88,
+        120
+    ],
     "latex-workshop.view.pdf.viewer": "tab",
     "latex-workshop.message.update.show": false,
     "telemetry.enableTelemetry": false,
@@ -85,10 +91,13 @@
     "python.dataScience.askForKernelRestart": false,
     "markdown.extension.toc.levels": "2..6",
     "breadcrumbs.enabled": false,
-    "editor.rulers": [
-        80,
-        88,
-        120
-    ],
     "python.linting.mypyEnabled": true,
+    "window.menuBarVisibility": "toggle",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "python.languageServer": "Microsoft",
+    "pasteImage.basePath": "${projectRoot}/imgs-autopaste/",
+    "pasteImage.defaultName": "YMMDD-HH-mm-ss",
+    "pasteImage.path": "${projectRoot}/imgs-autopaste/${currentFileNameWithoutExt}/",
+    "pasteImage.prefix": "../imgs-autopaste/",
+    "MarkdownPaste.path": "${workspaceRoot}/imgs-autopaste/${fileDirname}/${fileBasenameNoExtension}/",
 }
