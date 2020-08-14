@@ -20,7 +20,7 @@ shopt -s histappend
 HISTSIZE=2000000
 HISTFILESIZE=3000000
 HISTTIMEFORMAT='%Y-%m-%d %T: '
-HISTIGNORE='ls:history'
+HISTIGNORE='ls:history:yay:pacdate:exit'
 # save history immediately to file
 PROMPT_COMMAND='history -a'
 # save cmds one cmd per line
