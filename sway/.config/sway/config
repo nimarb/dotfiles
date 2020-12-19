@@ -85,8 +85,11 @@ input "1267:32:Elan_Touchpad" {
     bindsym $mod+d $menu
 
     # take a screenshot of a part of the screen
-    #bindsym $mod+Shift+s exec grim -g "$(slurp)" ~/screenshots/$(date +'%Y-%m-%d-%H%M%S_grim.png')
     bindsym $mod+Shift+s exec slurp | grim -g - - | wl-copy && wl-paste > ~/screenshots/$(date +'%Y-%m-%d-%H%M%S_grim.png')
+    # take a screenshot of a part of the screen and annotate it with swappy
+    bindsym $mod+Shift+Ctrl+s exec slurp | grim -g - - | swappy -f - -o - | wl-copy && wl-paste > ~/screenshots/$(date +'%Y-%m-%d-%H%M%S_grim.png')
+    # open a selector and copy the hex colour code at the clicked location
+    bindsym $mod+c exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
