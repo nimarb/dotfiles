@@ -46,7 +46,7 @@ set $lock_bg ~/pictures/lock_bg.jpg
 
 #output eDP-1 scale 2
 output eDP-1 {
-    scale 1.5
+    scale 1.25
     scale_filter linear
 }
 
