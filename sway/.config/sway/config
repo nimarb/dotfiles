@@ -111,14 +111,14 @@ input "1267:32:Elan_Touchpad" {
 # Moving around:
 #
     # Move your focus around
-    bindsym $mod+$left exec swaymsg focus left && swaymsg 'border pixel 5' && sleep .2 && swaymsg 'border pixel 2'
-    bindsym $mod+$down exec swaymsg focus down && swaymsg 'border pixel 5' && sleep .2 && swaymsg 'border pixel 2'
-    bindsym $mod+$up exec swaymsg focus up && swaymsg 'border pixel 5' && sleep .2 && swaymsg 'border pixel 2'
-    bindsym $mod+$right exec swaymsg focus right && swaymsg 'border pixel 5' && sleep .2 && swaymsg 'border pixel 2'
-    # bindsym $mod+$left focus left
-    # bindsym $mod+$down focus down
-    # bindsym $mod+$up focus up
-    # bindsym $mod+$right focus right
+    # bindsym $mod+$left exec swaymsg focus left && swaymsg 'border pixel 5' && sleep .2 && swaymsg 'border pixel 2'
+    # bindsym $mod+$down exec swaymsg focus down && swaymsg 'border pixel 5' && sleep .2 && swaymsg 'border pixel 2'
+    # bindsym $mod+$up exec swaymsg focus up && swaymsg 'border pixel 5' && sleep .2 && swaymsg 'border pixel 2'
+    # bindsym $mod+$right exec swaymsg focus right && swaymsg 'border pixel 5' && sleep .2 && swaymsg 'border pixel 2'
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
     # or use $mod+[up|down|left|right]
     bindsym $mod+Up focus up
     bindsym $mod+Down focus down
