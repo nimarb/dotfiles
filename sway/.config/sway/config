@@ -251,9 +251,17 @@ bindsym $mod+r mode "resize"
 #
 # Volume controls
 #
-    bindsym XF86AudioRaiseVolume exec amixer -q set Master 1%+ unmute
-    bindsym XF86AudioLowerVolume exec amixer -q set Master 1%- unmute
-    bindsym XF86AudioMute exec amixer -q set Master toggle
+
+# bindings for pipewire / pulseaudio
+    bindsym XF86AudioLowerVolume exec pactl -- set-sink-mute @DEFAULT_SINK@ 0 && pactl -- set-sink-volume @DEFAULT_SINK@ -1%
+    bindsym XF86AudioRaiseVolume exec pactl -- set-sink-mute @DEFAULT_SINK@ 0 && pactl -- set-sink-volume @DEFAULT_SINK@ +1%
+    bindsym XF86AudioMute exec pactl -- set-sink-mute @DEFAULT_SINK@ toggle
+    bindsym XF86AudioMicMute exec pactl -- set-source-mute @DEFAULT_SOURCE@ toggle
+
+# bindings for ALSA only
+    # bindsym XF86AudioRaiseVolume exec amixer -q set Master 1%+ unmute
+    # bindsym XF86AudioLowerVolume exec amixer -q set Master 1%- unmute
+    # bindsym XF86AudioMute exec amixer -q set Master toggle
 
 #
 # Music Player controls
