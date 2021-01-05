@@ -18,7 +18,8 @@
 			"temperature",
 			"backlight",
 			"battery",
-			"clock",
+			"clock#berlin",
+			"clock#tokyo",
 			"tray"
 		    ],
     // Modules configuration
@@ -57,10 +58,16 @@
         // "icon-size": 21,
         "spacing": 10
     },
-    "clock": {
+    "clock#berlin": {
         "format": "{:%Y-%m-%d | %H:%M}",
         "tooltip-format": "{:%Y-%m-%d | %H:%M}",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%Y-%m-%d}",
+	"timezone": "Europe/Berlin"
+    },
+    "clock#tokyo": {
+        "format": "{:jp: %H:%M}",
+        "tooltip-format": "{:%Y-%m-%d | %H:%M}",
+	"timezone": "Asia/Tokyo"
     },
     "cpu": {
         "format": "{usage}% "
