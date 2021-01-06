@@ -196,9 +196,6 @@ alias sysreload='sudo systemctl daemon-reload'
 # go sleep 
 alias susp='systemctl suspend'
 
-# alias for redshift, a screen temp adjuster like f.lux
-alias flux='redshift-gtk -m wayland &'
-
 # aliases for x11 only apps (electron based) to run in wayland
 alias signal='GDK_BACKEND=x11 signal-desktop'
 alias vscode='GDK_BACKEND=x11 code'
