@@ -187,6 +187,11 @@ function fgr {
 ppjson () { echo "$1" | python -m json.tool ;}
 alias prettyjson='python -m json.tool'
 
+# inspect a json (all in the current dir) live with jq and fzf for preview
+jsoninspect() {
+    echo '' | fzf --print-query --preview "cat *.json | jq {q}"
+}
+
 # show disk use of subdirs sorted by size
 alias subdirsize='du -d 1 -h | sort -hr | egrep -v ^0'
 
