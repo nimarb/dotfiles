@@ -39,6 +39,10 @@ xterm*|rxvt*)
     ;;
 esac
 
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
 # make grep colourful
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -154,6 +158,15 @@ pdfcompress() { ghostscript -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETT
 # extracts pages out of a pdf
 pdfextract() { gs -dBATCH -sOutputFile=extracted_p$2-p$3.pdf -dFirstPage=$2 -dLastPage=$3 -sDEVICE=pdfwrite $1 ;}
 
+# takes a pdf and produces an output which looks like it has been scanned.
+# src: https://gist.github.com/andyrbell/25c8632e15d17c83a54602f6acde2724
+pdfscanned() {
+        OUT=$(basename "$1" .pdf)
+	convert -density 150 "$1" -rotate "$([ $((RANDOM % 2)) -eq 1 ] && echo -)0.$(($RANDOM % 4 + 5))" \
+		-attenuate 0.4 +noise Multiplicative -attenuate 0.03 +noise Multiplicative -sharpen 0x1.0 \
+		-colorspace Gray "$OUT"_scanned.pdf
+}
+
 # find and grep
 function fgr {
     NAM=""
@@ -230,3 +243,4 @@ fi
 
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+source "$HOME/.cargo/env"
