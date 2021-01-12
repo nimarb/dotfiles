@@ -207,6 +207,9 @@ alias subdirsize='du -d 1 -h | sort -hr | egrep -v ^0'
 # find files with names which cant be used on exfat/ntfs
 findbadnames() { find . -name '*[?<>\\:*|\"]*' ;}
 
+# get synonyms from thesaurus.com
+the() { ~/ext-progs/synonym/synonym "$1" ;}
+
 # check dirty/writeback memory
 alias watchdirty='watch -d -n 1 grep -e Dirty: -e Writeback: /proc/meminfo'
 
