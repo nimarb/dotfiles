@@ -155,6 +155,32 @@ pdfcompress() { ghostscript -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETT
 # extracts pages out of a pdf
 pdfextract() { gs -dBATCH -sOutputFile=extracted_p$2-p$3.pdf -dFirstPage=$2 -dLastPage=$3 -sDEVICE=pdfwrite $1 ;}
 
+# makes the input PDF look as if it has been scanned. Outputs to
+# $filename_scanned.pdf appending small or bad for the other cases.
+pdfscan() {
+    OUT=$(basename "$1" .pdf)
+    convert -density 150 "$1" -colorspace gray -linear-stretch 3.5%x10% \
+            -blur 0x0.5 -attenuate 0.25 +noise Gaussian -rotate 0.5 temp.pdf
+    gs -dSAFER -dBATCH -dNOPAUSE -dNOCACHE -sDEVICE=pdfwrite \
+       -sColorConversionStrategy=LeaveColorUnchanged \
+       dAutoFilterColorImages=true -dAutoFilterGrayImages=true \
+       -dDownsampleMonoImages=true -dDownsampleGrayImages=true \
+       -dDownsampleColorImages=true -sOutputFile="$OUT"_scanned.pdf temp.pdf
+    rm temp.pdf
+}
+
+pdfscansmall() {
+    OUT=$(basename "$1" .pdf)
+    convert "$1" -alpha Off -density 150 -colorspace gray -blur 0.5x0.5 \
+            -rotate 0.4 -level 40%,60% "$OUT"_scanned-small.pdf
+}
+
+pdfscannbad() {
+    OUT=$(basename "$1" .pdf)
+    convert "$1" -colorspace gray \( +clone -blur 0x1 \) +swap -compose divide \
+            -composite -linear-stretch 5%x0% -rotate 1.5 "$OUT"_scanned-bad.pdf
+}
+
 # find and grep
 function fgr {
     NAM=""
