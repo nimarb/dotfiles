@@ -17,12 +17,13 @@ HISTCONTROL=ignoreboth
 
 # history file
 shopt -s histappend
-HISTSIZE=2000000
-HISTFILESIZE=3000000
+HISTSIZE=
+HISTFILESIZE=
 HISTTIMEFORMAT='%Y-%m-%d %T: '
 HISTIGNORE='ls:history:yay:pacdate:exit'
 # save history immediately to file
-PROMPT_COMMAND='history -a'
+#PROMPT_COMMAND='history -a'
+PROMPT_COMMAND="${PROMPT_COMMAND:+${PROMPT_COMMAND} ;}history -a";
 # save cmds one cmd per line
 shopt -s cmdhist
 
