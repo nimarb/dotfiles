@@ -126,9 +126,6 @@ alias gits='git status'
 alias guncommit='git reset --soft HEAD~'
 
 
-# catkin make on arch
-alias catm='catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so'
-
 # simple youtube play. Since yt 4k you need to stream vid and audio seperately
 yplay() {
     YTDL_OUT=$(youtube-dl "$1" --get-url);
@@ -262,11 +259,16 @@ fi
 ##################
 # COMPUTER SPECIFIC THINGS
 ##################
+
 # for ros
 if [ "$HOSTNAME" = "arch-tp" ]; then 
     source /opt/ros/kinetic/setup.bash
     unset PYTHONPATH
+
+    # catkin make on arch
+    alias catm='catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so'
 fi
+
 
 # if cv-lab diary exists, make alias to open it
 if [ -f "~/Nextcloud/tohoku_18/cv-research-lab_diary.md" ]; then
