@@ -52,7 +52,7 @@
 	"format": " {}",
 	"interval": 30,
 	"exec": "cat ~/.pomo.txt.tmux",
-	"exec-if": "pgrep todo.sh"
+	"exec-if": "pgrep -f 'todo.actions.d/pom'"
     },
     "tray": {
         // "icon-size": 21,

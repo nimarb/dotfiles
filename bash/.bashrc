@@ -17,12 +17,13 @@ HISTCONTROL=ignoreboth
 
 # history file
 shopt -s histappend
-HISTSIZE=2000000
-HISTFILESIZE=3000000
+HISTSIZE=
+HISTFILESIZE=
 HISTTIMEFORMAT='%Y-%m-%d %T: '
 HISTIGNORE='ls:history:yay:pacdate:exit'
 # save history immediately to file
-PROMPT_COMMAND='history -a'
+#PROMPT_COMMAND='history -a'
+PROMPT_COMMAND="${PROMPT_COMMAND:+${PROMPT_COMMAND} ;}history -a";
 # save cmds one cmd per line
 shopt -s cmdhist
 
@@ -158,13 +159,39 @@ pdfcompress() { ghostscript -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETT
 # extracts pages out of a pdf
 pdfextract() { gs -dBATCH -sOutputFile=extracted_p$2-p$3.pdf -dFirstPage=$2 -dLastPage=$3 -sDEVICE=pdfwrite $1 ;}
 
+# makes the input PDF look as if it has been scanned. Outputs to
+# $filename_scanned.pdf appending small or bad for the other cases.
+pdfscan() {
+    OUT=$(basename "$1" .pdf)
+    convert -density 150 "$1" -colorspace gray -linear-stretch 3.5%x10% \
+            -blur 0x0.5 -attenuate 0.25 +noise Gaussian -rotate 0.5 temp.pdf
+    gs -dSAFER -dBATCH -dNOPAUSE -dNOCACHE -sDEVICE=pdfwrite \
+       -sColorConversionStrategy=LeaveColorUnchanged \
+       dAutoFilterColorImages=true -dAutoFilterGrayImages=true \
+       -dDownsampleMonoImages=true -dDownsampleGrayImages=true \
+       -dDownsampleColorImages=true -sOutputFile="$OUT"_scanned.pdf temp.pdf
+    rm temp.pdf
+}
+
 # takes a pdf and produces an output which looks like it has been scanned.
 # src: https://gist.github.com/andyrbell/25c8632e15d17c83a54602f6acde2724
-pdfscanned() {
-        OUT=$(basename "$1" .pdf)
-	convert -density 150 "$1" -rotate "$([ $((RANDOM % 2)) -eq 1 ] && echo -)0.$(($RANDOM % 4 + 5))" \
-		-attenuate 0.4 +noise Multiplicative -attenuate 0.03 +noise Multiplicative -sharpen 0x1.0 \
-		-colorspace Gray "$OUT"_scanned.pdf
+pdfscanimg() {
+    OUT=$(basename "$1" .pdf)
+    convert -density 150 "$1" -rotate "$([ $((RANDOM % 2)) -eq 1 ] && echo -)0.$(($RANDOM % 4 + 5))" \
+        -attenuate 0.4 +noise Multiplicative -attenuate 0.03 +noise Multiplicative -sharpen 0x1.0 \
+        -colorspace Gray "$OUT"_scanned.pdf
+}
+
+pdfscansmall() {
+    OUT=$(basename "$1" .pdf)
+    convert "$1" -alpha Off -density 150 -colorspace gray -blur 0.5x0.5 \
+            -rotate 0.4 -level 40%,60% "$OUT"_scanned-small.pdf
+}
+
+pdfscannbad() {
+    OUT=$(basename "$1" .pdf)
+    convert "$1" -colorspace gray \( +clone -blur 0x1 \) +swap -compose divide \
+            -composite -linear-stretch 5%x0% -rotate 1.5 "$OUT"_scanned-bad.pdf
 }
 
 # find and grep
@@ -198,6 +225,9 @@ alias subdirsize='du -d 1 -h | sort -hr | egrep -v ^0'
 # find files with names which cant be used on exfat/ntfs
 findbadnames() { find . -name '*[?<>\\:*|\"]*' ;}
 
+# get synonyms from thesaurus.com
+the() { ~/ext-progs/synonym/synonym "$1" ;}
+
 # check dirty/writeback memory
 alias watchdirty='watch -d -n 1 grep -e Dirty: -e Writeback: /proc/meminfo'
 
@@ -213,9 +243,6 @@ alias sysstatus='sudo systemctl status'
 alias sysreload='sudo systemctl daemon-reload'
 # go sleep 
 alias susp='systemctl suspend'
-
-# alias for redshift, a screen temp adjuster like f.lux
-alias flux='redshift-gtk -m wayland &'
 
 # aliases for x11 only apps (electron based) to run in wayland
 alias signal='GDK_BACKEND=x11 signal-desktop'
@@ -255,5 +282,10 @@ if [ "$HOSTNAME" = "this-pc" ]; then
     # PATH="~/.local/bin${PATH:+:${PATH}}"
 fi
 
+# Source cargo for a manual rustup installation
+if [ -f "$HOME/.cargo/env" ]; then
+    source "$HOME/.cargo/env"
+fi
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-source "$HOME/.cargo/env"
+
