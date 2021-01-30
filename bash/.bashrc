@@ -246,6 +246,14 @@ if [ -f "~/Nextcloud/tohoku_18/cv-research-lab_diary.md" ]; then
     alias labd='vim ~/Nextcloud/tohoku_18/cv-research/lab_diary.md'
 fi
 
+if [ "$HOSTNAME" = "this-pc" ]; then
+    unalias t
+    alias t='todo-txt -antc'
+    # append local executables to path
+    PATH="${PATH:+${PATH}:}~/.local/bin"
+    # prepend local exec's to path -> overwrites sys cmds and might be dangerous
+    # PATH="~/.local/bin${PATH:+:${PATH}}"
+fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 source "$HOME/.cargo/env"
