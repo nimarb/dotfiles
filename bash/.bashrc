@@ -245,8 +245,8 @@ alias susp='systemctl suspend'
 # aliases for x11 only apps (electron based) to run in wayland
 alias signal='GDK_BACKEND=x11 signal-desktop'
 alias vscode='GDK_BACKEND=x11 code'
-alias vsnote='GDK_BACKEND=x11 code ~/nextcloud/notes'
-alias vsthought='GDK_BACKEND=x11 code ~/nextcloud/thoughtson'
+alias vsnote='GDK_BACKEND=x11 code ~/nextcloud/daten/notes'
+alias vsthought='GDK_BACKEND=x11 code ~/nextcloud/daten/thoughtson'
 alias virtualbox='GDK_BACKEND=x11 virtualbox'
 
 if which loginctl > /dev/null && loginctl >& /dev/null; then
