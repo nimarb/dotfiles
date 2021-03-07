@@ -126,9 +126,6 @@ alias gits='git status'
 alias guncommit='git reset --soft HEAD~'
 
 
-# catkin make on arch
-alias catm='catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so'
-
 # simple youtube play. Since yt 4k you need to stream vid and audio seperately
 yplay() {
     YTDL_OUT=$(youtube-dl "$1" --get-url);
@@ -217,6 +214,11 @@ function fgr {
 ppjson () { echo "$1" | python -m json.tool ;}
 alias prettyjson='python -m json.tool'
 
+# inspect a json (all in the current dir) live with jq and fzf for preview
+jsoninspect() {
+    echo '' | fzf --print-query --preview "cat *.json | jq {q}"
+}
+
 # show disk use of subdirs sorted by size
 alias subdirsize='du -d 1 -h | sort -hr | egrep -v ^0'
 
@@ -260,11 +262,16 @@ fi
 ##################
 # COMPUTER SPECIFIC THINGS
 ##################
+
 # for ros
 if [ "$HOSTNAME" = "arch-tp" ]; then 
     source /opt/ros/kinetic/setup.bash
     unset PYTHONPATH
+
+    # catkin make on arch
+    alias catm='catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so'
 fi
+
 
 # if cv-lab diary exists, make alias to open it
 if [ -f "~/Nextcloud/tohoku_18/cv-research-lab_diary.md" ]; then
@@ -274,6 +281,15 @@ fi
 # if work notebook exists, make alias to open it
 if [ -f "$HOME""/nextcloud/daten/notes/knister/work-nb.md" ]; then
     alias wnb='vim ~/nextcloud/daten/notes/knister/work-nb.md'
+fi
+
+if [ "$HOSTNAME" = "this-pc" ]; then
+    unalias t
+    alias t='todo-txt -antc'
+    # append local executables to path
+    PATH="${PATH:+${PATH}:}~/.local/bin"
+    # prepend local exec's to path -> overwrites sys cmds and might be dangerous
+    # PATH="~/.local/bin${PATH:+:${PATH}}"
 fi
 
 # Source cargo for a manual rustup installation
