@@ -159,6 +159,9 @@ pdfcompress() { ghostscript -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETT
 # extracts pages out of a pdf
 pdfextract() { gs -dBATCH -sOutputFile=extracted_p$2-p$3.pdf -dFirstPage=$2 -dLastPage=$3 -sDEVICE=pdfwrite $1 ;}
 
+# to make all PDF scan functions work, make sure gs >= 9.24 and adjust the
+# imagemagick policies, as written here: https://stackoverflow.com/questions/52998331/imagemagick-security-policy-pdf-blocking-conversion
+
 # makes the input PDF look as if it has been scanned. Outputs to
 # $filename_scanned.pdf appending small or bad for the other cases.
 pdfscan() {
