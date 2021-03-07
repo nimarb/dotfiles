@@ -271,6 +271,11 @@ if [ -f "~/Nextcloud/tohoku_18/cv-research-lab_diary.md" ]; then
     alias labd='vim ~/Nextcloud/tohoku_18/cv-research/lab_diary.md'
 fi
 
+# if work notebook exists, make alias to open it
+if [ -f "$HOME""/nextcloud/daten/notes/knister/work-nb.md" ]; then
+    alias wnb='vim ~/nextcloud/daten/notes/knister/work-nb.md'
+fi
+
 # Source cargo for a manual rustup installation
 if [ -f "$HOME/.cargo/env" ]; then
     source "$HOME/.cargo/env"
