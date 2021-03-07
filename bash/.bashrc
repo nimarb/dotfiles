@@ -156,6 +156,9 @@ pdfcompress() { ghostscript -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETT
 # extracts pages out of a pdf
 pdfextract() { gs -dBATCH -sOutputFile=extracted_p$2-p$3.pdf -dFirstPage=$2 -dLastPage=$3 -sDEVICE=pdfwrite $1 ;}
 
+# to make all PDF scan functions work, make sure gs >= 9.24 and adjust the
+# imagemagick policies, as written here: https://stackoverflow.com/questions/52998331/imagemagick-security-policy-pdf-blocking-conversion
+
 # makes the input PDF look as if it has been scanned. Outputs to
 # $filename_scanned.pdf appending small or bad for the other cases.
 pdfscan() {
@@ -244,8 +247,8 @@ alias susp='systemctl suspend'
 # aliases for x11 only apps (electron based) to run in wayland
 alias signal='GDK_BACKEND=x11 signal-desktop'
 alias vscode='GDK_BACKEND=x11 code'
-alias vsnote='GDK_BACKEND=x11 code ~/nextcloud/notes'
-alias vsthought='GDK_BACKEND=x11 code ~/nextcloud/thoughtson'
+alias vsnote='GDK_BACKEND=x11 code ~/nextcloud/daten/notes'
+alias vsthought='GDK_BACKEND=x11 code ~/nextcloud/daten/thoughtson'
 alias virtualbox='GDK_BACKEND=x11 virtualbox'
 
 if which loginctl > /dev/null && loginctl >& /dev/null; then
@@ -273,6 +276,11 @@ fi
 # if cv-lab diary exists, make alias to open it
 if [ -f "~/Nextcloud/tohoku_18/cv-research-lab_diary.md" ]; then
     alias labd='vim ~/Nextcloud/tohoku_18/cv-research/lab_diary.md'
+fi
+
+# if work notebook exists, make alias to open it
+if [ -f "$HOME""/nextcloud/daten/notes/knister/work-nb.md" ]; then
+    alias wnb='vim ~/nextcloud/daten/notes/knister/work-nb.md'
 fi
 
 if [ "$HOSTNAME" = "this-pc" ]; then
