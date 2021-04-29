@@ -305,3 +305,4 @@ if [ -f "$HOME/.cargo/env" ]; then
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
