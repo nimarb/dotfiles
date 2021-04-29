@@ -1,29 +1,163 @@
+# boot
+efibootmgr
+
+# base
 openssh
-autossh
-vim
-vim-systemd
-w3m
-htop
-powertop
-abs
 screen
-cpupower
-mosh
 lsof
 strace
-ranger
-nmap
-ntfs-3g
-clisp
 base-devel
+htop
+man-db
+man-pages
+unp
+untar
+unzip
+sudo
+ntfs-3g
+
+# dev
+vim
+git
+tig
+hugo
+zola
+fzf
+jq
+ripgrep
+the_silver_searcher
+python-black
+
+# arch
+abs
+arch-wiki-lite
+pacman-contrib
+
+# files
+ncdu
+ranger
+nnn
+
+# web
+nmap
 gnu-netcat
 curl
 wget
-sudo
+
+# misc
+powertop
+brightnessctl
+networkmanager-openconnect
+
+# wayland
+network-manager-applet
+alacritty
+wl-clipboard
+gammastep
+intel-media-driver
+playerctl
+wayvnc
+neatvnc
+xdg-desktop-portal-wlr
+
+# wayland (aur)
+wdisplays
+
+# sway
+sway
+slurp
+grim
+swayidle
+swaylock
+mako
+waybar
+oft-font-awesome
+xorg-server-wayland
+
+# media
+pipewire
+pipewire-alsa
+pipewire-pulse
+
+# apps
+firefox
+thunderbird
+signal-desktop
+mpv
+youtube-dl
+zathura
+imv
+nextcloud
+anki
+keepassxc
+
+# fonts
+noto-fonts
+ttf-roboto
+
+# fonts aur
+ttf-ms-win10
+ttf-ms-win10-japanese
+
+# apps aur
+visual-studio-code-bin
+todotxt
+
+# opt dev
+texlive-most
+xclip
+ruby # todotxt pom
+ruby-rainbow # todotxt pom
+
+# opt dev ai
+python-pytorch-opt-cuda
+python-scipy
+python-pandas
+python-numpy
+python-numexpr
+
+# opt dev aur
+py-spy
+ruby-terminal-notifier # todotxt pom
+vim-plug
+
+# opt webdev
+yarn
+
+# opt webdev aur
+firebase-tools
+google-cloud-sdk
+
+# apps opt
+darktable
+inkscape
+libreoffice-fresh
+filezilla
+xonotic
+s-tui
+
+# apps opt cli
+ghostscript
+
+# apps opt aur
+glimpse-editor
+spotify
+swappy
+visidata
+
+# system aur
+intel-hybrid-codec-driver
+
+
+
+# old
+autossh
+cpupower
+mosh
+ntfs-3g
+clisp
 iftop
 bwm-ng
-ncdu
 ethtool
 iw
-scrot
-tig
+
