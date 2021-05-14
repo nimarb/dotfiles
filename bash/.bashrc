@@ -116,8 +116,9 @@ export XDG_SESSION_TYPE=wayland
 export MOZ_DBUS_REMOTE=1
 export MOZ_ENABLE_WAYLAND=1
 
-# start chromium in wayland
+# start programs in wayland mode
 alias chrome="chromium-snapshot-bin --enable-features=UseOzonePlatform --enable-gpu --ozone-platform=wayland"
+alias signal='signal-desktop --enable-features=UseOzonePlatform --ozone-platform=wayland'
 
 # alias for todo.txt todo app
 alias t='todo.sh -antc'
@@ -252,7 +253,6 @@ alias sysreload='sudo systemctl daemon-reload'
 alias susp='systemctl suspend'
 
 # aliases for x11 only apps (electron based) to run in wayland
-alias signal='GDK_BACKEND=x11 signal-desktop'
 alias vscode='GDK_BACKEND=x11 code'
 alias vsnote='GDK_BACKEND=x11 code ~/nextcloud/daten/notes'
 alias vsthought='GDK_BACKEND=x11 code ~/nextcloud/daten/thoughtson'
