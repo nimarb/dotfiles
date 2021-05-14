@@ -61,7 +61,9 @@ call filter(s:undos, 'getftime(v:val) < localtime() - (60 * 60 * 24 *90)')
 call map(s:undos, 'delete(v:val)')
 
 call plug#begin('~/.vim/plugged')
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'https://github.com/alok/notational-fzf-vim'
 call plug#end()
 
