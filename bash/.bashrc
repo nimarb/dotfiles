@@ -1,4 +1,3 @@
-#
 # ~/.bashrc
 #
 
@@ -185,7 +184,7 @@ pdfscan() {
 # src: https://gist.github.com/andyrbell/25c8632e15d17c83a54602f6acde2724
 pdfscanimg() {
     OUT=$(basename "$1" .pdf)
-    convert -density 150 "$1" -rotate "$([ $((RANDOM % 2)) -eq 1 ] && echo -)0.$(($RANDOM % 4 + 5))" \
+    convert -density 150 "$1" -rotate "$([ $((RANDOM % 2)) -eq 1 ] && echo -)0.$((RANDOM % 4 + 5))" \
         -attenuate 0.4 +noise Multiplicative -attenuate 0.03 +noise Multiplicative -sharpen 0x1.0 \
         -colorspace Gray "$OUT"_scanned.pdf
 }
@@ -281,7 +280,7 @@ fi
 
 
 # if cv-lab diary exists, make alias to open it
-if [ -f "~/Nextcloud/tohoku_18/cv-research-lab_diary.md" ]; then
+if [ -f "$HOME/Nextcloud/tohoku_18/cv-research-lab_diary.md" ]; then
     alias labd='vim ~/Nextcloud/tohoku_18/cv-research/lab_diary.md'
 fi
 
@@ -294,7 +293,7 @@ if [ "$HOSTNAME" = "this-pc" ]; then
     unalias t
     alias t='todo-txt -antc'
     # append local executables to path
-    PATH="${PATH:+${PATH}:}~/.local/bin"
+    PATH="${PATH:+${PATH}:}$HOME/.local/bin"
     # prepend local exec's to path -> overwrites sys cmds and might be dangerous
     # PATH="~/.local/bin${PATH:+:${PATH}}"
 fi
@@ -305,4 +304,3 @@ if [ -f "$HOME/.cargo/env" ]; then
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
