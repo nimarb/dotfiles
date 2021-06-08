@@ -312,8 +312,9 @@ include /etc/sway/config.d/*
 # Autostart of programs
 #
     exec mako
-    # exec redshift-gtk -m wayland
-    exec gammastep-indicator
+    # executes gammastep with manual location check. if no network is
+    # available, default to munich as location
+    exec gammastep-indicator -l $(if [[ ! $(curl --fail "ipinfo.io") ]]; then echo "48.14:11.58"; else echo $(curl ipinfo.io | jq -j .loc | tr ',' ':'); fi 2> /dev/null)
     exec nm-applet --indicator
     exec swayidle -w \
 	timeout 300 'swaylock -f -i $lock_bg --scaling=fill' \
