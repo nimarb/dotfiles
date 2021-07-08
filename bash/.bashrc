@@ -134,6 +134,8 @@ alias guncommit='git reset --soft HEAD~'
 # pulls the remote branch with the same name as the local branch
 alias gitp="git pull origin $(git rev-parse --abbrev-ref HEAD)"
 
+# gpg related
+alias gpt='gpg-tui -a -s colored'
 
 
 # simple youtube play. Since yt 4k you need to stream vid and audio seperately
