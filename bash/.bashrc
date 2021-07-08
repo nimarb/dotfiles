@@ -132,7 +132,8 @@ alias pacs='pacsearch'
 alias gits='git status'
 alias guncommit='git reset --soft HEAD~'
 # pulls the remote branch with the same name as the local branch
-alias gitp="git pull origin $(git rev-parse --abbrev-ref HEAD)"
+alias gitpull='git pull origin $(git rev-parse --abbrev-ref HEAD)'
+alias gitpush="git push origin HEAD"
 
 # gpg related
 alias gpt='gpg-tui -a -s colored'
