@@ -131,6 +131,9 @@ alias pacs='pacsearch'
 # git shortcuts
 alias gits='git status'
 alias guncommit='git reset --soft HEAD~'
+# pulls the remote branch with the same name as the local branch
+alias gitp="git pull origin $(git rev-parse --abbrev-ref HEAD)"
+
 
 
 # simple youtube play. Since yt 4k you need to stream vid and audio seperately
