@@ -323,4 +323,4 @@ include /etc/sway/config.d/*
 	before-sleep 'swaylock -f -i $lock_bg --scaling=fill' \
 	lock 'swaylock -f -i $lock_bg --scaling=fill'
     exec swaybg -i $desk_bg -m fill
-
+    exec kanshi
