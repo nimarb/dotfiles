@@ -134,6 +134,8 @@ alias guncommit='git reset --soft HEAD~'
 # pulls the remote branch with the same name as the local branch
 alias gitpull='git pull origin $(git rev-parse --abbrev-ref HEAD)'
 alias gitpush="git push origin HEAD"
+alias gitl='git log --all --decorate --oneline --graph'
+alias gitf='git fetch --all'
 
 # gpg related
 alias gpt='gpg-tui -a -s colored'
