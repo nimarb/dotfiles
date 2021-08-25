@@ -17,3 +17,6 @@
 	prompt = false
 [alias]
 	d = difftool
+[init]
+    defaultBranch = main
+
