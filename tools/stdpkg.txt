@@ -27,6 +27,8 @@ jq
 ripgrep
 the_silver_searcher
 python-black
+tree
+strace
 
 # arch
 abs
@@ -37,6 +39,7 @@ pacman-contrib
 ncdu
 ranger
 nnn
+gpg-tui
 
 # web
 nmap
@@ -48,6 +51,8 @@ wget
 powertop
 brightnessctl
 networkmanager-openconnect
+gnome-keyring
+intel-undervolt
 
 # wayland
 network-manager-applet
@@ -59,6 +64,7 @@ playerctl
 wayvnc
 neatvnc
 xdg-desktop-portal-wlr
+kanshi
 
 # wayland (aur)
 wdisplays
@@ -90,6 +96,7 @@ imv
 nextcloud
 anki
 keepassxc
+foliate
 
 # fonts
 noto-fonts
@@ -103,11 +110,22 @@ ttf-ms-win10-japanese
 visual-studio-code-bin
 todotxt
 
+# media apps opt
+picard  # music tagger
+beets  # music tagger and organiser
+psst  # rust based spotify client
+
 # opt dev
 texlive-most
 xclip
 ruby # todotxt pom
 ruby-rainbow # todotxt pom
+mypy
+python-mypy_extensions
+gitg
+gitui
+python-pre-commit
+lnav  # ncurses log viewer
 
 # opt dev ai
 python-pytorch-opt-cuda
@@ -120,11 +138,18 @@ python-numexpr
 py-spy
 ruby-terminal-notifier # todotxt pom
 vim-plug
+ripgrep-all
+visual-studio-code-insiders-bin
+mkdocs
+fzfx
 
-# opt webdev
+# opt dev sento
 yarn
+python-fastapi
+uvicorn
+postgresql
 
-# opt webdev aur
+## opt webdev aur
 firebase-tools
 google-cloud-sdk
 
@@ -133,8 +158,12 @@ darktable
 inkscape
 libreoffice-fresh
 filezilla
-xonotic
 s-tui
+
+# games opt
+xonotic
+0ad
+widelands
 
 # apps opt cli
 ghostscript
@@ -144,6 +173,7 @@ glimpse-editor
 spotify
 swappy
 visidata
+yt-dlp
 
 # system aur
 intel-hybrid-codec-driver
@@ -160,4 +190,3 @@ iftop
 bwm-ng
 ethtool
 iw
-
