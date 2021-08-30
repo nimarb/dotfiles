@@ -1,6 +1,6 @@
 [user]
-    email = l.nimar.b@gmail.com
-    name = Nimar
+    email = nimar@sento.io
+    name = Nimar Blume
 
 [transfer]
     fsckObjects = true
@@ -19,7 +19,4 @@
 	d = difftool
 [init]
     defaultBranch = main
-
-[includeIf "gitdir:~/sento/"]
-    path = ~/.gitconfig-sento
 
