@@ -329,4 +329,9 @@ if [ -f "$HOME/.cargo/env" ]; then
     source "$HOME/.cargo/env"
 fi
 
+# use git completion if available, perhaps arch specific
+if [ -f "/usr/share/git/completion/git-completion.bash" ]; then
+    source '/usr/share/git/completion/git-completion.bash'
+fi
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
