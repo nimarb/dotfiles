@@ -118,6 +118,7 @@ export MOZ_ENABLE_WAYLAND=1
 # start programs in wayland mode
 alias chrome="chromium-snapshot-bin --enable-features=UseOzonePlatform --enable-gpu --ozone-platform=wayland"
 alias signal='signal-desktop --enable-features=UseOzonePlatform --ozone-platform=wayland'
+alias vscodei='code-insiders --enable-features=UseOzonePlatform --ozone-platform=wayland'
 
 # alias for todo.txt todo app
 alias t='todo.sh -antc'
