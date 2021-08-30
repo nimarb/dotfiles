@@ -240,6 +240,8 @@ rga-fzf() {
 	    xdg-open "$file"
 }
 alias rgaf='rga-fzf'
+alias fx='fzfx .'
+alias fcd='cd "$(fzfx cd)"'
 
 # pretty print json output
 ppjson () { echo "$1" | python -m json.tool ;}
