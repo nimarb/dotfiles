@@ -121,6 +121,8 @@ alias signal='signal-desktop --enable-features=UseOzonePlatform --ozone-platform
 
 # alias for todo.txt todo app
 alias t='todo.sh -antc'
+alias tls='todo.sh -antc ls'
+alias tlss='todo.sh -antc ls | grep +sento'
 
 # pacman install alias
 alias pacget='sudo pacman -S'
