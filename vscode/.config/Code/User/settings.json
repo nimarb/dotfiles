@@ -1,5 +1,4 @@
 {
-    "window.zoomLevel": 0,
     "vim.easymotion": true,
     "vim.incsearch": true,
     "vim.useSystemClipboard": true,
@@ -77,6 +76,18 @@
     ],
     "latex-workshop.view.pdf.viewer": "tab",
     "latex-workshop.message.update.show": false,
+    //"latex-workshop.view.pdf.viewer": "external",
+    //"latex-workshop.view.pdf.external.viewer.command": "/home/nb/progs/paper_random-nas-combined/zath.sh",
+    //"latex-workshop.view.pdf.external.viewer.args": [
+    //    "--synctex-editor-command",
+    //    "code --reuse-window -g \"%{input}:%{line}\"",
+    //    "%PDF%"
+    //],
+    //"latex-workshop.view.pdf.external.synctex.command": "/home/nb/progs/paper_random-nas-combined/zath.sh",
+    //"latex-workshop.view.pdf.external.synctex.args": [
+    //    "--synctex-forward=%LINE%:0:%TEX%",
+    //    "%PDF%"
+    //],
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
     "spellright.language": [
@@ -88,16 +99,44 @@
         "plaintext"
     ],
     "terminal.integrated.scrollback": 100000000,
-    "python.dataScience.askForKernelRestart": false,
     "markdown.extension.toc.levels": "2..6",
     "breadcrumbs.enabled": false,
-    "python.linting.mypyEnabled": true,
+    // "python.linting.mypyEnabled": true,
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.jediEnabled": false,
+    "cmake.configureOnOpen": false,
     "window.menuBarVisibility": "toggle",
     "diffEditor.ignoreTrimWhitespace": false,
-    "python.languageServer": "Microsoft",
+    "hediet.vscode-drawio.local-storage": "eyIuZHJhd2lvLWNvbmZpZyI6IntcImxhbmd1YWdlXCI6XCJcIixcImN1c3RvbUZvbnRzXCI6W10sXCJsaWJyYXJpZXNcIjpcImdlbmVyYWw7ZGZkO2VyO3VtbDtzeXNtbFwiLFwiY3VzdG9tTGlicmFyaWVzXCI6W1wiTC5zY3JhdGNocGFkXCJdLFwicGx1Z2luc1wiOltdLFwicmVjZW50Q29sb3JzXCI6W1wiNjZDQzAwXCIsXCJFNkZGQ0NcIixcIkIzRkY2NlwiLFwiRkZGRkZGXCIsXCIwMDAwMDBcIixcIjY5MkEyQVwiLFwiRkY2NjY2XCJdLFwiZm9ybWF0V2lkdGhcIjoyNDAsXCJjcmVhdGVUYXJnZXRcIjpmYWxzZSxcInBhZ2VGb3JtYXRcIjp7XCJ4XCI6MCxcInlcIjowLFwid2lkdGhcIjoxNjAwLFwiaGVpZ2h0XCI6OTAwfSxcInNlYXJjaFwiOnRydWUsXCJzaG93U3RhcnRTY3JlZW5cIjp0cnVlLFwiZ3JpZENvbG9yXCI6XCIjZDBkMGQwXCIsXCJkYXJrR3JpZENvbG9yXCI6XCIjNmU2ZTZlXCIsXCJhdXRvc2F2ZVwiOnRydWUsXCJyZXNpemVJbWFnZXNcIjpudWxsLFwib3BlbkNvdW50ZXJcIjowLFwidmVyc2lvblwiOjE4LFwidW5pdFwiOjEsXCJpc1J1bGVyT25cIjpmYWxzZSxcInVpXCI6XCJcIn0ifQ==",
+    "python.languageServer": "Pylance",
+    "python.analysis.typeCheckingMode": "basic",
     "pasteImage.basePath": "${projectRoot}/imgs-autopaste/",
     "pasteImage.defaultName": "YMMDD-HH-mm-ss",
     "pasteImage.path": "${projectRoot}/imgs-autopaste/${currentFileNameWithoutExt}/",
     "pasteImage.prefix": "../imgs-autopaste/",
     "MarkdownPaste.path": "${workspaceRoot}/imgs-autopaste/${fileDirname}/${fileBasenameNoExtension}/",
+    "explorer.confirmDragAndDrop": false,
+    "window.autoDetectColorScheme": true,
+    "jupyter.askForKernelRestart": false,
+    "jupyter.sendSelectionToInteractiveWindow": true,
+    "jupyter.interactiveWindowMode": "perFile",
+    "jupyter.widgetScriptSources": [
+        "jsdelivr.com",
+        "unpkg.com"
+    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "editor.tabSize": 4,
+    "editor.cursorStyle": "line",
+    "editor.insertSpaces": false,
+    "editor.lineNumbers": "on",
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+    "editor.wordWrap": "off",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "window.zoomLevel": 1,
+    "workbench.colorTheme": "Default Light+",
 }
