@@ -140,6 +140,9 @@ alias gitpush="git push origin HEAD"
 alias gitl='git log --all --decorate --oneline --graph'
 alias gitf='git fetch --all'
 
+# build pipeline, docker
+alias docker-compose='docker compose'
+
 # gpg related
 alias gpt='gpg-tui -a -s colored'
 
