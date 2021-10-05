@@ -314,7 +314,8 @@ include /etc/sway/config.d/*
     exec mako
     # executes gammastep with manual location check. if no network is
     # available, default to munich as location
-    exec gammastep-indicator -l $(if [[ ! $(curl -s -S --fail "ipinfo.io") ]]; then echo "48.14:11.58"; else echo $(curl -s ipinfo.io | jq -j .loc | tr ',' ':'); fi)
+    # exec gammastep-indicator -l $(if [[ ! $(curl -s -S --fail "ipinfo.io") ]]; then echo "48.14:11.58"; else echo $(curl -s ipinfo.io | jq -j .loc | tr ',' ':'); fi)
+    exec gammastep-indicator -l $(~/dotfiles/tools/get_lat_long.sh)
     exec nm-applet --indicator
     exec swayidle -w \
 	timeout 300 'swaylock -f -i $lock_bg --scaling=fill' \
