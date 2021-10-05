@@ -1,3 +1,5 @@
+##### essentials #####
+
 # boot
 efibootmgr
 
@@ -13,8 +15,10 @@ man-pages
 unp
 untar
 unzip
+zip
 sudo
 ntfs-3g
+gnupg
 
 # dev
 vim
@@ -46,6 +50,8 @@ nmap
 gnu-netcat
 curl
 wget
+iproute2
+ldns
 
 # misc
 powertop
@@ -66,9 +72,6 @@ neatvnc
 xdg-desktop-portal-wlr
 kanshi
 
-# wayland (aur)
-wdisplays
-
 # sway
 sway
 slurp
@@ -84,6 +87,8 @@ xorg-server-wayland
 pipewire
 pipewire-alsa
 pipewire-pulse
+pipewire-media-session
+gst-plugin-pipewire
 
 # apps
 firefox
@@ -93,14 +98,27 @@ mpv
 youtube-dl
 zathura
 imv
-nextcloud
-anki
+nextcloud-client
 keepassxc
 foliate
 
 # fonts
 noto-fonts
 ttf-roboto
+
+
+##### essentials aur #####
+
+# dev aur
+py-spy
+ruby-terminal-notifier  # todotxt pom
+vim-plug
+ripgrep-all
+fzfx
+
+# wayland aur
+wdisplays
+swappy
 
 # fonts aur
 ttf-ms-win10
@@ -109,11 +127,13 @@ ttf-ms-win10-japanese
 # apps aur
 visual-studio-code-bin
 todotxt
+anki
 
-# media apps opt
-picard  # music tagger
-beets  # music tagger and organiser
-psst  # rust based spotify client
+# system aur
+intel-hybrid-codec-driver
+
+
+##### optional #####
 
 # opt dev
 texlive-most
@@ -126,6 +146,7 @@ gitg
 gitui
 python-pre-commit
 lnav  # ncurses log viewer
+atool
 
 # opt dev ai
 python-pytorch-opt-cuda
@@ -134,33 +155,20 @@ python-pandas
 python-numpy
 python-numexpr
 
-# opt dev aur
-py-spy
-ruby-terminal-notifier # todotxt pom
-vim-plug
-ripgrep-all
-visual-studio-code-insiders-bin
-mkdocs
-fzfx
-
 # opt dev sento
 yarn
 python-fastapi
 uvicorn
 postgresql
-
-## opt webdev aur
-firebase-tools
-google-cloud-sdk
+kubernetes-tools
+gopass
 
 # apps opt
-darktable
-inkscape
 libreoffice-fresh
 filezilla
 s-tui
 
-# games opt
+# opt games
 xonotic
 0ad
 widelands
@@ -168,16 +176,30 @@ widelands
 # apps opt cli
 ghostscript
 
+# opt media apps
+picard  # music tagger
+beets  # music tagger and organiser
+darktable
+inkscape
+
+
+##### optional aur #####
+
+# opt dev aur
+mkdocs
+visual-studio-code-insiders-bin
+
+# opt webdev aur
+firebase-tools
+google-cloud-sdk
+
 # apps opt aur
-glimpse-editor
+psst-git  # rust based spotify client
 spotify
-swappy
+glimpse-editor
 visidata
-yt-dlp
-
-# system aur
-intel-hybrid-codec-driver
-
+yt-dlp-git
+sioyek-git
 
 
 # old
