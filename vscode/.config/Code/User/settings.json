@@ -139,4 +139,7 @@
     },
     "window.zoomLevel": 1,
     "workbench.colorTheme": "Default Light+",
+    "[json]": {
+        "editor.defaultFormatter": "j-brooke.fracturedjsonvsc"
+    },
 }
