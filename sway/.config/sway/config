@@ -87,7 +87,7 @@ input "1267:32:Elan_Touchpad" {
     # take a screenshot of a part of the screen
     bindsym $mod+Shift+s exec slurp | grim -g - - | wl-copy && wl-paste > ~/screenshots/$(date +'%Y-%m-%d-%H%M%S_grim.png')
     # take a screenshot of a part of the screen and annotate it with swappy
-    bindsym $mod+Shift+Ctrl+s exec slurp | grim -g - - | swappy -f - -o - | wl-copy && wl-paste > ~/screenshots/$(date +'%Y-%m-%d-%H%M%S_grim.png')
+    bindsym $mod+Shift+Ctrl+s exec slurp | grim -g - - | swappy -f - -o - | wl-copy && wl-paste > ~/screenshots/$(date +'%Y-%m-%d-%H%M%S_grim_annotated.png')
     # open a selector and copy the hex colour code at the clicked location
     bindsym $mod+c exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy
 
@@ -314,7 +314,7 @@ include /etc/sway/config.d/*
     exec mako
     # executes gammastep with manual location check. if no network is
     # available, default to munich as location
-    exec gammastep-indicator -l $(if [[ ! $(curl --fail "ipinfo.io") ]]; then echo "48.14:11.58"; else echo $(curl ipinfo.io | jq -j .loc | tr ',' ':'); fi 2> /dev/null)
+    exec gammastep-indicator -l $(if [[ ! $(curl -s -S --fail "ipinfo.io") ]]; then echo "48.14:11.58"; else echo $(curl -s ipinfo.io | jq -j .loc | tr ',' ':'); fi)
     exec nm-applet --indicator
     exec swayidle -w \
 	timeout 300 'swaylock -f -i $lock_bg --scaling=fill' \
