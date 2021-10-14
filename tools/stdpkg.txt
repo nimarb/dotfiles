@@ -19,6 +19,7 @@ zip
 sudo
 ntfs-3g
 gnupg
+bash-completion
 
 # dev
 vim
@@ -175,6 +176,7 @@ widelands
 
 # apps opt cli
 ghostscript
+sysz
 
 # opt media apps
 picard  # music tagger
