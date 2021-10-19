@@ -76,7 +76,10 @@ input "1267:32:Elan_Touchpad" {
 #
     # start a terminal
     bindsym $mod+Return exec $term
-    bindsym $mod+Shift+Return exec $term --class 'floaty-term'
+    # works for foot
+    bindsym $mod+Shift+Return exec $term --app-id 'floaty-term'
+    # works for alacritty
+    # bindsym $mod+Shift+Return exec $term --class 'floaty-term'
 
     # kill focused window
     bindsym $mod+Shift+q kill
