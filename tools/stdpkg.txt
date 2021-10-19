@@ -168,6 +168,8 @@ gopass
 libreoffice-fresh
 filezilla
 s-tui
+aerc
+w3m
 
 # opt games
 xonotic
@@ -183,6 +185,9 @@ picard  # music tagger
 beets  # music tagger and organiser
 darktable
 inkscape
+viu
+lsix-git
+libsixel
 
 
 ##### optional aur #####
@@ -202,6 +207,8 @@ glimpse-editor
 visidata
 yt-dlp-git
 sioyek-git
+foot
+theme.sh
 
 
 # old
