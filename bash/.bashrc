@@ -248,6 +248,9 @@ rga-fzf() {
 alias rgaf='rga-fzf'
 alias fx='fzfx .'
 alias fcd='cd "$(fzfx cd)"'
+# Bind ALT-C to fcd to cd into dirs using fzfx
+# TODO: doesn't work because cannot cd on enter
+# bind '"\ec": " \C-e\C-u`fcd`\e\C-e\er\C-m"'
 
 # pretty print json output
 ppjson () { echo "$1" | python -m json.tool ;}
@@ -288,6 +291,9 @@ alias vscode='GDK_BACKEND=x11 code'
 alias vsnote='GDK_BACKEND=x11 code ~/nextcloud/daten/notes'
 alias vsthought='GDK_BACKEND=x11 code ~/nextcloud/daten/thoughtson'
 alias virtualbox='GDK_BACKEND=x11 virtualbox'
+
+# provide cat for images with sixel support in terminals
+icat() { convert "$1" -geometry "$(clc $COLUMNS*9)"x"$(clc $LINES*13)" sixel:- ;}
 
 if which loginctl > /dev/null && loginctl >& /dev/null; then
     if loginctl show-user | grep KillUserProcesses | grep -q yes; then
