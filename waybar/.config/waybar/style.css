@@ -201,3 +201,10 @@ label:focus {
 #mpd.paused {
     background-color: #51a37a;
 }
+
+#custom-dismiss_notifications.none {
+    background-color: #2d3436;
+    color: grey;
+    opacity: 0.4;
+}
+

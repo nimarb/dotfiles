@@ -165,7 +165,9 @@ python-fastapi
 uvicorn
 postgresql
 kubernetes-tools
+kubeseal
 gopass
+helm
 
 # apps opt
 libreoffice-fresh
@@ -173,6 +175,11 @@ filezilla
 s-tui
 aerc
 w3m
+netsurf
+helvum  # pipewire patchbay gtk gui
+asciinema
+btop  # fancy htop in CLI
+bottom  # fancy htop in CLI, cmd is btm
 
 # opt games
 xonotic
@@ -215,6 +222,7 @@ visidata
 yt-dlp-git
 sioyek-git
 theme.sh
+paru-git
 
 
 # old
