@@ -85,7 +85,8 @@ input "1267:32:Elan_Touchpad" {
     bindsym $mod+Shift+q kill
 
     # start your launcher
-    bindsym $mod+d $menu
+    bindsym $mod+d exec fuzzel -l 20
+    bindsym $mod+Shift+d $menu
 
     # take a screenshot of a part of the screen
     bindsym $mod+Shift+s exec slurp | grim -g - - | wl-copy && wl-paste > ~/screenshots/$(date +'%Y-%m-%d-%H%M%S_grim.png')

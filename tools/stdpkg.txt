@@ -120,6 +120,9 @@ fzfx
 # wayland aur
 wdisplays
 swappy
+foot
+foot-terminfo
+fuzzel
 
 # fonts aur
 ttf-ms-win10
@@ -188,9 +191,13 @@ inkscape
 viu
 lsix-git
 libsixel
+chafa  # faster sixel image display tool
 
 
 ##### optional aur #####
+
+# opt wayland aur
+fnott
 
 # opt dev aur
 mkdocs
@@ -207,7 +214,6 @@ glimpse-editor
 visidata
 yt-dlp-git
 sioyek-git
-foot
 theme.sh
 
 
