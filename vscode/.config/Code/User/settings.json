@@ -129,7 +129,7 @@
     },
     "editor.tabSize": 4,
     "editor.cursorStyle": "line",
-    "editor.insertSpaces": false,
+    "editor.insertSpaces": true,
     "editor.lineNumbers": "on",
     "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
     "editor.wordWrap": "off",
@@ -137,9 +137,11 @@
         "default": "right",
         "jupyter-notebook": "left"
     },
-    "window.zoomLevel": 1,
-    "workbench.colorTheme": "Default Light+",
     "[json]": {
         "editor.defaultFormatter": "j-brooke.fracturedjsonvsc"
     },
+    "gitlens.keymap": "none",
+    "redhat.telemetry.enabled": false,
+    "window.zoomLevel": 1,
+    "workbench.colorTheme": "Default Light+",
 }
