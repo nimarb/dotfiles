@@ -83,6 +83,7 @@ alias pwrtp='sudo powertop'
 
 # make ls output readable for humans
 alias lsl='ls -lh'
+alias lst='ls -lht'
 
 # creating an awk calculator invoked by clc ARGS
 clc () { awk "BEGIN{ pi = 4.0*atan2(1.0,1.0); deg = pi/180.0; print $* }" ;}
@@ -116,7 +117,7 @@ export MOZ_DBUS_REMOTE=1
 export MOZ_ENABLE_WAYLAND=1
 
 # start programs in wayland mode
-alias chrome="chromium-snapshot-bin --enable-features=UseOzonePlatform --enable-gpu --ozone-platform=wayland"
+alias chromei="chromium-snapshot-bin --enable-features=UseOzonePlatform --enable-gpu --ozone-platform=wayland"
 alias signal='signal-desktop --enable-features=UseOzonePlatform --ozone-platform=wayland'
 alias vscodei='code-insiders --enable-features=UseOzonePlatform --ozone-platform=wayland'
 
@@ -286,6 +287,9 @@ alias sysreload='sudo systemctl daemon-reload'
 # go sleep 
 alias susp='systemctl suspend'
 
+# bluetoothctl alias
+alias bctl='bluetoothctl'
+
 # aliases for x11 only apps (electron based) to run in wayland
 alias vscode='GDK_BACKEND=x11 code'
 alias vsnote='GDK_BACKEND=x11 code ~/nextcloud/daten/notes'
@@ -293,7 +297,14 @@ alias vsthought='GDK_BACKEND=x11 code ~/nextcloud/daten/thoughtson'
 alias virtualbox='GDK_BACKEND=x11 virtualbox'
 
 # provide cat for images with sixel support in terminals
-icat() { convert "$1" -geometry "$(clc $COLUMNS*9)"x"$(clc $LINES*13)" sixel:- ;}
+icatc() { convert "$1" -geometry "$(clc $COLUMNS*9)"x"$(clc $LINES*13)" sixel:- ;}
+alias icat='chafa -f sixels'
+
+# for python projects, source venv from .venv
+alias svenv='source .venv/bin/activate'
+
+# kubernetes k8s stuff
+alias kctl='kubectl'
 
 if which loginctl > /dev/null && loginctl >& /dev/null; then
     if loginctl show-user | grep KillUserProcesses | grep -q yes; then
@@ -316,6 +327,11 @@ if [ "$HOSTNAME" = "arch-tp" ]; then
     alias catm='catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so'
 fi
 
+# on archtp480s, source k8s bash completion
+if [ "$HOSTNAME" = "archtp480s" ]; then
+    source <(kctl completion bash)
+    complete -F __start_kubectl kctl
+fi
 
 # if cv-lab diary exists, make alias to open it
 if [ -f "$HOME/Nextcloud/tohoku_18/cv-research-lab_diary.md" ]; then
