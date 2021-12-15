@@ -1,1 +1,11 @@
 default-timeout=3200
+
+# == Mode: Away ==
+[mode=away]
+default-timeout=0
+ignore-timeout=1
+
+# == Mode: Do Not Disturb ==
+[mode=do-not-disturb]
+invisible=1
+

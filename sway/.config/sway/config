@@ -113,6 +113,9 @@ input "1267:32:Elan_Touchpad" {
     # start the program to manage displays (e.g. for a projector)
     bindsym $mod+p exec wdisplays
 
+    # dismiss all notifications on the screen
+    bindsym $mod+period exec makoctl dismiss -a
+
 #
 # Moving around:
 #
@@ -328,3 +331,6 @@ include /etc/sway/config.d/*
 	lock 'swaylock -f -i $lock_bg --scaling=fill'
     exec swaybg -i $desk_bg -m fill
     exec kanshi
+    # retain all notifications while i am away
+    exec swayidle timeout 75 "makoctl set-mode away" resume "makoctl set-mode default"
+

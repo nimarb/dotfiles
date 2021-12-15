@@ -7,6 +7,7 @@
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
     "modules-center": ["sway/window"],
     "modules-right": [
+			"custom/dismiss_notifications",
 			"idle_inhibitor",
 			"custom/todotxt_pom",
 			"pulseaudio",
@@ -40,6 +41,13 @@
     // },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
+    },
+    "custom/dismiss_notifications": {
+	"exec-if": "command -v makoctl",
+	"exec": "( makoctl list | jq -e '.data[] | length > 0' >/dev/null && echo '\nDismiss Notifications\n' ) || echo '\nNo Notifications\nnone' ",
+	"format": "{}",
+	"on-click": "makoctl dismiss -a",
+	"interval": 2,
     },
     "idle_inhibitor": {
         "format": "{icon}",
