@@ -142,6 +142,4 @@
     },
     "gitlens.keymap": "none",
     "redhat.telemetry.enabled": false,
-    "window.zoomLevel": 1,
-    "workbench.colorTheme": "Default Light+",
 }

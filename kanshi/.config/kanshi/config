@@ -6,8 +6,13 @@
     output eDP-1 enable mode 2560x1440@59.998Hz position 0,600 scale 1.25
     output "Lenovo Group Limited LEN T27p-10 0x0000774D" enable mode 3840x2160@59.997Hz position 2048,0
 }
+
 {
     output eDP-1 enable mode 2560x1440@59.998Hz position 3840,528 scale 1.25
     output "Dell Inc. DELL U2720Q 8BGKVS2" enable mode 3840x2160@59.997Hz position 0,0
 }
 
+{
+    output eDP-1 enable mode 2560x1440@59.998Hz position 0,1080 scale 1.25
+    output "Eizo Nanao Corporation EV2333W 21943079" enable mode 1920x1080@60.000Hz position 70,0
+}

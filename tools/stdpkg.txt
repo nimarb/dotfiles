@@ -180,6 +180,7 @@ helvum  # pipewire patchbay gtk gui
 asciinema
 btop  # fancy htop in CLI
 bottom  # fancy htop in CLI, cmd is btm
+rebuild-detector
 
 # opt games
 xonotic
