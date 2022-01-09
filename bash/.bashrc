@@ -256,6 +256,17 @@ alias fcd='cd "$(fzfx cd)"'
 # TODO: doesn't work because cannot cd on enter
 # bind '"\ec": " \C-e\C-u`fcd`\e\C-e\er\C-m"'
 
+# remaining fzfx binds
+alias ff='fzfx full' # full text search
+alias fh='fzfx all' # hidden files
+alias fcp='fzfx cp' # copy files
+alias fmv='fzfx mv' # move files
+alias fmd='fzfx md' # markdown files
+alias fpdf='fzfx pdf' # pdf and postscript files
+alias fav='fzfx media' # audio and videos
+alias fpic='fzfx media' # pictures
+alias fps='fzfx ps' # processes
+
 # pretty print json output
 ppjson () { echo "$1" | python -m json.tool ;}
 alias prettyjson='python -m json.tool'

@@ -114,7 +114,7 @@ ttf-roboto
 py-spy
 ruby-terminal-notifier  # todotxt pom
 vim-plug
-ripgrep-all
+ripgrep-all  # also search eg pdfs, docs, zip files with rg
 fzfx
 
 # wayland aur
@@ -151,6 +151,7 @@ gitui
 python-pre-commit
 lnav  # ncurses log viewer
 atool
+bat  # replacement for cat with syntax highlighting
 
 # opt dev ai
 python-pytorch-opt-cuda
@@ -168,6 +169,7 @@ kubernetes-tools
 kubeseal
 gopass
 helm
+pwgen
 
 # apps opt
 libreoffice-fresh
@@ -181,6 +183,7 @@ asciinema
 btop  # fancy htop in CLI
 bottom  # fancy htop in CLI, cmd is btm
 rebuild-detector
+age  # alternative crypto lib to gpg
 
 # opt games
 xonotic
@@ -210,6 +213,7 @@ fnott
 # opt dev aur
 mkdocs
 visual-studio-code-insiders-bin
+lapce  # alternative GUI text editor written in rust
 
 # opt webdev aur
 firebase-tools
@@ -224,6 +228,7 @@ yt-dlp-git
 sioyek-git
 theme.sh
 paru-git
+glow  # markdown renderer for CLI
 
 
 # old
