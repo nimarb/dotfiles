@@ -319,6 +319,7 @@ alias svenv='source .venv/bin/activate'
 
 # kubernetes k8s stuff
 alias kctl='kubectl'
+alias kpipesh='kubectl get pods --no-headers -o custom-columns=":metadata.name" | fzf | xargs -I{ppln} kubectl exec --stdin --tty {ppln} -- /bin/bash'
 
 if which loginctl > /dev/null && loginctl >& /dev/null; then
     if loginctl show-user | grep KillUserProcesses | grep -q yes; then

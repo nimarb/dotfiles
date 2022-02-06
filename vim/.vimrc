@@ -27,6 +27,7 @@ set backspace=2
 set history=100
 set mouse=a
 set hlsearch
+set ignorecase
 set smartcase
 set smarttab
 set nomodeline

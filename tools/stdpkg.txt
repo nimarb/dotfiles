@@ -20,6 +20,7 @@ sudo
 ntfs-3g
 gnupg
 bash-completion
+lsusb
 
 # dev
 vim

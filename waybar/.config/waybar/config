@@ -9,6 +9,7 @@
     "modules-right": [
 			"custom/dismiss_notifications",
 			"idle_inhibitor",
+			"customer/todotxt_important",
 			"custom/todotxt_pom",
 			"pulseaudio",
 			"network",
@@ -42,12 +43,17 @@
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
+    "sway/window": {
+	    "format": "{}",
+	    "align": 0.5
+    },
     "custom/dismiss_notifications": {
-	"exec-if": "command -v makoctl",
-	"exec": "( makoctl list | jq -e '.data[] | length > 0' >/dev/null && echo '\nDismiss Notifications\n' ) || echo '\nNo Notifications\nnone' ",
-	"format": "{}",
-	"on-click": "makoctl dismiss -a",
-	"interval": 2,
+	    "exec-if": "command -v makoctl",
+	    // "exec": "( makoctl 
+	    "exec": "( makoctl list | jq -e '.data[] | length > 0' >/dev/null && echo '\nDismiss Notifications\n' ) || echo '\nNo Notifications\nnone' ",
+	    "format": "{}",
+	    "on-click": "( makoctl set-mode away ) || makoctl set-mode default",
+	    "interval": 2
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -56,11 +62,17 @@
             "deactivated": ""
         }
     },
+    "customer/todotxt_important": {
+	    "format": "⚠️ ✔️ {}",
+	    "interval": 60,
+	    // "exec": "tls | grep '([A-F])' | wc -l",
+	    "exec": "cat ~/nextcloud/todo/todo.txt | grep '([A-F])' | wc -l"
+    },
     "custom/todotxt_pom": {
-	"format": " {}",
-	"interval": 30,
-	"exec": "cat ~/.pomo.txt.tmux",
-	"exec-if": "pgrep -f 'todo.actions.d/pom'"
+	    "format": " {}",
+	    "interval": 30,
+	    "exec": "cat ~/.pomo.txt.tmux",
+	    "exec-if": "pgrep -f 'todo.actions.d/pom'"
     },
     "tray": {
         // "icon-size": 21,
