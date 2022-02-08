@@ -135,6 +135,10 @@ alias pacget='sudo pacman -S'
 # pacman search alias
 alias pacs='pacsearch'
 
+# search all currently installed pacman pkgs
+alias pacsi='pacman -Qq | fzf --preview "'"pacman -Qil {}"'" --layout=reverse --bind "'"enter:execute(pacman -Qil {} | less)"'"'
+alias pacsall='pacman -Slq | fzf --preview "'"pacman -Si {}"'" --layout=reverse'
+
 # git shortcuts
 alias gits='git status'
 alias guncommit='git reset --soft HEAD~'
@@ -320,6 +324,16 @@ alias svenv='source .venv/bin/activate'
 # kubernetes k8s stuff
 alias kctl='kubectl'
 alias kpipesh='kubectl get pods --no-headers -o custom-columns=":metadata.name" | fzf | xargs -I{ppln} kubectl exec --stdin --tty {ppln} -- /bin/bash'
+
+# pass and gopass fzf
+gop(){
+  QUERY=$1
+  if [ -z "$QUERY" ]; then
+    QUERY=''
+  fi
+  gopass show -n \
+    "$(gopass ls --flat | fzf -q "$QUERY" --preview "gopass show {}")"
+}
 
 if which loginctl > /dev/null && loginctl >& /dev/null; then
     if loginctl show-user | grep KillUserProcesses | grep -q yes; then
