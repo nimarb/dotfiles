@@ -84,7 +84,8 @@ xorg-server-wayland
 pipewire
 pipewire-alsa
 pipewire-pulse
-pipewire-media-session
+wireplumber
+wireplumber-docs
 gst-plugin-pipewire
 
 # apps
