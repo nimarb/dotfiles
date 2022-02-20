@@ -59,7 +59,6 @@ intel-undervolt
 
 # wayland
 network-manager-applet
-alacritty
 wl-clipboard
 gammastep
 intel-media-driver
@@ -68,6 +67,11 @@ wayvnc
 neatvnc
 xdg-desktop-portal-wlr
 kanshi
+foot
+foot-terminfo
+fuzzel
+qt5-wayland
+qt6-wayland
 
 # sway
 sway
@@ -117,9 +121,6 @@ fzfx
 # wayland aur
 wdisplays
 swappy
-foot
-foot-terminfo
-fuzzel
 
 # fonts aur
 ttf-ms-win10
@@ -234,6 +235,7 @@ sioyek-git
 theme.sh
 paru-git
 glow  # markdown renderer for CLI
+google-chrome
 
 
 # old
