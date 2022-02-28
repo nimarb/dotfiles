@@ -1,3 +1,6 @@
 # ignore vim's undo directory
 vim/.vim/undodir/*
 
+# ignore vscode cache
+vscode/.config/Code/Cache*
+vscode/.config/Code/*

@@ -320,6 +320,8 @@ alias icat='chafa -f sixels'
 
 # for python projects, source venv from .venv
 alias svenv='source .venv/bin/activate'
+alias mkvenvs='python -m venv .venv --system-site-packages'
+alias mkvenv='python -m venv .venv'
 
 # kubernetes k8s stuff
 alias kctl='kubectl'

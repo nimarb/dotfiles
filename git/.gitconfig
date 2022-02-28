@@ -20,6 +20,8 @@
 [init]
     defaultBranch = main
 
+[includeIf "gitdir:~/sento-code/"]
+    path = ~/.gitconfig-sento
 [includeIf "gitdir:~/sento/"]
     path = ~/.gitconfig-sento
 
