@@ -127,7 +127,7 @@ alias tls='todo.sh -antc ls'
 alias tlss='todo.sh -antc ls | grep +sento'
 
 # alias for cal do display week numbers always
-alias cal='cal -w'
+alias cal='cal -w -3'
 
 # pacman install alias
 alias pacget='sudo pacman -S'

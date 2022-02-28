@@ -25,7 +25,6 @@
         "suppressUpdateNotice": false,
         "suppressWelcomeNotice": true
     },
-    "workbench.activityBar.visible": false,
     "code-runner.executorMap": {
         "javascript": "node",
         "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
@@ -107,7 +106,6 @@
     "cmake.configureOnOpen": false,
     "window.menuBarVisibility": "toggle",
     "diffEditor.ignoreTrimWhitespace": false,
-    "hediet.vscode-drawio.local-storage": "eyIuZHJhd2lvLWNvbmZpZyI6IntcImxhbmd1YWdlXCI6XCJcIixcImN1c3RvbUZvbnRzXCI6W10sXCJsaWJyYXJpZXNcIjpcImdlbmVyYWw7ZGZkO2VyO3VtbDtzeXNtbFwiLFwiY3VzdG9tTGlicmFyaWVzXCI6W1wiTC5zY3JhdGNocGFkXCJdLFwicGx1Z2luc1wiOltdLFwicmVjZW50Q29sb3JzXCI6W1wiNjZDQzAwXCIsXCJFNkZGQ0NcIixcIkIzRkY2NlwiLFwiRkZGRkZGXCIsXCIwMDAwMDBcIixcIjY5MkEyQVwiLFwiRkY2NjY2XCJdLFwiZm9ybWF0V2lkdGhcIjoyNDAsXCJjcmVhdGVUYXJnZXRcIjpmYWxzZSxcInBhZ2VGb3JtYXRcIjp7XCJ4XCI6MCxcInlcIjowLFwid2lkdGhcIjoxNjAwLFwiaGVpZ2h0XCI6OTAwfSxcInNlYXJjaFwiOnRydWUsXCJzaG93U3RhcnRTY3JlZW5cIjp0cnVlLFwiZ3JpZENvbG9yXCI6XCIjZDBkMGQwXCIsXCJkYXJrR3JpZENvbG9yXCI6XCIjNmU2ZTZlXCIsXCJhdXRvc2F2ZVwiOnRydWUsXCJyZXNpemVJbWFnZXNcIjpudWxsLFwib3BlbkNvdW50ZXJcIjowLFwidmVyc2lvblwiOjE4LFwidW5pdFwiOjEsXCJpc1J1bGVyT25cIjpmYWxzZSxcInVpXCI6XCJcIn0ifQ==",
     "python.languageServer": "Pylance",
     "python.analysis.typeCheckingMode": "basic",
     "pasteImage.basePath": "${projectRoot}/imgs-autopaste/",
@@ -142,4 +140,7 @@
     },
     "gitlens.keymap": "none",
     "redhat.telemetry.enabled": false,
+    "window.zoomLevel": 1,
+    "workbench.activityBar.visible": false,
+    "workbench.colorTheme": "Default Light+",
 }
