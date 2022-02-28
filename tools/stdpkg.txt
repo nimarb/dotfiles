@@ -107,7 +107,7 @@ foliate
 # fonts
 noto-fonts
 ttf-roboto
-
+noto-fonts-emoji
 
 ##### essentials aur #####
 
@@ -200,6 +200,7 @@ widelands
 ghostscript
 sysz
 powertop
+tpacpi-bat  # set threshold for thinkpad batteries
 
 # opt media apps
 picard  # music tagger
@@ -210,6 +211,8 @@ viu
 lsix-git
 libsixel
 chafa  # faster sixel image display tool
+bluez  # bluetooth
+bluez-utils
 
 ##### optional aur #####
 

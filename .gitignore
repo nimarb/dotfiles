@@ -3,4 +3,11 @@ vim/.vim/undodir/*
 
 # ignore vscode cache
 vscode/.config/Code/Cache*
-vscode/.config/Code/*
+vscode/.config/Code/logs*
+vscode/.config/Code/Service*
+vscode/.config/Code/Local Storage*
+vscode/.config/Code/Session Storage*
+vscode/.config/Code/GPUCache*
+vscode/.config/Code/Code Cache*
+vscode/.config/Code/User/globalStorage*
+vscode/.config/Code/User/workspaceStorage*
