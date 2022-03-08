@@ -393,4 +393,10 @@ if [ -f "/usr/share/git/completion/git-completion.bash" ]; then
     source '/usr/share/git/completion/git-completion.bash'
 fi
 
+# Load pc specific aliases
+if [ -f "$HOME/.local/share/scripts/aliases.bash" ]; then
+    source "$HOME/.local/share/scripts/aliases.bash"
+fi
+
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
