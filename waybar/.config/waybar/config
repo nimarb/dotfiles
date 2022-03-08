@@ -22,6 +22,7 @@
 			"battery",
 			"clock#berlin",
 			"clock#tokyo",
+			"clock#utc",
 			"tray"
 		    ],
     // Modules configuration
@@ -45,7 +46,8 @@
     },
     "sway/window": {
 	    "format": "{}",
-	    "align": 0.5
+	    "align": 0.5,
+	    "icon": false
     },
     "custom/dismiss_notifications": {
 	    "exec-if": "command -v makoctl",
@@ -88,6 +90,11 @@
         "format": "{:jp: %H:%M}",
         "tooltip-format": "{:%Y-%m-%d | %H:%M}",
 	"timezone": "Asia/Tokyo"
+    },
+    "clock#utc": {
+	"format": "{:utc: %H:%M}",
+        "tooltip-format": "{:%Y-%m-%d | %H:%M}",
+	"timezone": "Etc/UTC"
     },
     "cpu": {
         "format": "{usage}% "
