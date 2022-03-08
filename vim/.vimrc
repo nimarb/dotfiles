@@ -45,6 +45,10 @@ autocmd! bufwritepost .vimrc source %
 set pastetoggle=<F2>
 set clipboard=unnamed
 set wildmenu
+
+" source: https://stackoverflow.com/a/61379319
+xnoremap <silent> <C-c> :w !wl-copy<CR><CR>
+
 " Ex mode is dumb
 nnoremap Q <Nop>
 set lazyredraw
