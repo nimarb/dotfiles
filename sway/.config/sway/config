@@ -45,10 +45,11 @@ set $lock_bg ~/pictures/lock_bg.jpg
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 #output eDP-1 scale 2
-output eDP-1 {
-    scale 1.25
-    scale_filter linear
-}
+output eDP-1 scale 1
+# output eDP-1 {
+#     scale 1.25
+#     scale_filter linear
+# }
 
 ### Input configuration
 #
@@ -69,6 +70,18 @@ input "1267:32:Elan_Touchpad" {
     tap_button_map lrm
     middle_emulation enabled
 }
+
+input "2:14:ETPS/2_Elantech_Touchpad" {
+    tap enabled
+    tap_button_map lrm
+    middle_emulation enabled
+}
+
+### Key bindings
+#
+# Basics:
+#
+    # start a terminal
 
 ### Key bindings
 #
