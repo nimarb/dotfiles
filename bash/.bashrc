@@ -108,7 +108,6 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 # for good appindicatior support (tray icons) and support screen sharing
 export XDG_CURRENT_DESKTOP=sway
-
 # to support screen sharing
 export XDG_SESSION_TYPE=wayland
 
@@ -121,13 +120,19 @@ alias chromei="chromium-snapshot-bin --enable-features=UseOzonePlatform --enable
 alias signal='signal-desktop --enable-features=UseOzonePlatform --ozone-platform=wayland'
 alias vscodei='code-insiders --enable-features=UseOzonePlatform --ozone-platform=wayland'
 
+# env vars to support Fcitx5 IME in wayland/sway
+# see also: https://github.com/swaywm/sway/pull/5890
+# export GTK_IM_MODULE=fcitx5
+# export QT_IM_MODULE=fcitx5
+
 # alias for todo.txt todo app
 alias t='todo.sh -antc'
 alias tls='todo.sh -antc ls'
 alias tlss='todo.sh -antc ls | grep +sento'
 
 # alias for cal do display week numbers always
-alias cal='cal -w -3'
+alias cal='cal -w'
+alias call='cal -w -3'
 
 # pacman install alias
 alias pacget='sudo pacman -S'
@@ -146,7 +151,30 @@ alias guncommit='git reset --soft HEAD~'
 alias gitpull='git pull origin $(git rev-parse --abbrev-ref HEAD)'
 alias gitpush="git push origin HEAD"
 alias gitl='git log --all --decorate --oneline --graph'
-alias gitf='git fetch --all'
+alias gitf='git fetch --all -p'
+alias gitdiff='GIT_EXTERNAL_DIFF=difft git log -p --ext-diff'
+
+# function which deletes already merged git branches locally
+clean_git_branches() {
+    git switch main
+    git fetch --all --prune
+    git branch -v
+
+    echo "Check if you saw any unpushed branches. If so ABORT with Ctrl+C"
+    read -p "If there were no unpushed branches, continue to DELETE? (n/N/Y)" -n 1 -r
+    echo  # move to a new line
+    if [[ $REPLY =~ ^[Y]$ ]]
+    then
+	num_deleted_branches=$(git branch --merged main | grep -c -v '^[ *]*main$')
+	git branch --merged main | grep -v '^[ *]*main$' | xargs git branch -d
+	echo "Deleted $num_deleted_branches branche(s)."
+    fi
+}
+
+# inspecting a CSR record in plain text, the last part should be the CSR path
+alias csrinsp='openssl req -noout -text -in'
+# convert a p7b certificate to cer, do p7btocer file.p7b
+alias p7btocer='openssl pkcs7 -inform DER -outform PEM -print_certs > certificate_bundle.cer -in'
 
 # build pipeline, docker
 alias docker-compose='docker compose'
@@ -270,6 +298,9 @@ alias fpdf='fzfx pdf' # pdf and postscript files
 alias fav='fzfx media' # audio and videos
 alias fpic='fzfx media' # pictures
 alias fps='fzfx ps' # processes
+
+# launch ranger in the downloads folder
+alias rando='ranger ~/Downloads'
 
 # pretty print json output
 ppjson () { echo "$1" | python -m json.tool ;}

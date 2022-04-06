@@ -20,6 +20,10 @@ gnupg
 bash-completion
 lsusb
 exfatprogs
+untar
+unzip
+zip
+rsync
 
 # dev
 vim
@@ -99,6 +103,7 @@ signal-desktop
 mpv
 youtube-dl
 zathura
+zathura-pdf-mupdf  # --asdeps
 imv
 nextcloud-client
 keepassxc
@@ -138,9 +143,6 @@ intel-hybrid-codec-driver
 ##### optional #####
 
 # opt base
-untar
-unzip
-zip
 
 # opt dev
 texlive-most
@@ -157,6 +159,7 @@ bat  # replacement for cat with syntax highlighting
 tmux
 hugo
 zola
+difftastic  # syntax respecting diff viewer
 
 # opt dev ai
 python-pytorch-opt-cuda
@@ -176,6 +179,7 @@ gopass
 helm
 pwgen
 docker
+docker-compose
 
 # apps opt
 libreoffice-fresh
@@ -185,11 +189,13 @@ aerc
 w3m
 netsurf
 helvum  # pipewire patchbay gtk gui
+qpwgraph  # an audio graph construction tool
 asciinema
 btop  # fancy htop in CLI
 bottom  # fancy htop in CLI, cmd is btm
 rebuild-detector
 age  # alternative crypto lib to gpg
+handlr  # xdg-open replacement to open files with correct app
 
 # opt games
 xonotic
@@ -213,6 +219,10 @@ libsixel
 chafa  # faster sixel image display tool
 bluez  # bluetooth
 bluez-utils
+
+# opt iphone connect apps
+libimobiledevice
+ifuse
 
 ##### optional aur #####
 
