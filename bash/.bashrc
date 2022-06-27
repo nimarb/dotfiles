@@ -119,6 +119,7 @@ export MOZ_ENABLE_WAYLAND=1
 alias chromei="chromium-snapshot-bin --enable-features=UseOzonePlatform --enable-gpu --ozone-platform=wayland"
 alias signal='signal-desktop --enable-features=UseOzonePlatform --ozone-platform=wayland'
 alias vscodei='code-insiders --enable-features=UseOzonePlatform --ozone-platform=wayland'
+alias infra='GDK_BACKEND=x11 infra'
 
 # env vars to support Fcitx5 IME in wayland/sway
 # see also: https://github.com/swaywm/sway/pull/5890
@@ -344,6 +345,10 @@ alias vscode='GDK_BACKEND=x11 code'
 alias vsnote='GDK_BACKEND=x11 code ~/nextcloud/daten/notes'
 alias vsthought='GDK_BACKEND=x11 code ~/nextcloud/daten/thoughtson'
 alias virtualbox='GDK_BACKEND=x11 virtualbox'
+
+# get crypto prices
+
+alias coinz='curl "https://plaintextco.in/?ids=bitcoin,ethereum,solana&term=true"'
 
 # provide cat for images with sixel support in terminals
 icatc() { convert "$1" -geometry "$(clc $COLUMNS*9)"x"$(clc $LINES*13)" sixel:- ;}
