@@ -24,6 +24,7 @@ untar
 unzip
 zip
 rsync
+usbutils
 
 # dev
 vim
@@ -65,6 +66,7 @@ intel-undervolt
 network-manager-applet
 wl-clipboard
 gammastep
+python-gobject  # to be able to show gammastep-indicator
 intel-media-driver
 playerctl
 wayvnc
@@ -196,6 +198,9 @@ bottom  # fancy htop in CLI, cmd is btm
 rebuild-detector
 age  # alternative crypto lib to gpg
 handlr  # xdg-open replacement to open files with correct app
+khal  # CLI calendar tool
+vdirsyncer  # syncs online calendars to cal
+python-requests-oauthlib  # enables google oauth for vdirsysncer
 
 # opt games
 xonotic
@@ -249,7 +254,12 @@ theme.sh
 paru-git
 glow  # markdown renderer for CLI
 google-chrome
+q-dns-git  # dns query tool
+doggo  # dns query tool
+calcure  # calendar on the CLI
 
+# apps opt aur sento
+infra-appimage
 
 # old
 autossh
