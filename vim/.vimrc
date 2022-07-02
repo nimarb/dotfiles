@@ -32,7 +32,8 @@ set smartcase
 set smarttab
 set nomodeline
 "set backupcopy=yes
-"set backupdir=$HOME/.vim/backup
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swp//
 set backupskip=/tmp/*
 filetype indent on
 imap jj <Esc>
@@ -47,6 +48,7 @@ set clipboard=unnamed
 set wildmenu
 
 " source: https://stackoverflow.com/a/61379319
+" it's used to be able to copy to normal OS buffer
 xnoremap <silent> <C-c> :w !wl-copy<CR><CR>
 
 " Ex mode is dumb
