@@ -140,7 +140,9 @@
     },
     "gitlens.keymap": "none",
     "redhat.telemetry.enabled": false,
-    "window.zoomLevel": 1,
     "workbench.activityBar.visible": false,
-    "workbench.colorTheme": "Default Light+",
+    "git.autofetch": true,
+    "markdown.experimental.editor.pasteLinks.enabled": true,
+    "editor.experimental.pasteActions.enabled": true,
+    "workbench.colorTheme": "Default Light+"
 }
