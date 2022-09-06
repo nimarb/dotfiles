@@ -7,9 +7,9 @@
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
     "modules-center": ["sway/window"],
     "modules-right": [
-			"custom/dismiss_notifications",
+			"custom/dnd",
 			"idle_inhibitor",
-			"customer/todotxt_important",
+			"custom/todotxt_important",
 			"custom/todotxt_pom",
 			"pulseaudio",
 			"network",
@@ -49,13 +49,25 @@
 	    "align": 0.5,
 	    "icon": false
     },
-    "custom/dismiss_notifications": {
-	    "exec-if": "command -v makoctl",
-	    // "exec": "( makoctl 
-	    "exec": "( makoctl list | jq -e '.data[] | length > 0' >/dev/null && echo '\nDismiss Notifications\n' ) || echo '\nNo Notifications\nnone' ",
-	    "format": "{}",
-	    "on-click": "( makoctl set-mode away ) || makoctl set-mode default",
-	    "interval": 2
+    // "custom/dismiss_notifications": {
+    //         "exec-if": "command -v makoctl",
+    //         // "exec": "( makoctl 
+    //         "exec": "( makoctl list | jq -e '.data[] | length > 0' >/dev/null && echo '\nDismiss Notifications\n' ) || echo '\nNo Notifications\nnone' ",
+    //         "format": "{}",
+    //         "on-click": "( makoctl set-mode away ) || makoctl set-mode default",
+    //         "interval": 2
+    // },
+    "custom/dnd": {
+        "interval": "once",
+        "return-type": "json",
+        "format": "{}{icon}",
+        "format-icons": {
+            "default": "",
+            "dnd": ""
+        },
+        "on-click": "makoctl mode | grep 'do-not-disturb' && makoctl mode -r do-not-disturb || makoctl mode -a do-not-disturb; pkill -RTMIN+11 waybar",
+        "exec": "printf '{\"alt\":\"%s\",\"tooltip\":\"mode: %s\"}' $(makoctl mode | grep -q 'do-not-disturb' && echo dnd || echo default) $(makoctl mode | tail -1)",
+        "signal": 11
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -64,7 +76,7 @@
             "deactivated": ""
         }
     },
-    "customer/todotxt_important": {
+    "custom/todotxt_important": {
 	    "format": "⚠️ ✔️ {}",
 	    "interval": 60,
 	    // "exec": "tls | grep '([A-F])' | wc -l",

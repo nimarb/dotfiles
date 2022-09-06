@@ -75,6 +75,8 @@ window#waybar.chromium {
 #network,
 #pulseaudio,
 #custom-media,
+#custom-dnd,
+#custom-todotxt_important,
 #tray,
 #mode,
 #idle_inhibitor,
@@ -206,5 +208,37 @@ label:focus {
     background-color: #2d3436;
     color: grey;
     opacity: 0.4;
+}
+
+
+#idle_inhibitor {
+    background-color: #2d3436;
+}
+
+#idle_inhibitor.activated {
+    background-color: #ecf0f1;
+    color: #2d3436;
+}
+
+#idle_inhibitor {
+    background-color: #2d3436;
+}
+
+#idle_inhibitor.activated {
+    background-color: #ecf0f1;
+    color: #2d3436;
+}
+
+#custom-dnd {
+    background-color: #2d3436;
+}
+
+#custom-dnd.activated {
+    background-color: #ecf0f1;
+    color: #2d3436;
+}
+
+#custom-todotxt_important {
+    background-color: #2d3436;
 }
 
