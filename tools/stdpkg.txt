@@ -257,6 +257,7 @@ google-chrome
 q-dns-git  # dns query tool
 doggo  # dns query tool
 calcure  # calendar on the CLI
+anytype-bin  # note taking app
 
 # apps opt aur sento
 infra-appimage
