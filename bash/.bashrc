@@ -174,6 +174,7 @@ clean_git_branches() {
 
 # inspecting a CSR record in plain text, the last part should be the CSR path
 alias csrinsp='openssl req -noout -text -in'
+alias cerinsp='openssl x509 -noout -text -in'  # att: CER can have PEM or DER encodings
 alias peminsp='openssl x509 -inform pem -noout -text -in'
 alias derinsp='openssl x509 -inform der -noout -text -in'
 # convert a p7b certificate to cer, do p7btocer file.p7b
