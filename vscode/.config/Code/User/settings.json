@@ -99,7 +99,6 @@
     ],
     "terminal.integrated.scrollback": 100000000,
     "markdown.extension.toc.levels": "2..6",
-    "breadcrumbs.enabled": false,
     // "python.linting.mypyEnabled": true,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "python.jediEnabled": false,

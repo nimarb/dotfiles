@@ -10,21 +10,34 @@ PS1='[\u@\h \W]\$ '
 # sudo tab completion
 complete -cf sudo
 
+###########
+# HISTORY
+###########
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
-# history file
+# history file, store everything forever
 shopt -s histappend
-HISTSIZE=
+# size of the history file on disk
 HISTFILESIZE=
-HISTTIMEFORMAT='%Y-%m-%d %T: '
+# size of the history stored in memory
+HISTSIZE=
+HISTTIMEFORMAT='%F %T: '
+# Change the file loc because some bash sessions truncate .bash_history file on close.
+export HISTFILE=~/.bash_eternal_history
 HISTIGNORE='ls:history:yay:pacdate:exit'
 # save history immediately to file
-#PROMPT_COMMAND='history -a'
-PROMPT_COMMAND="${PROMPT_COMMAND:+${PROMPT_COMMAND} ;}history -a";
+# PROMPT_COMMAND='history -a'
+# logs every command also to a date versioned file in .logs
+export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> ~/.logs/bash-history-$(date "+%Y-%m-%d").log; fi'
 # save cmds one cmd per line
 shopt -s cmdhist
+
+###########
+# END HISTORY
+###########
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -125,6 +138,9 @@ alias infra='GDK_BACKEND=x11 infra'
 # see also: https://github.com/swaywm/sway/pull/5890
 # export GTK_IM_MODULE=fcitx5
 # export QT_IM_MODULE=fcitx5
+
+# export SSH sock to make ssh-agent via systemd work
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # alias for todo.txt todo app
 alias t='todo.sh -antc'
@@ -365,6 +381,7 @@ alias mkvenv='python -m venv .venv'
 # kubernetes k8s stuff
 alias kctl='kubectl'
 alias kpipesh='kubectl get pods --no-headers -o custom-columns=":metadata.name" | fzf | xargs -I{ppln} kubectl exec --stdin --tty {ppln} -- /bin/bash'
+alias klistcont='kubectl get pods --all-namespaces -o jsonpath='\''{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.containers[*]}{.image}{", "}{end}{end}'\'' | sort'
 
 # pass and gopass fzf
 gop(){
@@ -410,7 +427,7 @@ fi
 
 # if work notebook exists, make alias to open it
 if [ -f "$HOME""/nextcloud/daten/notes/knister/work-nb.md" ]; then
-    alias wnb='vim ~/nextcloud/daten/notes/knister/work-nb.md'
+    alias wnb='vim ~/personal/notes/knister/work-nb.md'
 fi
 
 if [ "$HOSTNAME" = "this-pc" ]; then

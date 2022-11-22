@@ -128,6 +128,7 @@ fzfx
 # wayland aur
 wdisplays
 swappy
+wl-mirror  # allows screen/section mirroring on sway
 
 # fonts aur
 ttf-ms-win10
@@ -162,6 +163,8 @@ tmux
 hugo
 zola
 difftastic  # syntax respecting diff viewer
+lapce  # alternative GUI text editor written in rust
+helix  # CLI modal editor made in a modern way
 
 # opt dev ai
 python-pytorch-opt-cuda
@@ -191,6 +194,7 @@ aerc
 w3m
 netsurf
 helvum  # pipewire patchbay gtk gui
+easyeffects  # pipewire audio effect library
 qpwgraph  # an audio graph construction tool
 asciinema
 btop  # fancy htop in CLI
@@ -201,6 +205,8 @@ handlr  # xdg-open replacement to open files with correct app
 khal  # CLI calendar tool
 vdirsyncer  # syncs online calendars to cal
 python-requests-oauthlib  # enables google oauth for vdirsysncer
+ladybird  # alternative web browser with new engine
+jc  # converts CLI output to json
 
 # opt games
 xonotic
@@ -237,7 +243,6 @@ fnott
 # opt dev aur
 mkdocs
 visual-studio-code-insiders-bin
-lapce  # alternative GUI text editor written in rust
 
 # opt webdev aur
 firebase-tools
@@ -258,6 +263,8 @@ q-dns-git  # dns query tool
 doggo  # dns query tool
 calcure  # calendar on the CLI
 anytype-bin  # note taking app
+subfinder  # enumerate subdomains
+jless  # less for json files to view them efficiently, like jq
 
 # apps opt aur sento
 infra-appimage
