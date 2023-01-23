@@ -36,6 +36,7 @@ ripgrep
 the_silver_searcher
 python-black
 tree
+ruff  # python linter which is amazing
 
 # arch
 abs
@@ -265,9 +266,11 @@ calcure  # calendar on the CLI
 anytype-bin  # note taking app
 subfinder  # enumerate subdomains
 jless  # less for json files to view them efficiently, like jq
+losslesscut-bin  # lossless video / audio trimmer
 
 # apps opt aur sento
 infra-appimage
+pnpm-bin  # alternative js/ts package manager
 
 # old
 autossh
