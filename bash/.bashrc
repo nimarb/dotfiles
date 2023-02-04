@@ -128,11 +128,15 @@ export XDG_SESSION_TYPE=wayland
 export MOZ_DBUS_REMOTE=1
 export MOZ_ENABLE_WAYLAND=1
 
+# alias sway so that it will log
+alias sway='sway --verbose 2> ~/sway.log'
+
 # start programs in wayland mode
 alias chromei="chromium-snapshot-bin --enable-features=UseOzonePlatform --enable-gpu --ozone-platform=wayland"
 alias signal='signal-desktop --enable-features=UseOzonePlatform --ozone-platform=wayland'
 alias vscodei='code-insiders --enable-features=UseOzonePlatform --ozone-platform=wayland'
 alias infra='GDK_BACKEND=x11 infra'
+alias lseq='logseq --enable-features=UseOzonePlatform --ozone-platform=wayland'
 
 # env vars to support Fcitx5 IME in wayland/sway
 # see also: https://github.com/swaywm/sway/pull/5890
@@ -165,8 +169,8 @@ alias pacsall='pacman -Slq | fzf --preview "'"pacman -Si {}"'" --layout=reverse'
 alias gits='git status'
 alias guncommit='git reset --soft HEAD~'
 # pulls the remote branch with the same name as the local branch
-alias gitpull='git pull origin $(git rev-parse --abbrev-ref HEAD)'
-alias gitpush="git push origin HEAD"
+alias gpl='git pull origin $(git rev-parse --abbrev-ref HEAD)'
+alias gps="git push origin HEAD"
 alias gitl='git log --all --decorate --oneline --graph'
 alias gitf='git fetch --all -p'
 alias gitdiff='GIT_EXTERNAL_DIFF=difft git log -p --ext-diff'
