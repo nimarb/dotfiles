@@ -231,6 +231,8 @@ aerc
 w3m
 netsurf
 ladybird  # alternative web browser with new engine
+jc  # converts CLI output to json
+bettercap  # new wireshark/pcap alternative with nice web-ui
 
 # opt games
 xonotic
