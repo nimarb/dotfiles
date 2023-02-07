@@ -18,13 +18,15 @@ sudo
 ntfs-3g
 gnupg
 bash-completion
-lsusb
 exfatprogs
 untar
 unzip
 zip
 rsync
 usbutils
+which
+acpi  # battery tools
+cpupower
 
 # dev
 vim
@@ -39,7 +41,6 @@ tree
 ruff  # python linter which is amazing
 
 # arch
-abs
 arch-wiki-lite
 pacman-contrib
 
@@ -65,7 +66,7 @@ intel-undervolt
 
 # wayland
 network-manager-applet
-wl-clipboard
+wl-clipboard  # also install mailcap for type inference?
 gammastep
 python-gobject  # to be able to show gammastep-indicator
 intel-media-driver
@@ -90,6 +91,7 @@ mako
 waybar
 oft-font-awesome
 xorg-server-wayland
+swappy
 
 # media
 pipewire
@@ -99,18 +101,23 @@ wireplumber
 wireplumber-docs
 gst-plugin-pipewire
 
+# opt sound i guess
+pavucontrol
+pipewire-pulse
+
 # apps
 firefox
 thunderbird
 signal-desktop
 mpv
-youtube-dl
+yt-dlp
 zathura
 zathura-pdf-mupdf  # --asdeps
 imv
 nextcloud-client
 keepassxc
 foliate
+ripgrep-all  # also search eg pdfs, docs, zip files with rg
 
 # fonts
 noto-fonts
@@ -123,22 +130,20 @@ noto-fonts-emoji
 py-spy
 ruby-terminal-notifier  # todotxt pom
 vim-plug
-ripgrep-all  # also search eg pdfs, docs, zip files with rg
 fzfx
 
 # wayland aur
 wdisplays
-swappy
 wl-mirror  # allows screen/section mirroring on sway
 
 # fonts aur
-ttf-ms-win10
-ttf-ms-win10-japanese
+ttf-ms-win11-auto  # and then install japanese and normal
 
 # apps aur
 visual-studio-code-bin
 todotxt
 anki
+tagainijisho
 
 # system aur
 intel-hybrid-codec-driver
@@ -149,23 +154,24 @@ intel-hybrid-codec-driver
 # opt base
 
 # opt dev
-texlive-most
-xclip
-ruby # todotxt pom
-ruby-rainbow # todotxt pom
 mypy
-python-mypy_extensions
+python-mypy_extensions  # for now not installed
 gitg
 gitui
 python-pre-commit
 lnav  # ncurses log viewer
-bat  # replacement for cat with syntax highlighting
+bat  # replacement for cat with syntax highlighting, deps of fzfx
 tmux
 hugo
 zola
 difftastic  # syntax respecting diff viewer
 lapce  # alternative GUI text editor written in rust
+
+# old?
+ruby # todotxt pom
+ruby-rainbow # todotxt pom
 helix  # CLI modal editor made in a modern way
+texlive-most  # not default install
 
 # opt dev ai
 python-pytorch-opt-cuda
@@ -186,14 +192,14 @@ helm
 pwgen
 docker
 docker-compose
+pnpm
+python-poetry
+python-pip
 
 # apps opt
 libreoffice-fresh
-filezilla
 s-tui
-aerc
-w3m
-netsurf
+filezilla
 helvum  # pipewire patchbay gtk gui
 easyeffects  # pipewire audio effect library
 qpwgraph  # an audio graph construction tool
@@ -206,13 +212,23 @@ handlr  # xdg-open replacement to open files with correct app
 khal  # CLI calendar tool
 vdirsyncer  # syncs online calendars to cal
 python-requests-oauthlib  # enables google oauth for vdirsysncer
-ladybird  # alternative web browser with new engine
 jc  # converts CLI output to json
+glow  # markdown renderer for CLI
+jless  # less for json files to view them efficiently, like jq
+visidata
+calibre
+
+# apps opt really opt
+aerc
+w3m
+netsurf
+ladybird  # alternative web browser with new engine
 
 # opt games
 xonotic
 0ad
 widelands
+verloren
 
 # apps opt cli
 ghostscript
@@ -225,7 +241,7 @@ picard  # music tagger
 beets  # music tagger and organiser
 darktable
 inkscape
-viu
+viu  # in terminal image viewer
 lsix-git
 libsixel
 chafa  # faster sixel image display tool
@@ -250,27 +266,29 @@ firebase-tools
 google-cloud-sdk
 
 # apps opt aur
-psst-git  # rust based spotify client
 spotify
-glimpse-editor
-visidata
-yt-dlp-git
 sioyek-git
 theme.sh
 paru-git
-glow  # markdown renderer for CLI
 google-chrome
 q-dns-git  # dns query tool
 doggo  # dns query tool
 calcure  # calendar on the CLI
 anytype-bin  # note taking app
 subfinder  # enumerate subdomains
-jless  # less for json files to view them efficiently, like jq
+psst-git  # rust based spotify client
 losslesscut-bin  # lossless video / audio trimmer
+logseq-desktop-bin  # note/outliner tool
+
+# apps opt aur old
+glimpse-editor
 
 # apps opt aur sento
 infra-appimage
 pnpm-bin  # alternative js/ts package manager
+
+# opt dev aur sento
+azure-cli
 
 # old
 autossh

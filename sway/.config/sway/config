@@ -25,8 +25,8 @@ for_window [app_id="^floaty-term"] floating enable
 #for_window [app_id="^launcher$"] floating enable, border none, resize set width 25 ppt height 100 ppt, move position 0 px 0 px
 
 # More elaborate launcher
-set $menu exec alacritty --class 'launcher' --command env TERMINAL_COMMAND="alacritty --command" sway-launcher-desktop
-for_window [app_id="^launcher$"] floating enable, border pixel 5, sticky enable, resize set width 25 ppt height 100 ppt, move position 0 px 0 px
+# set $menu exec alacritty --class 'launcher' --command env TERMINAL_COMMAND="alacritty --command" sway-launcher-desktop
+# for_window [app_id="^launcher$"] floating enable, border pixel 5, sticky enable, resize set width 25 ppt height 100 ppt, move position 0 px 0 px
 
 
 # Images
@@ -44,8 +44,13 @@ set $lock_bg ~/pictures/lock_bg.jpg
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
-#output eDP-1 scale 2
-output eDP-1 scale 1
+# scale the internal moniotor of t14sg3 to approx 172dpi
+output "SDC 0x417A Unknown" {
+    mode 2880x1800@90Hz
+    scale 1.4
+    render_bit_depth 10
+}
+
 # output eDP-1 {
 #     scale 1.25
 #     scale_filter linear
@@ -110,8 +115,8 @@ input "1739:52839:SYNA8018:00_06CB:CE67_Touchpad" {
     bindsym $mod+Shift+q kill
 
     # start your launcher
-    bindsym $mod+d exec fuzzel -l 20
-    bindsym $mod+Shift+d $menu
+    bindsym $mod+d exec fuzzel -l 20 --dpi-aware=yes
+    # bindsym $mod+Shift+d $menu
 
     # take a screenshot of a part of the screen
     bindsym $mod+Shift+s exec slurp | grim -g - - | wl-copy && wl-paste > ~/screenshots/$(date +'%Y-%m-%d-%H%M%S_grim.png')

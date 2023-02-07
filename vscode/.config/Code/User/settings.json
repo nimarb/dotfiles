@@ -143,8 +143,9 @@
     "git.autofetch": true,
     "markdown.experimental.editor.pasteLinks.enabled": true,
     "editor.experimental.pasteActions.enabled": true,
-    "workbench.colorTheme": "Default Light+",
     "gitdoc.pushMode": "push",
     "git.confirmSync": false,
-    "githubPullRequests.pullBranch": "never"
+    "githubPullRequests.pullBranch": "never",
+    "workbench.colorTheme": "Default Light+ Experimental",
+    "window.zoomLevel": 1
 }
