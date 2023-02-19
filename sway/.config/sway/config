@@ -73,7 +73,7 @@ output "SDC 0x417A Unknown" {
 input "type:keyboard" {
     xkb_layout us,de
     xkb_variant altgr-intl,nodeadkeys
-    xkb_options grp:alt_shift_toggle
+    xkb_options grp:alt_caps_toggle
 }
 
 input "1267:32:Elan_Touchpad" {

@@ -124,6 +124,13 @@ noto-fonts
 ttf-roboto
 noto-fonts-emoji
 
+# amd gpu drivers
+mesa
+libva-mesa-driver  # for VA-API
+mesa-vdpau  # for VDPAU
+libva-utils  # tools for VA-API verification, e.g. `vainfo`
+vdpauinfo  # tools for VDPAU verification, e.g. `vdpauinfo`
+
 ##### essentials aur #####
 
 # dev aur
@@ -152,6 +159,7 @@ intel-hybrid-codec-driver
 ##### optional #####
 
 # opt base
+tlp  # battery tools
 
 # opt dev
 mypy

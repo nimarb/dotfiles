@@ -111,13 +111,15 @@ export EDITOR=vim
 
 # enable QT5 wayland backend
 # export QT_QPA_PLATFORM_PLUGIN_PATH=/usr/lib/qt/plugins
-export QT_QPA_PLATFORM=wayland-egl
+export QT_QPA_PLATFORM='wayland-egl'
 export CLUTTER_BACKEND=wayland
 export SDL_VIDEODRIVER=wayland
 export GDK_BACKEND=wayland
 export ECORE_EVAS_ENGINE=wayland_egl
 export ELM_ENGINE=wayland_egl
 export _JAVA_AWT_WM_NONREPARENTING=1
+export SDL_VIDEODRIVER=wayland
+export SDL_DYNAMIC_API='/usr/lib/libSDL2-2.0.so'
 
 # for good appindicatior support (tray icons) and support screen sharing
 export XDG_CURRENT_DESKTOP=sway
@@ -133,10 +135,11 @@ alias sway='sway --verbose 2> ~/sway.log'
 
 # start programs in wayland mode
 alias chromei="chromium-snapshot-bin --enable-features=UseOzonePlatform --enable-gpu --ozone-platform=wayland"
-alias signal='signal-desktop --enable-features=UseOzonePlatform --ozone-platform=wayland'
-alias vscodei='code-insiders --enable-features=UseOzonePlatform --ozone-platform=wayland'
-alias infra='GDK_BACKEND=x11 infra'
+alias signal='signal-desktop --ozone-platform=wayland --enable-features=UseOzonePlatform,WebRTCPipeWireCapturer'
+alias infrax11='GDK_BACKEND=x11 infra'
+alias infra='infra --ozone-platform=wayland --enable-features=UseOzonePlatform,WebRTCPipeWireCapturer '
 alias lseq='logseq --enable-features=UseOzonePlatform --ozone-platform=wayland'
+alias slack='slack --ozone-platform=wayland --enable-features=UseOzonePlatform,WebRTCPipeWireCapturer'
 
 # env vars to support Fcitx5 IME in wayland/sway
 # see also: https://github.com/swaywm/sway/pull/5890
