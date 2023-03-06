@@ -14,7 +14,7 @@
     "C_Cpp.loggingLevel": "Information",
     "editor.fontFamily": "'Noto Mono', 'Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback'",
     "editor.minimap.enabled": false,
-    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Enabled": false,
     "gitlens.advanced.messages": {
         "suppressCommitHasNoPreviousCommitWarning": false,
         "suppressCommitNotFoundWarning": false,
@@ -87,8 +87,7 @@
     //    "--synctex-forward=%LINE%:0:%TEX%",
     //    "%PDF%"
     //],
-    "telemetry.enableTelemetry": false,
-    "telemetry.enableCrashReporter": false,
+    "telemetry.telemetryLevel": "off",
     "spellright.language": [
         "en_GB"
     ],
@@ -115,8 +114,6 @@
     "explorer.confirmDragAndDrop": false,
     "window.autoDetectColorScheme": true,
     "jupyter.askForKernelRestart": false,
-    "jupyter.sendSelectionToInteractiveWindow": true,
-    "jupyter.interactiveWindowMode": "perFile",
     "jupyter.widgetScriptSources": [
         "jsdelivr.com",
         "unpkg.com"
@@ -146,6 +143,16 @@
     "gitdoc.pushMode": "push",
     "git.confirmSync": false,
     "githubPullRequests.pullBranch": "never",
-    "workbench.colorTheme": "Default Light+ Experimental",
-    "window.zoomLevel": 1
+    "workbench.colorTheme": "Default Dark+ Experimental",
+    "window.zoomLevel": 1,
+    "[jsonc]": {
+        "editor.defaultFormatter": "j-brooke.fracturedjsonvsc"
+    },
+    "editor.inlineSuggest.enabled": true,
+    "[python]": {
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.wordBasedSuggestions": false
+    },
+    "jupyter.interactiveWindow.creationMode": "perFile",
+    "jupyter.interactiveWindow.textEditor.executeSelection": true
 }

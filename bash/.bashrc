@@ -163,6 +163,7 @@ alias pacget='sudo pacman -S'
 
 # pacman search alias
 alias pacs='pacsearch'
+alias pacfiles='pacman -F'  # search which pkg contains a specific file
 
 # search all currently installed pacman pkgs
 alias pacsi='pacman -Qq | fzf --preview "'"pacman -Qil {}"'" --layout=reverse --bind "'"enter:execute(pacman -Qil {} | less)"'"'
@@ -205,6 +206,9 @@ alias p7btocer='openssl pkcs7 -inform DER -outform PEM -print_certs > certificat
 
 # build pipeline, docker
 alias docker-compose='docker compose'
+# stop all running docker containers
+alias dockerstop='docker ps -aq | xargs docker stop'
+alias dockerstoprm='docker ps -aq | xargs docker stop | xargs docker rm'
 
 # gpg related
 alias gpt='gpg-tui -a -s colored'

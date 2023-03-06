@@ -1,1 +1,2 @@
-{:git/disable-auto-commit? false, :git/auto-commit-seconds 180}
+{:git/disable-auto-commit? false, :git/auto-commit-seconds 180, :property-pages/enabled? false}
+
