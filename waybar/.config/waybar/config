@@ -20,7 +20,7 @@
 			"temperature",
 			"backlight",
 			"battery",
-			"custom/calendarweek",
+			"custom/calendar_week",
 			"clock#berlin",
 			"clock#tokyo",
 			"clock#utc",
@@ -181,9 +181,9 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
     },
-    "custom/calendarweek": {
-        "format": "CW {}",
-        "exec": "date +%V",
+    "custom/calendar_week": {
+        "format": "🗓️ CW {}",
+        "exec": "date '+%V'",
         "interval": 3600
     }
 
