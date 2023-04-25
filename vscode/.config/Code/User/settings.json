@@ -144,7 +144,6 @@
     "git.confirmSync": false,
     "githubPullRequests.pullBranch": "never",
     "workbench.colorTheme": "Default Dark+ Experimental",
-    "window.zoomLevel": 1,
     "[jsonc]": {
         "editor.defaultFormatter": "j-brooke.fracturedjsonvsc"
     },
@@ -154,5 +153,13 @@
         "editor.wordBasedSuggestions": false
     },
     "jupyter.interactiveWindow.creationMode": "perFile",
-    "jupyter.interactiveWindow.textEditor.executeSelection": true
+    "jupyter.interactiveWindow.textEditor.executeSelection": true,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "window.zoomLevel": 1,
+    "explorer.confirmDelete": false
 }

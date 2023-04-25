@@ -135,7 +135,7 @@ alias sway='sway --verbose 2> ~/sway.log'
 
 # start programs in wayland mode
 alias chromei="chromium-snapshot-bin --enable-features=UseOzonePlatform --enable-gpu --ozone-platform=wayland"
-alias signal='signal-desktop --ozone-platform=wayland --enable-features=UseOzonePlatform,WebRTCPipeWireCapturer'
+alias signal='signal-desktop --ozone-platform=wayland --enable-features=UseOzonePlatform,WebRTCPipeWireCapturer --disable-gpu'
 alias infrax11='GDK_BACKEND=x11 infra'
 alias infra='infra --ozone-platform=wayland --enable-features=UseOzonePlatform,WebRTCPipeWireCapturer '
 alias lseq='logseq --enable-features=UseOzonePlatform --ozone-platform=wayland'
@@ -388,11 +388,16 @@ alias icat='chafa -f sixels'
 alias svenv='source .venv/bin/activate'
 alias mkvenvs='python -m venv .venv --system-site-packages'
 alias mkvenv='python -m venv .venv'
+alias pptlf='poetry run -- pytest -vv --last-failed'
+alias ppt='poetry run -- pytest -vv'
 
 # kubernetes k8s stuff
 alias kctl='kubectl'
 alias kpipesh='kubectl get pods --no-headers -o custom-columns=":metadata.name" | fzf | xargs -I{ppln} kubectl exec --stdin --tty {ppln} -- /bin/bash'
 alias klistcont='kubectl get pods --all-namespaces -o jsonpath='\''{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.containers[*]}{.image}{", "}{end}{end}'\'' | sort'
+
+# date conversions
+alias epoch2date='date -d'
 
 # pass and gopass fzf
 gop(){

@@ -142,6 +142,7 @@ fzfx
 # wayland aur
 wdisplays
 wl-mirror  # allows screen/section mirroring on sway
+wshowkeys-git  # show which key codes are pressed
 
 # fonts aur
 ttf-ms-win11-auto  # and then install japanese and normal
@@ -203,6 +204,7 @@ docker-compose
 pnpm
 python-poetry
 python-pip
+terraform
 
 # apps opt
 libreoffice-fresh
@@ -277,7 +279,7 @@ google-cloud-sdk
 
 # apps opt aur
 spotify
-sioyek-git
+sioyek-git  # pdf annotator for academics
 theme.sh
 paru-git
 google-chrome
