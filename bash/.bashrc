@@ -472,3 +472,8 @@ fi
 
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# by pynecone
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH

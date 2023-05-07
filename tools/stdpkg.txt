@@ -175,6 +175,7 @@ hugo
 zola
 difftastic  # syntax respecting diff viewer
 lapce  # alternative GUI text editor written in rust
+pylyzer  # static code analyzer for python
 
 # old?
 ruby # todotxt pom
@@ -272,6 +273,7 @@ fnott
 # opt dev aur
 mkdocs
 visual-studio-code-insiders-bin
+python-pynecone  # webapp builder in python
 
 # opt webdev aur
 firebase-tools
