@@ -391,6 +391,9 @@ alias mkvenv='python -m venv .venv'
 alias pptlf='poetry run -- pytest -vv --last-failed'
 alias ppt='poetry run -- pytest -vv'
 
+# make poetry not request keyring access
+export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
+
 # kubernetes k8s stuff
 alias kctl='kubectl'
 alias kpipesh='kubectl get pods --no-headers -o custom-columns=":metadata.name" | fzf | xargs -I{ppln} kubectl exec --stdin --tty {ppln} -- /bin/bash'
