@@ -87,7 +87,37 @@
     //    "--synctex-forward=%LINE%:0:%TEX%",
     //    "%PDF%"
     //],
+
+    // TELEMETRY SETTINGS OF APPS START
     "telemetry.telemetryLevel": "off",
+	"clangd.checkUpdates": false,
+	"code-runner.enableAppInsights": false,
+	"docker-explorer.enableTelemetry": false,
+	"extensions.ignoreRecommendations": true,
+	"gitlens.showWelcomeOnInstall": false,
+	"gitlens.showWhatsNewAfterUpgrades": false,
+	"java.help.firstView": "none",
+	"java.help.showReleaseNotes": false,
+	"julia.enableTelemetry": false,
+	"kite.showWelcomeNotificationOnStartup": false,
+	"liveServer.settings.donotShowInfoMsg": true,
+	"Lua.telemetry.enable": false,
+	"material-icon-theme.showWelcomeMessage": false,
+	"pros.showWelcomeOnStartup": false,
+	"pros.useGoogleAnalytics": false,
+	"redhat.telemetry.enabled": false,
+	"rpcServer.showStartupMessage": false,
+	"shellcheck.disableVersionCheck": true,
+	"sonarlint.disableTelemetry": true,
+	"telemetry.enableCrashReporter": false,
+	"telemetry.enableTelemetry": false,
+	"terraform.telemetry.enabled": false,
+	"update.showReleaseNotes": false,
+	"vsicons.dontShowNewVersionMessage": true,
+	"workbench.welcomePage.walkthroughs.openOnInstall": false,
+    "pylyzer.diagnostics": false,
+    // TELEMETRY SETTINGS OF APPS END
+
     "spellright.language": [
         "en_GB"
     ],
@@ -135,7 +165,6 @@
         "editor.defaultFormatter": "j-brooke.fracturedjsonvsc"
     },
     "gitlens.keymap": "none",
-    "redhat.telemetry.enabled": false,
     "workbench.activityBar.visible": false,
     "git.autofetch": true,
     "markdown.experimental.editor.pasteLinks.enabled": true,
@@ -160,7 +189,5 @@
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "window.zoomLevel": 1,
     "explorer.confirmDelete": false,
-    "pylyzer.diagnostics": false
 }
