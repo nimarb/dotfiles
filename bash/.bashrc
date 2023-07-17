@@ -140,6 +140,7 @@ alias infrax11='GDK_BACKEND=x11 infra'
 alias infra='infra --ozone-platform=wayland --enable-features=UseOzonePlatform,WebRTCPipeWireCapturer '
 alias lseq='logseq --enable-features=UseOzonePlatform --ozone-platform=wayland'
 alias slack='slack --ozone-platform=wayland --enable-features=UseOzonePlatform,WebRTCPipeWireCapturer'
+alias obsmd='obsidian --ozone-platform-hint=auto'
 
 # env vars to support Fcitx5 IME in wayland/sway
 # see also: https://github.com/swaywm/sway/pull/5890
@@ -209,6 +210,7 @@ alias docker-compose='docker compose'
 # stop all running docker containers
 alias dockerstop='docker ps -aq | xargs docker stop'
 alias dockerstoprm='docker ps -aq | xargs docker stop | xargs docker rm'
+alias dops='docker ps --format '\''table {{.Names}}\t{{.Status}}\t{{.Image}}\t{{.Ports}}'\'''
 
 # gpg related
 alias gpt='gpg-tui -a -s colored'
@@ -388,8 +390,10 @@ alias icat='chafa -f sixels'
 alias svenv='source .venv/bin/activate'
 alias mkvenvs='python -m venv .venv --system-site-packages'
 alias mkvenv='python -m venv .venv'
-alias pptlf='poetry run -- pytest -vv --last-failed'
 alias ppt='poetry run -- pytest -vv'
+alias pptlf='poetry run -- pytest -vv --last-failed'
+alias ppted='poetry run -- pytest -vv --picked'
+alias pptx='poetry run -- pytest -n 8 --dist worksteal --ff-inverse -vv'
 
 # make poetry not request keyring access
 export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring

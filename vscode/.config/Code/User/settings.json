@@ -172,7 +172,6 @@
     "gitdoc.pushMode": "push",
     "git.confirmSync": false,
     "githubPullRequests.pullBranch": "never",
-    "workbench.colorTheme": "Default Dark+ Experimental",
     "[jsonc]": {
         "editor.defaultFormatter": "j-brooke.fracturedjsonvsc"
     },
@@ -190,4 +189,5 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "explorer.confirmDelete": false,
+    "window.zoomLevel": 1
 }
