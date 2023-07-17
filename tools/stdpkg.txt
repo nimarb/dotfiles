@@ -63,6 +63,7 @@ brightnessctl
 networkmanager-openconnect
 gnome-keyring
 intel-undervolt
+progress  # see progress of cp, dd, etc
 
 # wayland
 network-manager-applet
@@ -100,6 +101,7 @@ pipewire-pulse
 wireplumber
 wireplumber-docs
 gst-plugin-pipewire
+gstreamer-vaapi  # hardware accelerated
 
 # opt sound i guess
 pavucontrol
@@ -130,6 +132,7 @@ libva-mesa-driver  # for VA-API
 mesa-vdpau  # for VDPAU
 libva-utils  # tools for VA-API verification, e.g. `vainfo`
 vdpauinfo  # tools for VDPAU verification, e.g. `vdpauinfo`
+radeontop  # see utilisation of gpu
 
 ##### essentials aur #####
 
@@ -166,7 +169,7 @@ tlp  # battery tools
 mypy
 python-mypy_extensions  # for now not installed
 gitg
-gitui
+gitui  # rust fuzzy git client
 python-pre-commit
 lnav  # ncurses log viewer
 bat  # replacement for cat with syntax highlighting, deps of fzfx
@@ -176,6 +179,7 @@ zola
 difftastic  # syntax respecting diff viewer
 lapce  # alternative GUI text editor written in rust
 pylyzer  # static code analyzer for python
+ctop  # top for (docker) containers
 
 # old?
 ruby # todotxt pom
