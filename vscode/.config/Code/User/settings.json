@@ -189,5 +189,7 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "explorer.confirmDelete": false,
+    "terminal.integrated.experimentalImageSupport": true,
+    "ruff.run": "onSave",
     "window.zoomLevel": 1
 }

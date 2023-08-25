@@ -127,7 +127,7 @@
     },
     "temperature": {
         // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "hwmon-path": "/sys/class/hwmon/hwmon6/temp1_input",  // Tcl1 sensor
         "critical-threshold": 93,
         // "format-critical": "{temperatureC}°C ",
         "format": "{temperatureC}°C "

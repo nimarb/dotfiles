@@ -98,6 +98,7 @@ swappy
 pipewire
 pipewire-alsa
 pipewire-pulse
+pipewire-v4l2
 wireplumber
 wireplumber-docs
 gst-plugin-pipewire
@@ -208,6 +209,7 @@ docker
 docker-compose
 pnpm
 python-poetry
+python-poetry-plugin-up
 python-pip
 terraform
 
@@ -264,6 +266,7 @@ libsixel
 chafa  # faster sixel image display tool
 bluez  # bluetooth
 bluez-utils
+ncspot  # ncurses spotify client
 
 # opt iphone connect apps
 libimobiledevice
@@ -278,6 +281,7 @@ fnott
 mkdocs
 visual-studio-code-insiders-bin
 python-pynecone  # webapp builder in python
+jujutsu  # next-gen git compatible VCS, jj
 
 # opt webdev aur
 firebase-tools
