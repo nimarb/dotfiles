@@ -10,11 +10,13 @@
             "after": ["<Esc>"]
         }
     ],
+    "vim.handleKeys": {
+        "<C-p>": false
+    },
     "C_Cpp.intelliSenseEngine": "Default",
     "C_Cpp.loggingLevel": "Information",
     "editor.fontFamily": "'Noto Mono', 'Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback'",
     "editor.minimap.enabled": false,
-    "python.linting.flake8Enabled": false,
     "gitlens.advanced.messages": {
         "suppressCommitHasNoPreviousCommitWarning": false,
         "suppressCommitNotFoundWarning": false,
@@ -164,6 +166,9 @@
     "[json]": {
         "editor.defaultFormatter": "j-brooke.fracturedjsonvsc"
     },
+    "[jsonc]": {
+        "editor.defaultFormatter": "j-brooke.fracturedjsonvsc"
+    },
     "gitlens.keymap": "none",
     "workbench.activityBar.visible": false,
     "git.autofetch": true,
@@ -172,13 +177,12 @@
     "gitdoc.pushMode": "push",
     "git.confirmSync": false,
     "githubPullRequests.pullBranch": "never",
-    "[jsonc]": {
-        "editor.defaultFormatter": "j-brooke.fracturedjsonvsc"
-    },
     "editor.inlineSuggest.enabled": true,
     "[python]": {
         "diffEditor.ignoreTrimWhitespace": false,
-        "editor.wordBasedSuggestions": false
+        "editor.wordBasedSuggestions": false,
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "charliermarsh.ruff"
     },
     "jupyter.interactiveWindow.creationMode": "perFile",
     "jupyter.interactiveWindow.textEditor.executeSelection": true,
@@ -190,6 +194,6 @@
     },
     "explorer.confirmDelete": false,
     "terminal.integrated.experimentalImageSupport": true,
-    "ruff.run": "onSave",
-    "window.zoomLevel": 1
+    "ruff.lint.run": "onSave",
+    "xml.symbols.maxItemsComputed": 5000000,
 }
