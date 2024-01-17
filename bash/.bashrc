@@ -316,7 +316,7 @@ rga-fzf() {
 	    xdg-open "$file"
 }
 alias rgaf='rga-fzf'
-alias fx='fzfx .'
+alias fzx='fzfx .'
 alias fcd='cd "$(fzfx cd)"'
 # Bind ALT-C to fcd to cd into dirs using fzfx
 # TODO: doesn't work because cannot cd on enter

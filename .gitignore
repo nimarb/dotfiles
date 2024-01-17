@@ -13,3 +13,6 @@ vscode/.config/Code/Code Cache*
 vscode/.config/Code/User/globalStorage*
 vscode/.config/Code/User/workspaceStorage*
 vscode/.config/Code/User/History*
+
+# ignore xonotic maps
+xonotic/.xonotic/data/dlcache

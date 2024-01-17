@@ -121,6 +121,7 @@ nextcloud-client
 keepassxc
 foliate
 ripgrep-all  # also search eg pdfs, docs, zip files with rg
+fx  # terminal json viewer
 
 # fonts
 noto-fonts
@@ -147,6 +148,7 @@ fzfx
 wdisplays
 wl-mirror  # allows screen/section mirroring on sway
 wshowkeys-git  # show which key codes are pressed
+wl-screenrec  # fast screen recorder
 
 # fonts aur
 ttf-ms-win11-auto  # and then install japanese and normal
@@ -165,6 +167,7 @@ intel-hybrid-codec-driver
 
 # opt base
 tlp  # battery tools
+tpacpi-bat  # battery tools
 
 # opt dev
 mypy

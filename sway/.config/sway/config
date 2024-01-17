@@ -47,7 +47,7 @@ set $lock_bg ~/pictures/lock_bg.jpg
 # scale the internal moniotor of t14sg3 to approx 172dpi
 # render bit depth is 8 because screen sharing through pipewire doesn't work with 10
 # https://github.com/emersion/xdg-desktop-portal-wlr/wiki/%22It-doesn't-work%22-Troubleshooting-Checklist
-output "SDC 0x417A Unknown" {
+output "Samsung Display Corp. 0x417A Unknown" {
     mode 2880x1800@90Hz
     scale 1.4
     render_bit_depth 8
@@ -308,6 +308,7 @@ bindsym $mod+r mode "resize"
 # Music Player controls
 #
     bindsym XF86AudioPlay exec playerctl play-pause
+    bindsym $mod+Control_R exec playerctl play-pause
     bindsym XF86AudioNext exec playerctl next
     bindsym XF86AudioPrev exec playerctl previous
 
@@ -317,8 +318,8 @@ bindsym $mod+r mode "resize"
 # Brightness controls
 #
 
-    bindsym XF86MonBrightnessUp exec brightnessctl set +10%
-    bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+    bindsym --locked XF86MonBrightnessUp exec brightnessctl set +10%
+    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 10%-
 
 #
 # Status Bar:
