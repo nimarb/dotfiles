@@ -170,7 +170,6 @@
         "editor.defaultFormatter": "j-brooke.fracturedjsonvsc"
     },
     "gitlens.keymap": "none",
-    "workbench.activityBar.visible": false,
     "git.autofetch": true,
     "markdown.experimental.editor.pasteLinks.enabled": true,
     "editor.experimental.pasteActions.enabled": true,
