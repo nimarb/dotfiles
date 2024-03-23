@@ -53,6 +53,12 @@ output "Samsung Display Corp. 0x417A Unknown" {
     render_bit_depth 8
 }
 
+# t480s
+output "LG Display 0x058B Unknown" {
+    mode 2560x1440@60Hz
+    scale 1.25
+}
+
 # output eDP-1 {
 #     scale 1.25
 #     scale_filter linear
