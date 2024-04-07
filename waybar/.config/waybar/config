@@ -100,13 +100,13 @@
 	"timezone": "Europe/Berlin"
     },
     "clock#tokyo": {
-        "format": "{:jp: %H:%M}",
-        "tooltip-format": "{:%Y-%m-%d | %H:%M}",
+        "format": "JP {:%H:%M}",
+        "tooltip-format": "JP {:%Y-%m-%d | %H:%M}",
 	"timezone": "Asia/Tokyo"
     },
     "clock#utc": {
-	"format": "{:utc: %H:%M}",
-        "tooltip-format": "{:%Y-%m-%d | %H:%M}",
+	"format": "UTC {:%H:%M}",
+        "tooltip-format": "UTC {:%Y-%m-%d | %H:%M}",
 	"timezone": "Etc/UTC"
     },
     "cpu": {
