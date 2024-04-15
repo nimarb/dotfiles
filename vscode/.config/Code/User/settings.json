@@ -179,7 +179,7 @@
     "editor.inlineSuggest.enabled": true,
     "[python]": {
         "diffEditor.ignoreTrimWhitespace": false,
-        "editor.wordBasedSuggestions": false,
+        "editor.wordBasedSuggestions": "off",
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "charliermarsh.ruff"
     },
@@ -194,5 +194,9 @@
     "explorer.confirmDelete": false,
     "terminal.integrated.experimentalImageSupport": true,
     "ruff.lint.run": "onSave",
+    "window.zoomLevel": 1,
     "xml.symbols.maxItemsComputed": 5000000,
+    "hediet.vscode-drawio.resizeImages": null,
+    "workbench.activityBar.location": "hidden",
+    "notebook.output.scrolling": true
 }
