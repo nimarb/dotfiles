@@ -31,6 +31,7 @@ cpupower
 # dev
 vim
 git
+git-lfs
 tig
 fzf
 jq
@@ -135,6 +136,7 @@ mesa-vdpau  # for VDPAU
 libva-utils  # tools for VA-API verification, e.g. `vainfo`
 vdpauinfo  # tools for VDPAU verification, e.g. `vdpauinfo`
 radeontop  # see utilisation of gpu
+nvtop  # GPU utilisation of many vendors
 
 ##### essentials aur #####
 
@@ -215,6 +217,7 @@ python-poetry
 python-poetry-plugin-up
 python-pip
 terraform
+biome  # typescript formatter
 
 # apps opt
 libreoffice-fresh
@@ -237,6 +240,7 @@ glow  # markdown renderer for CLI
 jless  # less for json files to view them efficiently, like jq
 visidata
 calibre
+mtr  # traceroute and ping combined
 
 # apps opt really opt
 aerc
@@ -292,7 +296,7 @@ google-cloud-sdk
 
 # apps opt aur
 spotify
-sioyek-git  # pdf annotator for academics
+sioyek  # pdf annotator for academics
 theme.sh
 paru-git
 google-chrome
@@ -304,6 +308,7 @@ subfinder  # enumerate subdomains
 psst-git  # rust based spotify client
 losslesscut-bin  # lossless video / audio trimmer
 logseq-desktop-bin  # note/outliner tool
+gping  # ping with a graph
 
 # apps opt aur old
 glimpse-editor

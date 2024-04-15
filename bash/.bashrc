@@ -97,6 +97,7 @@ alias pwrtp='sudo powertop'
 # make ls output readable for humans
 alias lsl='ls -lh'
 alias lst='ls -lht'
+alias perms="stat -c '%a - %n'"
 
 # creating an awk calculator invoked by clc ARGS
 clc () { awk "BEGIN{ pi = 4.0*atan2(1.0,1.0); deg = pi/180.0; print $* }" ;}
