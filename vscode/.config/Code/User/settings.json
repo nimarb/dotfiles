@@ -186,10 +186,16 @@
     "jupyter.interactiveWindow.creationMode": "perFile",
     "jupyter.interactiveWindow.textEditor.executeSelection": true,
     "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "biomejs.biome" 
     },
     "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "biomejs.biome" 
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "biomejs.biome" 
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "biomejs.biome" 
     },
     "explorer.confirmDelete": false,
     "terminal.integrated.experimentalImageSupport": true,
@@ -198,5 +204,13 @@
     "xml.symbols.maxItemsComputed": 5000000,
     "hediet.vscode-drawio.resizeImages": null,
     "workbench.activityBar.location": "hidden",
-    "notebook.output.scrolling": true
+    "notebook.output.scrolling": true,
+    "editor.codeActionsOnSave": {
+        "quickfix.biome": "explicit",
+        "source.organizeImports": "explicit"
+    },
+    // auto complete for shadcn
+    "tailwindCSS.experimental.classRegex": [
+      ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ]
 }
