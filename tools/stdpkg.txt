@@ -215,6 +215,7 @@ docker-compose
 pnpm
 python-poetry
 python-poetry-plugin-up
+uv
 python-pip
 terraform
 biome  # typescript formatter
