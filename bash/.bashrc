@@ -181,6 +181,7 @@ alias gitl='git log --all --decorate --oneline --graph'
 alias gitf='git fetch --all -p'
 alias gitdiff='GIT_EXTERNAL_DIFF=difft git log -p --ext-diff'
 alias gbcp='git branch --show-current | wl-copy'
+alias gsm='git switch main'
 
 # function which deletes already merged git branches locally
 clean_git_branches() {
