@@ -230,6 +230,7 @@ qpwgraph  # an audio graph construction tool
 asciinema
 btop  # fancy htop in CLI
 bottom  # fancy htop in CLI, cmd is btm
+zenith  # rust system monitor, zoomable graphs
 rebuild-detector
 age  # alternative crypto lib to gpg
 handlr  # xdg-open replacement to open files with correct app
@@ -290,6 +291,7 @@ mkdocs
 visual-studio-code-insiders-bin
 python-pynecone  # webapp builder in python
 jujutsu  # next-gen git compatible VCS, jj
+zed-editor  # next gen editor, like lapce but more polished?
 
 # opt webdev aur
 firebase-tools

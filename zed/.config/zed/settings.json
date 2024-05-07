@@ -1,0 +1,39 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "vim_mode": true,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "auto_update": false,
+  "formatter": {
+    "external": {
+      "command": "biome",
+      "arguments": ["format", "--write", "--stdin-file-path={buffer_path}"]
+    }
+  },
+  // prefer biome over eslint: https://github.com/zed-industries/zed/pull/10911 , https://github.com/biomejs/biome-zed/issues/5
+  "languages": {
+    "TSX": {
+      "language_servers": ["biome", "typescript-language-server", "!eslint"]
+    },
+    "JSX": {
+      "language_servers": ["biome", "typescript-language-server", "!eslint"]
+    },
+    "TypeScript": {
+      "language_servers": ["biome", "typescript-language-server", "!eslint"]
+    },
+    "JavaScript": {
+      "language_servers": ["biome", "typescript-language-server", "!eslint"]
+    }
+  }
+}

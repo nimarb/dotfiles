@@ -1,0 +1,9 @@
+[
+  {
+    "context": "Editor && vim_mode == insert && !menu",
+    "bindings": {
+      // put key-bindings here if you want them to work in insert mode
+      "j j": "vim::NormalBefore" // remap jj in insert mode to escape.
+    }
+  }
+]
