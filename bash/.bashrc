@@ -214,6 +214,7 @@ alias docker-compose='docker compose'
 alias dockerstop='docker ps -aq | xargs docker stop'
 alias dockerstoprm='docker ps -aq | xargs docker stop | xargs docker rm'
 alias dops='docker ps --format '\''table {{.Names}}\t{{.Status}}\t{{.Image}}\t{{.Ports}}'\'''
+alias dokillvol='docker volume rm $(docker volume ls -q)'
 
 # gpg related
 alias gpt='gpg-tui -a -s colored'

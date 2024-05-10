@@ -1,9 +1,12 @@
 [
   {
-    "context": "Editor && vim_mode == insert && !menu",
+    "context": "Editor && vim_mode == insert",
     "bindings": {
       // put key-bindings here if you want them to work in insert mode
       "j j": "vim::NormalBefore" // remap jj in insert mode to escape.
+      // alternatives
+      // "j j": ["vim::SwitchMode", "Normal"]  // also from docs
+      // "j j": ["workspace::SendKeystrokes", "escape"]  // also closes any menus, source discord
     }
   }
 ]
