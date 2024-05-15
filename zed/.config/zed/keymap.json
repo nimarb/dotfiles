@@ -9,4 +9,13 @@
       // "j j": ["workspace::SendKeystrokes", "escape"]  // also closes any menus, source discord
     }
   }
+  //{
+  //  // use tab to cycle through completion suggestions
+  //  "context": "Editor && showing_completions",
+  //  "bindings": {
+  //    "enter": "editor::ConfirmCompletion",
+  //    "shift-tab": "editor::ContextMenuPrev",
+  //    "tab": "editor::ContextMenuNext"
+  //  }
+  //}
 ]

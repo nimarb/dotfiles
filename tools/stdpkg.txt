@@ -183,9 +183,10 @@ tmux
 hugo
 zola
 difftastic  # syntax respecting diff viewer
-lapce  # alternative GUI text editor written in rust
+lapce  # alternative GUI text editor written in rust, Zed like
 pylyzer  # static code analyzer for python
 ctop  # top for (docker) containers
+httpie  # api client w good usability
 
 # old?
 ruby # todotxt pom
