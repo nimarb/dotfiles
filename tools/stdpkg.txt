@@ -176,10 +176,12 @@ mypy
 python-mypy_extensions  # for now not installed
 gitg
 gitui  # rust fuzzy git client
+lazygit  # alt git client
 python-pre-commit
 lnav  # ncurses log viewer
 bat  # replacement for cat with syntax highlighting, deps of fzfx
 tmux
+zellij  # tmux / screen replacement
 hugo
 zola
 difftastic  # syntax respecting diff viewer

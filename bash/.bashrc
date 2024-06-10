@@ -61,9 +61,6 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-# alias from mpd if it is installed as user
-alias mpd='mpd ~/.mpd.conf'
-
 # alias to always use more safe rm/mv (asks when deleting more than 3 things)
 alias rm='rm -I'
 alias mv='mv -i'
@@ -182,6 +179,7 @@ alias gitf='git fetch --all -p'
 alias gitdiff='GIT_EXTERNAL_DIFF=difft git log -p --ext-diff'
 alias gbcp='git branch --show-current | wl-copy'
 alias gsm='git switch main'
+alias lgit='lazygit'
 
 # function which deletes already merged git branches locally
 clean_git_branches() {
@@ -219,6 +217,8 @@ alias dokillvol='docker volume rm $(docker volume ls -q)'
 # gpg related
 alias gpt='gpg-tui -a -s colored'
 
+# zellij instead of tmux/screen
+alias zj='zellij'
 
 # simple youtube play. Since yt 4k you need to stream vid and audio seperately
 yplay() {
@@ -395,6 +395,7 @@ alias svenv='source .venv/bin/activate'
 alias mkvenvs='python -m venv .venv --system-site-packages'
 alias mkvenv='python -m venv .venv'
 alias mkuenv='uv venv .venv'
+alias mkuenvs='uv venv .venv --system-site-packages'
 alias ppt='poetry run -- pytest -vv'
 alias pptlf='poetry run -- pytest -vv --last-failed'
 alias ppted='poetry run -- pytest -vv --picked'

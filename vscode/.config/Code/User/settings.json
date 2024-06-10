@@ -212,5 +212,7 @@
     // auto complete for shadcn
     "tailwindCSS.experimental.classRegex": [
       ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
-    ]
+    ],
+    "github.copilot.editor.enableAutoCompletions": true,
+    "workbench.preferredLightColorTheme": "Default Dark Modern"
 }
