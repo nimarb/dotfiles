@@ -246,6 +246,7 @@ jless  # less for json files to view them efficiently, like jq
 visidata
 calibre
 mtr  # traceroute and ping combined
+dust  # alternative to ncdu / du
 
 # apps opt really opt
 aerc
