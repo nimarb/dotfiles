@@ -484,7 +484,10 @@ if [ -f "$HOME/.local/share/scripts/aliases.bash" ]; then
 fi
 
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# old way of getting FZF bindings:
+# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --bash)"
 
 # by pynecone
 # bun
