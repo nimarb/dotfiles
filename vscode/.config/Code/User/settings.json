@@ -185,17 +185,9 @@
     },
     "jupyter.interactiveWindow.creationMode": "perFile",
     "jupyter.interactiveWindow.textEditor.executeSelection": true,
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "biomejs.biome" 
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "biomejs.biome" 
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "biomejs.biome" 
-    },
-    "[javascriptreact]": {
-        "editor.defaultFormatter": "biomejs.biome" 
+    "[typescriptreact][typescript][javascript][javascriptreact]": {
+        "editor.defaultFormatter": "biomejs.biome",
+        "editor.formatOnSave": true,
     },
     "explorer.confirmDelete": false,
     "terminal.integrated.experimentalImageSupport": true,
@@ -205,6 +197,8 @@
     "hediet.vscode-drawio.resizeImages": null,
     "workbench.activityBar.location": "hidden",
     "notebook.output.scrolling": true,
+    // never show commit and & sync in git
+    "git.postCommitCommand": "none",
     "editor.codeActionsOnSave": {
         "quickfix.biome": "explicit",
         "source.organizeImports": "explicit"
