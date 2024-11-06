@@ -129,7 +129,7 @@ export MOZ_DBUS_REMOTE=1
 export MOZ_ENABLE_WAYLAND=1
 
 # alias sway so that it will log
-alias sway='sway --verbose 2> ~/sway.log'
+alias sway='WLR_RENDERER=vulkan sway --verbose 2> ~/sway.log'
 
 # start programs in wayland mode
 alias chromei="chromium-snapshot-bin --enable-features=UseOzonePlatform --enable-gpu --ozone-platform=wayland"

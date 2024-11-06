@@ -189,6 +189,7 @@ lapce  # alternative GUI text editor written in rust, Zed like
 pylyzer  # static code analyzer for python
 ctop  # top for (docker) containers
 httpie  # api client w good usability
+dblab  # CLI db client
 
 # old?
 ruby # todotxt pom
@@ -233,7 +234,7 @@ qpwgraph  # an audio graph construction tool
 asciinema
 btop  # fancy htop in CLI
 bottom  # fancy htop in CLI, cmd is btm
-zenith  # rust system monitor, zoomable graphs
+zenith  # rust system monitor, zoomable graphs, htop like
 rebuild-detector
 age  # alternative crypto lib to gpg
 handlr  # xdg-open replacement to open files with correct app
