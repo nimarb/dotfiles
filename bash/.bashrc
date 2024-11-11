@@ -174,6 +174,7 @@ alias guncommit='git reset --soft HEAD~'
 # pulls the remote branch with the same name as the local branch
 alias gpl='git pull origin $(git rev-parse --abbrev-ref HEAD)'
 alias gps="git push origin HEAD"
+alias gpsall='for i in `git remote`; do echo "Pushing to:" $i; git push $i; done;'
 alias gitl='git log --all --decorate --oneline --graph'
 alias gitf='git fetch --all -p'
 alias gitdiff='GIT_EXTERNAL_DIFF=difft git log -p --ext-diff'
