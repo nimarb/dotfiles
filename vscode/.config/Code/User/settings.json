@@ -208,5 +208,8 @@
       ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
     ],
     "github.copilot.editor.enableAutoCompletions": true,
-    "workbench.preferredLightColorTheme": "Default Dark Modern"
+    "workbench.preferredLightColorTheme": "Default Dark Modern",
+    "files.associations": {
+        "*.prompt": "yaml"
+    }
 }

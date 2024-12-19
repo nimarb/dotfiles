@@ -86,6 +86,7 @@ qt6-wayland
 # sway
 sway
 slurp
+wf-recorder
 grim
 swayidle
 swaylock
@@ -185,7 +186,7 @@ zellij  # tmux / screen replacement
 hugo
 zola
 difftastic  # syntax respecting diff viewer
-lapce  # alternative GUI text editor written in rust, Zed like
+# lapce  # alternative GUI text editor written in rust, Zed like
 pylyzer  # static code analyzer for python
 ctop  # top for (docker) containers
 httpie  # api client w good usability

@@ -134,6 +134,8 @@ input "1739:52839:SYNA8018:00_06CB:CE67_Touchpad" {
     bindsym Print exec grim - - | wl-copy && wl-paste > ~/screenshots/$(date +'%Y-%m-%d-%H%M%S_grim_fullscreen.png')
     # open a selector and copy the hex colour code at the clicked location
     bindsym $mod+c exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy
+    # NOTE: wf-recorder doesn't work?
+    bindsym $mod+Shift+n exec wf-recorder -g "$(slurp)" -c hevc_vaapi -d /dev/dri/renderD128 -f ~/screen-recordings/$(date +'%Y-%m-%d-%H%M%S_wfrecorder.mp4')
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.

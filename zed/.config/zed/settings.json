@@ -7,39 +7,58 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "theme": "Solarized Dark",
-  "vim_mode": true,
-  "telemetry": {
-    "diagnostics": true,
-    "metrics": false
-  },
-  "ui_font_size": 16,
-  "buffer_font_size": 16,
-  "auto_update": false,
-  "formatter": {
-    "external": {
-      "command": "biome",
-      "arguments": ["format", "--write", "--stdin-file-path={buffer_path}"]
-    }
-  },
-  "journal": {
-    "hour_format": "hour24",
-    "path": "~/personal/notes/zed"
-  },
-  "preferred_line_length": 88,
-  // prefer biome over eslint: https://github.com/zed-industries/zed/pull/10911 , https://github.com/biomejs/biome-zed/issues/5
-  "languages": {
-    "TSX": {
-      "language_servers": ["biome", "typescript-language-server", "!eslint"]
-    },
-    "JSX": {
-      "language_servers": ["biome", "typescript-language-server", "!eslint"]
-    },
-    "TypeScript": {
-      "language_servers": ["biome", "typescript-language-server", "!eslint"]
-    },
-    "JavaScript": {
-      "language_servers": ["biome", "typescript-language-server", "!eslint"]
-    }
-  }
+	"theme": "Solarized Dark",
+	"vim_mode": true,
+	"telemetry": {
+		"diagnostics": true,
+		"metrics": false
+	},
+	"ui_font_size": 16,
+	"buffer_font_size": 16,
+	"auto_update": false,
+	"formatter": {
+		"language_server": {
+			"name": "biome"
+		}
+	},
+	"code_actions_on_format": {
+		"source.fixAll.biome": true,
+		"source.organizeImports.biome": true
+	},
+	"journal": {
+		"hour_format": "hour24",
+		"path": "~/personal/notes/zed"
+	},
+	"preferred_line_length": 88,
+	// prefer biome over eslint: https://github.com/zed-industries/zed/pull/10911 , https://github.com/biomejs/biome-zed/issues/5
+	"languages": {
+		"TSX": {
+			"language_servers": ["biome", "typescript-language-server", "!eslint"]
+		},
+		"JSX": {
+			"language_servers": ["biome", "typescript-language-server", "!eslint"]
+		},
+		"TypeScript": {
+			"language_servers": ["biome", "typescript-language-server", "!eslint"]
+		},
+		"JavaScript": {
+			"language_servers": ["biome", "typescript-language-server", "!eslint"]
+		}
+	},
+	"assistant": {
+		"default_model": {
+			"provider": "anthropic",
+			"model": "claude-3-5-sonnet-latest"
+		},
+		"version": "2"
+	},
+	"lsp": {
+		"pyright": {
+			"settings": {
+				"python": {
+					"pythonPath": ".venv/bin/python"
+				}
+			}
+		}
+	}
 }
