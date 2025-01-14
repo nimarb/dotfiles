@@ -1,0 +1,15 @@
+# global git ignore file
+
+# ignore mac stuff
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
+
+# vscode stuff
+.vscode
+.idea
+
+# windows stuff
+Thumbs.db
+
