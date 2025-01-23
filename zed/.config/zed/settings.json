@@ -30,6 +30,7 @@
 		"path": "~/personal/notes/zed"
 	},
 	"preferred_line_length": 88,
+	"wrap_guides": [80, 88, 120],
 	// prefer biome over eslint: https://github.com/zed-industries/zed/pull/10911 , https://github.com/biomejs/biome-zed/issues/5
 	"languages": {
 		"TSX": {
@@ -53,12 +54,47 @@
 		"version": "2"
 	},
 	"lsp": {
-		"pyright": {
-			"settings": {
-				"python": {
-					"pythonPath": ".venv/bin/python"
+		//		"pyright": {
+		//			"settings": {
+		//				"python": {
+		//					"pythonPath": ".venv/bin/python"
+		//				}
+		//			}
+		//		}
+		"ruff": {
+			"initialization_options": {
+				"settings": {
+					"targetVersion": "py313",
+					"lineLength": 88,
+					"showSyntaxErrors": true,
+					"lint": {
+						"select": ["ALL"],
+						"ignore": [
+							"D",
+							"S101",
+							"E501",
+							"ERA001" // ignore commented out code
+						]
+					}
 				}
 			}
+		},
+		"Python": {
+			"language_servers": ["ruff", "pyright"],
+			"formatOnSave": true,
+			"formatter": [
+				{
+					"code_actions": {
+						"source.organizeImports.ruff": true,
+						"source.fixAll.ruff": true
+					}
+				},
+				{
+					"language_server": {
+						"name": "ruff"
+					}
+				}
+			]
 		}
 	}
 }

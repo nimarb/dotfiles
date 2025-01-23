@@ -14,6 +14,8 @@ alt-enter = 'exec-and-forget open -n /Applications/Ghostty.app'
 #end tell'
 #'''
 
+alt-o = 'exec-and-forget pmset displaysleepnow'
+
 alt-h = 'focus left'
 alt-j = 'focus down'
 alt-k = 'focus up'
@@ -54,6 +56,9 @@ alt-7 = 'workspace 7'
 alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
 alt-0 = 'workspace 10'
+
+ctrl-left = "workspace prev"
+ctrl-right = "workspace next"
 
 alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
