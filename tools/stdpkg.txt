@@ -79,6 +79,8 @@ xdg-desktop-portal-wlr
 kanshi
 foot
 foot-terminfo
+ghostty
+ghostty-terminfo
 fuzzel
 qt5-wayland
 qt6-wayland
