@@ -7,14 +7,28 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-	"theme": "Solarized Dark",
+	"features": {
+		"edit_prediction_provider": "zed"
+	},
+	"agent": {
+		"inline_assistant_model": {
+			"provider": "zed.dev",
+			"model": "claude-sonnet-4-thinking-latest"
+		},
+		"default_model": {
+			"provider": "anthropic",
+			"model": "claude-4-sonnet-thinking-latest"
+		},
+		"version": "2"
+	},
+	"theme": "Ayu Dark",
 	"vim_mode": true,
 	"telemetry": {
 		"diagnostics": true,
 		"metrics": false
 	},
-	"ui_font_size": 16,
-	"buffer_font_size": 16,
+	"ui_font_size": 14,
+	"buffer_font_size": 12.0,
 	"auto_update": false,
 	"formatter": {
 		"language_server": {
@@ -28,6 +42,14 @@
 	"journal": {
 		"hour_format": "hour24",
 		"path": "~/personal/notes/zed"
+	},
+	// until https://github.com/zed-industries/zed/issues/7334 is fixed for smaller width
+	"gutter": {
+		"line_numbers": true,
+		"code_actions": true,
+		"runnables": true,
+		"breakpoints": true,
+		"folds": false // `za` toggles fold / zR/ZM opens/closes all folds
 	},
 	"preferred_line_length": 88,
 	"wrap_guides": [80, 88, 120],
@@ -45,13 +67,6 @@
 		"JavaScript": {
 			"language_servers": ["biome", "typescript-language-server", "!eslint"]
 		}
-	},
-	"assistant": {
-		"default_model": {
-			"provider": "anthropic",
-			"model": "claude-3-5-sonnet-latest"
-		},
-		"version": "2"
 	},
 	"lsp": {
 		//		"pyright": {
