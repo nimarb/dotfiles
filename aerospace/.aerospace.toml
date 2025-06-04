@@ -6,7 +6,25 @@ enable-normalization-opposite-orientation-for-nested-containers = false
 [mode.main.binding]
 # alt-enter = 'exec-and-forget open -n /System/Applications/Utilities/Terminal.app'
 alt-enter = 'exec-and-forget open -n /Applications/Ghostty.app'
-# alt-shift-enter = 'exec-and-forget open -n /Applications/Ghostty.app '
+# open a floating terminal window
+alt-shift-enter = '''exec-and-forget sh -c '
+# remember what’s already on screen
+baseline=$(aerospace list-windows --workspace visible \
+          --app-bundle-id com.mitchellh.ghostty --format "%{window-id}")
+
+open -na /Applications/Ghostty.app        # launch new window
+
+# wait ≤200ms for a window ID we haven’t seen yet
+for _ in {1..20}; do
+  id=$(aerospace list-windows --workspace visible \
+        --app-bundle-id com.mitchellh.ghostty --format "%{window-id}" \
+        | grep -Fvx "$baseline" | tail -1)
+  [ -n "$id" ] && break
+  sleep 0.01
+done
+
+[ -n "$id" ] && aerospace layout floating --window-id "$id"
+' '''
 #alt-enter = '''exec-and-forget osascript -e '
 #tell application "/Applications/Ghostty.app"
 #    do script
