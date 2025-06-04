@@ -26,8 +26,11 @@ alt-shift-j = 'move down'
 alt-shift-k = 'move up'
 alt-shift-l = 'move right'
 
-alt-b = 'split horizontal'
-alt-v = 'split vertical'
+# we move to join-with for more reliable, albeit less i3 like window stacking
+# alt-b = 'split horizontal'
+# alt-v = 'split vertical'
+alt-b = 'join-with left'
+alt-v = 'join-with up'
 
 alt-f = 'fullscreen'
 alt-shift-f = 'macos-native-fullscreen'
