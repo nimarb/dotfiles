@@ -3,6 +3,14 @@
 enable-normalization-flatten-containers = false
 enable-normalization-opposite-orientation-for-nested-containers = false
 
+[gaps]
+inner.horizontal = 2
+inner.vertical =   2
+outer.left =       2
+outer.bottom =     2
+outer.top =        2
+outer.right =      2
+
 [mode.main.binding]
 # alt-enter = 'exec-and-forget open -n /System/Applications/Utilities/Terminal.app'
 alt-enter = 'exec-and-forget open -n /Applications/Ghostty.app'
@@ -98,6 +106,10 @@ alt-shift-right = "move-workspace-to-monitor prev"
 alt-shift-c = 'reload-config'
 alt-r = 'mode resize'
 
+### scratchpad bindings, see https://github.com/cristianoliveira/aerospace-scratchpad
+alt-shift-minus = "exec-and-forget aerospace-scratchpad move"
+alt-minus = "exec-and-forget aerospace-scratchpad next"
+
 # [workspace-to-monitor-force-assignment]
 # 1 = 'main'
 # 2 = 'main'
@@ -117,3 +129,6 @@ k = 'resize height -50'
 l = 'resize width +50'
 enter = 'mode main'
 esc = 'mode main'
+
+[exec.env-vars]
+    PATH = '/opt/homebrew/bin:${PATH}'

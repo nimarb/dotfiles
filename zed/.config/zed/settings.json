@@ -11,13 +11,14 @@
 		"edit_prediction_provider": "zed"
 	},
 	"agent": {
-		"inline_assistant_model": {
+		"default_profile": "write",
+  "inline_assistant_model": {
 			"provider": "zed.dev",
 			"model": "claude-sonnet-4-thinking-latest"
 		},
 		"default_model": {
 			"provider": "anthropic",
-			"model": "claude-4-sonnet-thinking-latest"
+			"model": "claude-sonnet-4-thinking-latest"
 		},
 		"version": "2"
 	},

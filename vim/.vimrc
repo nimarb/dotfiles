@@ -21,6 +21,7 @@ syntax on
 set shiftwidth=4
 set showcmd
 set number
+set relativenumber
 set showmatch
 set incsearch
 set backspace=2
@@ -35,6 +36,7 @@ set nomodeline
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swp//
 set backupskip=/tmp/*
+set autoindent
 filetype indent on
 imap jj <Esc>
 set tabpagemax=20
@@ -79,4 +81,3 @@ let g:nv_search_paths = ['~/nextcloud/notes', '~/nextcloud/thoughtson', '~/nextc
 
 " syntax highlighting for code snippets inlined in markdown
 let g:markdown_fenced_languages = ['html', 'css', 'sh', 'bash', 'javascript', 'typescript', 'python', 'ruby', 'vim']
-

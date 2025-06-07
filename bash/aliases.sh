@@ -124,9 +124,14 @@ alias zj='zellij'
 
 # simple youtube play. Since yt 4k you need to stream vid and audio seperately
 yplay() {
-    YTDL_OUT=$(youtube-dl "$1" --get-url);
+    YTDL_OUT=$(yt-dlp "$1" --get-url);
     URLS=($(echo "$YTDL_OUT" | tr ',' '\n'))
     vlc "${URLS[0]}" --input-slave "${URLS[1]}"
+}
+
+# play youtube audio looped in terminal
+function ytp() {
+    mpv --keep-open --loop --ytdl-format=bestaudio "$*"
 }
 
 # search youtube and play best audio version with mpv

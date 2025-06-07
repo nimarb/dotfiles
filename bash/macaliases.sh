@@ -3,3 +3,6 @@
 # alias for cal do display week numbers always
 # alias cal='cal -w'
 alias call='cal -3'
+
+alias bup='brew update && brew upgrade'
+

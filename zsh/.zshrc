@@ -37,7 +37,7 @@ HISTTIMEFORMAT='%F %T: '
 export HISTFILE=~/.zsh_eternal_history
 HISTFILE=~/.zsh_eternal_history
 
-HISTORY_IGNORE="(ls|history|yay|pacdate|exit)"
+HISTORY_IGNORE="(ls|history|yay|pacdate|exit|bup)"
 
 # logs every command also to a date versioned file in .logs
 precmd() { if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> ~/.logs/zsh-history-$(date "+%Y-%m-%d").log; fi }
