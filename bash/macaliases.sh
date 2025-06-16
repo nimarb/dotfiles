@@ -5,4 +5,4 @@
 alias call='cal -3'
 
 alias bup='brew update && brew upgrade'
-
+alias icat='chafa'

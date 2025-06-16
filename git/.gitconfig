@@ -20,6 +20,10 @@
 [init]
     defaultBranch = main
 
+[includeIf "gitdir:~/work/langfuse/"]
+    path = ~/.gitconfig-langfuse
+[includeIf "gitdir:~/glue-code/"]
+    path = ~/.gitconfig-superglue
 [includeIf "gitdir:~/sento-code/"]
     path = ~/.gitconfig-sento
 [includeIf "gitdir:~/sento/"]
@@ -32,4 +36,3 @@
 	required = true
 [merge]
     conflictstyle = zdiff3
-

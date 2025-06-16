@@ -12,3 +12,5 @@
 # windows stuff
 Thumbs.db
 
+
+**/.claude/settings.local.json
