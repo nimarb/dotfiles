@@ -17,7 +17,7 @@ runtime! archlinux.vim
 set wrapscan
 filetype plugin on
 syntax on
-"set tabstop=4
+set tabstop=4
 set shiftwidth=4
 set showcmd
 set number
@@ -81,3 +81,4 @@ let g:nv_search_paths = ['~/nextcloud/notes', '~/nextcloud/thoughtson', '~/nextc
 
 " syntax highlighting for code snippets inlined in markdown
 let g:markdown_fenced_languages = ['html', 'css', 'sh', 'bash', 'javascript', 'typescript', 'python', 'ruby', 'vim']
+

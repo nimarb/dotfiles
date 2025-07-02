@@ -1,0 +1,4 @@
+[lint]
+ignore = [
+    "G004",  # no f-strings in logging -> annoying
+    ]
