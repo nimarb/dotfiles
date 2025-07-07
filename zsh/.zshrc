@@ -49,5 +49,3 @@ precmd() { if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pw
 ###########
 # END HISTORY
 ###########
-
-

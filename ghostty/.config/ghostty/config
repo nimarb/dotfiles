@@ -2,3 +2,4 @@
 
 # toggle quick terminal
 keybind = global:ctrl+option+grave_accent=toggle_quick_terminal
+keybind = shift+enter=text:\n
