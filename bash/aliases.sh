@@ -80,6 +80,7 @@ alias gbcp='git branch --show-current | wl-copy'
 alias gsm='git switch main'
 alias lgit='lazygit'
 alias gsf='git branch | grep -v "^\*" | fzf --height=20% --reverse --info=inline | xargs git switch'
+alias gsb='git switch -'
 
 # clones a git dir without fsck'ing contents --> for old repos & new git
 alias gitc-nofsck='git clone --config transfer.fsckobjects=false --config receive.fsckobjects=false --config fetch.fsckobjects=false'
