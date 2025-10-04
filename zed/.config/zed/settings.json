@@ -67,6 +67,9 @@
     },
     "JavaScript": {
       "language_servers": ["biome", "typescript-language-server", "!eslint"]
+    },
+    "Python": {
+      "language_servers": ["ty"]
     }
   },
   "lsp": {
