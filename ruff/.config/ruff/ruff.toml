@@ -1,4 +1,5 @@
 [lint]
 ignore = [
     "G004",  # no f-strings in logging -> annoying
+    "T201",  # print statements are OK
     ]
