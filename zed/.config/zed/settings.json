@@ -7,6 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "colorize_brackets": true,
   "agent": {
     "default_profile": "ask",
     "inline_assistant_model": {
@@ -25,7 +26,7 @@
   "theme": "Ayu Dark",
   "vim_mode": true,
   "use_smartcase_search": true,
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "telemetry": {
     "diagnostics": true,
     "metrics": true
