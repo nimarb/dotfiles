@@ -86,19 +86,61 @@ alias gsb='git switch -'
 alias gitc-nofsck='git clone --config transfer.fsckobjects=false --config receive.fsckobjects=false --config fetch.fsckobjects=false'
 
 # function which deletes already merged git branches locally
-clean_git_branches() {
+git_clean_branches() {
     git switch main
     git fetch --all --prune
     git branch -v
 
     echo "Check if you saw any unpushed branches. If so ABORT with Ctrl+C"
-    read -p "If there were no unpushed branches, continue to DELETE? (n/N/Y)" -n 1 -r
+    printf "If there were no unpushed branches, continue to DELETE? [n]/y "
+    read -r REPLY
     echo  # move to a new line
-    if [[ $REPLY =~ ^[Y]$ ]]
+    if [[ $REPLY =~ ^[Yy]$ ]]
     then
-	num_deleted_branches=$(git branch --merged main | grep -c -v '^[ *]*main$')
-	git branch --merged main | grep -v '^[ *]*main$' | xargs git branch -d
-	echo "Deleted $num_deleted_branches branche(s)."
+	# 1) branches truly merged into main
+	merged=$(git branch --merged main | grep -v '^[ *]*main$')
+	# 2) branches whose remote tracking branch is gone (squash-merged PRs)
+	gone=$(git branch -vv | grep ': gone]' | awk '{print $1}')
+	# combine, deduplicate
+	to_delete=$(printf '%s\n' $merged $gone | sort -u | grep -v '^$')
+	num=$(echo "$to_delete" | grep -c -v '^$' || true)
+	if [ "$num" -gt 0 ]; then
+	    echo "$to_delete" | xargs git branch -D
+	    echo "Deleted $num branch(es)."
+	else
+	    echo "No branches to delete."
+	fi
+    fi
+}
+
+# like git_clean_branches but also deletes branches with no remote at all
+git_clean_branches_without_remote() {
+    git switch main
+    git fetch --all --prune
+    git branch -vv
+    echo ""
+    # 1) branches truly merged into main
+    merged=$(git branch --merged main | grep -v '^[ *]*main$')
+    # 2) branches whose remote tracking branch is gone (squash-merged PRs)
+    gone=$(git branch -vv | grep ': gone]' | awk '{print $1}')
+    # 3) branches with no remote tracking branch at all
+    no_remote=$(git branch -vv | grep -v '^\*' | grep -v '\[origin/' | awk '{print $1}')
+    # combine, deduplicate
+    to_delete=$(printf '%s\n' $merged $gone $no_remote | sort -u | grep -v '^$')
+    num=$(echo "$to_delete" | grep -c -v '^$' || true)
+    if [ "$num" -eq 0 ]; then
+	echo "No branches to delete."
+	return
+    fi
+    echo "Will delete $num branch(es):"
+    echo "$to_delete"
+    echo ""
+    printf "Continue? [n]/y "
+    read -r REPLY
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+	echo "$to_delete" | xargs git branch -D
+	echo "Deleted $num branch(es)."
     fi
 }
 
