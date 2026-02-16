@@ -7,21 +7,25 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "text_rendering_mode": "platform_default",
+  "git_panel": {
+    "tree_view": true,
+  },
   "colorize_brackets": true,
   "agent": {
     "default_profile": "ask",
     "inline_assistant_model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-5-thinking-latest"
+      "model": "claude-sonnet-4-5-thinking-latest",
     },
     "model_parameters": [],
     "default_model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-thinking-latest"
-    }
+      "model": "claude-opus-4-6-thinking-latest",
+    },
   },
   "features": {
-    "edit_prediction_provider": "zed"
+    "edit_prediction_provider": "zed",
   },
   "theme": "Ayu Dark",
   "vim_mode": true,
@@ -29,7 +33,7 @@
   "relative_line_numbers": "enabled",
   "telemetry": {
     "diagnostics": true,
-    "metrics": true
+    "metrics": true,
   },
   "ui_font_size": 14,
   "buffer_font_size": 12.0,
@@ -46,7 +50,7 @@
   // },
   "journal": {
     "hour_format": "hour24",
-    "path": "~/personal/notes/zed"
+    "path": "~/personal/notes/zed",
   },
   // until https://github.com/zed-industries/zed/issues/7334 is fixed for smaller width
   "gutter": {
@@ -54,24 +58,24 @@
     "runnables": true,
     "breakpoints": true,
     "folds": false, // `za` toggles fold / zR/ZM opens/closes all folds
-    "min_line_number_digits": 0
+    "min_line_number_digits": 0,
   },
   "preferred_line_length": 88,
   "wrap_guides": [80, 88, 120],
   // prefer biome over eslint: https://github.com/zed-industries/zed/pull/10911 , https://github.com/biomejs/biome-zed/issues/5
   "languages": {
     "TSX": {
-      "language_servers": ["biome", "typescript-language-server", "!eslint"]
+      "language_servers": ["biome", "typescript-language-server", "!eslint"],
     },
     "TypeScript": {
-      "language_servers": ["biome", "typescript-language-server", "!eslint"]
+      "language_servers": ["biome", "typescript-language-server", "!eslint"],
     },
     "JavaScript": {
-      "language_servers": ["biome", "typescript-language-server", "!eslint"]
+      "language_servers": ["biome", "typescript-language-server", "!eslint"],
     },
     "Python": {
-      "language_servers": ["ty"]
-    }
+      "language_servers": ["ty"],
+    },
   },
   "lsp": {
     //    "pyright": {
@@ -93,11 +97,11 @@
               "D",
               "S101",
               "E501",
-              "ERA001" // ignore commented out code
-            ]
-          }
-        }
-      }
-    }
-  }
+              "ERA001", // ignore commented out code
+            ],
+          },
+        },
+      },
+    },
+  },
 }
