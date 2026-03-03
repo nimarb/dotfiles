@@ -8,6 +8,9 @@ export PATH="/opt/homebrew/opt/go@1.23/bin:$PATH"
 # use new bash as default via homebrew
 export PATH="/opt/homebrew/opt/bash/bin:$PATH"
 
+# to run global bun executables such as QMD by tobi
+export PATH="/Users/nb/.bun/bin:$PATH"
+
 
 
 ###########
