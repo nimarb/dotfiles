@@ -1,0 +1,138 @@
+# read-only-ish
+prefix_rule(
+  pattern=[
+    ["ls"], ["pwd"], ["cat"], ["bat"], ["less"], ["head"], ["tail"],
+    ["tree"], ["stat"], ["file"],
+    ["grep"], ["rg"], ["ag"],
+    ["sg"], ["ast-grep"],
+    ["jq"], ["yq"],
+    # ["awk"], ["sed"],
+    ["find"],
+  ],
+  decision="allow",
+)
+
+# git read-only
+prefix_rule(
+  pattern=[
+    ["git","status"],
+    ["git","diff"],
+    ["git","show"],
+    ["git","log"],
+    ["git","grep"],
+  ],
+  decision="allow",
+)
+
+# test/typecheck loops
+prefix_rule(
+  pattern=[
+    ["pnpm","test"], ["pnpm","lint"], ["pnpm","typecheck"],
+    ["npm","test"],
+    # ["npm","run","test"], ["npm","run","lint"], ["npm","run","typecheck"],
+    # ["go","test"], ["go","vet"],
+    # ["cargo","test"], ["cargo","check"], ["cargo","clippy"],
+    # ["pytest"],
+    ["ruff","check"],
+    # ["mypy"],
+    # ["tsc"],
+    ["tsgo"],
+    # ["eslint"],
+  ],
+  decision="allow",
+)
+prefix_rule(pattern=["/bin/zsh", "-lc", "git diff --name-only origin/main...HEAD | while read f; do if [[ \"$f\" == web/* ]]; then rg -n \"\\bv1\\b|\\bv2\\b|\\bv3\\b|\\bv4\\b\" \"$f\"; fi; done"], decision="allow")
+prefix_rule(pattern=["fd", "AGENTS.md", "web", "packages/shared", "worker", "ee"], decision="allow")
+prefix_rule(pattern=["fd", "feat-dashboard-data-load.md"], decision="allow")
+prefix_rule(pattern=["fd", "useLocalStorage", "web/src/components", "web/src/hooks", "web/src"], decision="allow")
+prefix_rule(pattern=["/bin/zsh", "-lc", "command -v jq >/dev/null && echo jq-found || echo jq-missing"], decision="allow")
+prefix_rule(pattern=["jq", ".log.entries | length", "us.cloud.langfuse.com.har"], decision="allow")
+prefix_rule(pattern=["jq", "-r", ".log.entries[] | select(.request.url|contains(\"/api/trpc/projects.environmentFilterOptions\")) | [.startedDateTime,.time,.request.url] | @tsv", "us.cloud.langfuse.com.har"], decision="allow")
+prefix_rule(pattern=["fd", ".", "scripts"], decision="allow")
+prefix_rule(pattern=["scripts/launch-remote-debug.sh", "--help"], decision="allow")
+prefix_rule(pattern=["curl", "-sS", "-i", "--max-time", "3", "http://127.0.0.1:9222/json/version"], decision="allow")
+prefix_rule(pattern=["lsof", "-nP", "-iTCP:9222", "-sTCP:LISTEN"], decision="allow")
+prefix_rule(pattern=["curl", "-sS", "-i", "--max-time", "3", "http://127.0.0.1:9222/json/list"], decision="allow")
+prefix_rule(pattern=["curl", "-sS", "-i", "--max-time", "2", "http://localhost:9222/json/version"], decision="allow")
+prefix_rule(pattern=["curl", "-sS", "-i", "--max-time", "2", "http://127.0.0.1:9222/json/list"], decision="allow")
+prefix_rule(pattern=["curl", "-sS", "-i", "--max-time", "2", "http://127.0.0.1:9222/json/version"], decision="allow")
+prefix_rule(pattern=["pgrep", "-fl", "Google Chrome|remote-debugging-port|langfuse-remote-debug-profile"], decision="allow")
+prefix_rule(pattern=["curl", "-g", "-sS", "-i", "--max-time", "2", "http://[::1]:9222/json/version"], decision="allow")
+prefix_rule(pattern=["/bin/zsh", "-lc", "for p in / /json /json/version /json/list ; do echo \"\\n$p\"; curl -sS -i --max-time 2 \"http://127.0.0.1:9222$p\" || true; done"], decision="allow")
+prefix_rule(pattern=["fd", ".", "web/.claude/skills/vercel-react-best-practices"], decision="allow")
+prefix_rule(pattern=["fd", "refactor-use-env-hook-across-app.md", "."], decision="allow")
+prefix_rule(pattern=["fd", "events", "web/src/server/api/routers", "web/src/components", "web/src/features", "packages/shared/src/server/repositories", "packages/shared/src/tableDefinitions", "packages/shared/src/server/tableMappings"], decision="allow")
+prefix_rule(pattern=["fd", ".", "packages/shared/src/tableDefinitions", "packages/shared/src/server/tableMappings", "web/src/features/events/server", "web/src/features/events/components", "web/src/features/events/hooks"], decision="allow")
+prefix_rule(pattern=["fd", "filter-config", "web/src/features/events", "web/src/features/filters/config"], decision="allow")
+prefix_rule(pattern=["fd", ".", ".agents/skills/clickhouse-best-practices"], decision="allow")
+prefix_rule(pattern=["node", "-p", "require('./web/package.json').dependencies['react-grid-layout']"], decision="allow")
+prefix_rule(pattern=["fd", "-a", "Dockerfile*", "."], decision="allow")
+prefix_rule(pattern=["/bin/zsh", "-lc", "node -v && pnpm -v && (turbo --version || true)"], decision="allow")
+prefix_rule(pattern=["turbo", "prune", "--help"], decision="allow")
+prefix_rule(pattern=["pnpm", "--filter", "web", "run", "lint", "--", "--file", "src/features/events/hooks/useEventsTableData.ts", "--file", "src/features/prompts/server/routers/promptRouter.ts"], decision="allow")
+prefix_rule(pattern=["git", "add", "web/src/features/events/hooks/useEventsTableData.ts", "web/src/features/prompts/server/routers/promptRouter.ts"], decision="allow")
+prefix_rule(pattern=["pnpm", "--filter", "web", "exec", "eslint", "src/features/events/hooks/useEventsTableData.ts", "src/features/prompts/server/routers/promptRouter.ts", "--cache", "--cache-location", ".next/cache/eslint/", "--max-warnings", "0"], decision="allow")
+prefix_rule(pattern=["pnpm", "--filter", "web", "run", "test-client", "--", "src/features/score-analytics/hooks/useScoreAnalyticsQuery.clienttest.tsx"], decision="allow")
+prefix_rule(pattern=["git", "blame", "-L", "440,470", "web/src/features/events/components/EventsTable.tsx"], decision="allow")
+prefix_rule(pattern=["git", "blame", "-L", "1008,1032", "web/src/features/events/components/EventsTable.tsx"], decision="allow")
+prefix_rule(pattern=["git", "rev-parse", "--abbrev-ref", "HEAD"], decision="allow")
+prefix_rule(pattern=["fd", "-t", "f", ".", "web/src/components/trace2"], decision="allow")
+prefix_rule(pattern=["fd", "-t", "f", "*SpanContent*", "web/src"], decision="allow")
+prefix_rule(pattern=["fd", "AGENTS.md"], decision="allow")
+prefix_rule(pattern=["fd", "traceId", "web/src/pages/project"], decision="allow")
+prefix_rule(pattern=["gh", "run"], decision="allow")
+prefix_rule(pattern=["fd", "*.clienttest.ts*", "web/src/features/prompts", "web/src/components/ui"], decision="allow")
+prefix_rule(pattern=["curl", "-L"], decision="allow")
+prefix_rule(pattern=["fd", "feat-saved-views-v2.md"], decision="allow")
+prefix_rule(pattern=["fd", "setup|jest", "web"], decision="allow")
+prefix_rule(pattern=["fd", "AGENTS.md", "web", "packages/shared", "ee", "worker"], decision="allow")
+prefix_rule(pattern=["printf", "\\n---\\n"], decision="allow")
+prefix_rule(pattern=["fd", "EventsAggQueryBuilder.ts|EventsQueryBuilder.ts", "packages/shared"], decision="allow")
+prefix_rule(pattern=["fd", "useDashboardFilterOptions*", "web/src"], decision="allow")
+prefix_rule(pattern=["fd", "*.clienttest.tsx", "web/src/hooks", "web/src/pages/project/[projectId]"], decision="allow")
+prefix_rule(pattern=["fd", "events*.servertest.ts", "web/src/__tests__/server"], decision="allow")
+prefix_rule(pattern=["fd", "*.clienttest.tsx", "web/src/hooks", "web/src/components"], decision="allow")
+prefix_rule(pattern=["fd", "*trpc*.servertest.ts", "web/src/__tests__/server"], decision="allow")
+prefix_rule(pattern=["fd", "--glob", "*.clienttest.tsx", "web/src/hooks", "web/src/components", "web/src/features"], decision="allow")
+prefix_rule(pattern=["pnpm", "--filter", "web", "run", "test", "--", "--testPathPatterns=events-trpc.servertest.ts"], decision="allow")
+prefix_rule(pattern=["pnpm", "--filter", "web", "run", "test-client", "--", "--testPathPatterns=useDashboardFilterOptions.clienttest.tsx"], decision="allow")
+prefix_rule(pattern=["pnpm", "--filter", "web", "exec", "dotenv", "-e", "../.env.test", "-e", "../.env", "--", "jest", "--verbose", "--runInBand", "--selectProjects", "server", "--testPathPatterns=events-trpc.servertest.ts"], decision="allow")
+prefix_rule(pattern=["pnpm", "--filter", "web", "exec", "dotenv", "-e", "../.env.test", "-e", "../.env", "--", "jest", "--verbose", "--runInBand", "--selectProjects", "client", "--testPathPatterns=useDashboardFilterOptions.clienttest.tsx"], decision="allow")
+prefix_rule(pattern=["fd", "jest*", "web"], decision="allow")
+prefix_rule(pattern=["pnpm", "--filter", "web", "exec", "dotenv", "-e", "../.env.test", "-e", "../.env", "--", "jest", "--config", "./jest.config.mjs", "--verbose", "--runInBand", "--selectProjects", "server", "--testPathPatterns=events-trpc.servertest.ts"], decision="allow")
+prefix_rule(pattern=["pnpm", "--filter", "web", "exec", "dotenv", "-e", "../.env.test", "-e", "../.env", "--", "jest", "--config", "./jest.config.mjs", "--verbose", "--runInBand", "--selectProjects", "client", "--testPathPatterns=useDashboardFilterOptions.clienttest.tsx"], decision="allow")
+prefix_rule(pattern=["pnpm", "--filter", "web", "run", "lint"], decision="allow")
+prefix_rule(pattern=["fd", "AGENTS.md", "web", "."], decision="allow")
+prefix_rule(pattern=["fd", "events*.clienttest.tsx", "web/src/features", "web/src/components", "web/src/__tests__"], decision="allow")
+prefix_rule(pattern=["pnpm", "--filter", "web", "run", "test-client", "--", "--runInBand", "--testPathPatterns=useEventMetadataFilterOptions.clienttest.tsx|useFilterExpandedState.clienttest.tsx|sidebarFilterSessionPersistence.clienttest.tsx"], decision="allow")
+prefix_rule(pattern=["fd", "events*servertest.ts", "web/src/__tests__/server"], decision="allow")
+prefix_rule(pattern=["fd", "tailwind|postcss|globals\\.css|app\\.css|theme\\.css|tw-", "."], decision="allow")
+prefix_rule(pattern=["fd", "AGENTS\\.md$", "web", "packages/shared", "worker", "ee", "."], decision="allow")
+prefix_rule(pattern=["/bin/zsh", "-lc", "rg -n --hidden --glob 'web/**' --glob '!**/node_modules/**' --glob '!**/.next/**' '![a-zA-Z0-9_:\\-/\\[\\].%#]|\\"], decision="allow")
+prefix_rule(pattern=["sed", "s/:.*//"], decision="allow")
+prefix_rule(pattern=["awk", "-F:", "{print $NF}"], decision="allow")
+prefix_rule(pattern=["test", "-f", "web/node_modules/@tailwindcss/forms/README.md"], decision="allow")
+prefix_rule(pattern=["test", "-f", "web/node_modules/@headlessui/tailwindcss/README.md"], decision="allow")
+prefix_rule(pattern=["test", "-f", "web/node_modules/@tailwindcss/container-queries/README.md"], decision="allow")
+prefix_rule(pattern=["test", "-f", "web/node_modules/tailwindcss-animate/package.json"], decision="allow")
+prefix_rule(pattern=["sort"], decision="allow")
+prefix_rule(pattern=["sed", "-n", "1,220p", "web/src/features/score-analytics/lib/colorScales.ts", "web/src/features/score-analytics/lib/color-scales.ts"], decision="allow")
+prefix_rule(pattern=["/bin/zsh", "-lc", "rg -n '\\*:(first|last|odd|even|nth|not-|hover|focus)|prose-[^\\s\"\\'`]+:' web/src --glob '*.{ts,tsx,js,jsx,css}'"], decision="allow")
+prefix_rule(pattern=["/bin/zsh", "-lc", "rg -n 'transform-none|transition-\\[[^\\]]*transform[^\\]]*\\]|bg-\\[--|text-\\[--|border-\\[--|ring-\\[--|fill-\\[--|stroke-\\[--|grid-cols-\\[[^\\]]*,[^\\]]*\\]|grid-rows-\\[[^\\]]*,[^\\]]*\\]|object-\\[[^\\]]*,[^\\]]*\\]|(^|[\"\\'`\\s])![^\\s\"\\'`]+|outline-none|flex-grow|flex-shrink|overflow-ellipsis|decoration-slice|decoration-clone|drop-shadow-sm|shadow-sm|rounded-sm|blur-sm|backdrop-blur-sm' web/src --glob '*.{ts,tsx,js,jsx,css}'"], decision="allow")
+prefix_rule(pattern=["/bin/zsh", "-lc", "rg -n '(^|[^-])\\bring(\\s|\"|\\'|`|$)' web/src --glob '*.{ts,tsx,js,jsx}'"], decision="allow")
+prefix_rule(pattern=["fd", "\\.(module\\.)?css$|\\.scss$|\\.sass$|\\.less$|\\.styl$", "web/src", "web"], decision="allow")
+prefix_rule(pattern=["/bin/zsh", "-lc", "/bin/zsh -lc 'rg -n \"(^|[[:space:]\\\"\\'\\`])![A-Za-z0-9_\\[\\]-]+\" web/src --glob \"*.{ts,tsx,js,jsx,css}\"'"], decision="allow")
+prefix_rule(pattern=["fd", "tailwind-merge", "node_modules", "web/node_modules", ".pnpm"], decision="allow")
+prefix_rule(pattern=["fd", "package.json", "node_modules/.pnpm", "web/node_modules/.pnpm"], decision="allow")
+prefix_rule(pattern=["printf", "suffix-important files: "], decision="allow")
+prefix_rule(pattern=["printf", "shadow-sm files: "], decision="allow")
+prefix_rule(pattern=["printf", "hover-hidden files: "], decision="allow")
+prefix_rule(pattern=["printf", "opacity utility files: "], decision="allow")
+prefix_rule(pattern=["bun", "-e"], decision="allow")
+prefix_rule(pattern=["fd", "events*test*", "web/src/__tests__", "web/src/features/events"], decision="allow")
+prefix_rule(pattern=["fd", "observations-trpc.servertest.ts", "web/src/__tests__/server"], decision="allow")
+prefix_rule(pattern=["pnpm", "--filter", "web", "test", "--", "web/src/__tests__/server/events-trpc.servertest.ts"], decision="allow")
+prefix_rule(pattern=["pnpm", "--filter", "web", "exec", "jest", "--selectProjects", "server", "--runInBand", "--runTestsByPath", "src/__tests__/server/events-trpc.servertest.ts"], decision="allow")
+prefix_rule(pattern=["dotenv", "-e", "../.env.test", "-e", "../.env", "--", "jest", "--selectProjects", "server", "--runInBand", "--runTestsByPath", "src/__tests__/server/events-trpc.servertest.ts"], decision="allow")
+prefix_rule(pattern=["pnpm", "exec", "dotenv", "-e", "../.env.test", "-e", "../.env", "--", "jest", "--selectProjects", "server", "--runInBand", "--runTestsByPath", "src/__tests__/server/events-trpc.servertest.ts"], decision="allow")
+prefix_rule(pattern=["/bin/zsh", "-lc", "rg -n \"encode.*filter|decode.*filter|split\\(';'\") web/src/features/filters -g '!**/dist/**'"], decision="allow")

@@ -9,3 +9,4 @@
 
 ## Working Mode
 * never commit to git unless specifically asked to
+* never run `terraform validate` or `terraform apply` without my explicit permission. only terraform command to run is `terraform fmt`.
