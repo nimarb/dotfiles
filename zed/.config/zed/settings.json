@@ -7,12 +7,27 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "diff_view_style": "unified",
+  "edit_predictions": {
+    "provider": "zed"
+  },
   "text_rendering_mode": "platform_default",
   "git_panel": {
+    "dock": "left",
     "tree_view": true,
   },
   "colorize_brackets": true,
   "agent": {
+    "dock": "right",
     "default_profile": "write",
     "inline_assistant_model": {
       "provider": "anthropic",
@@ -23,9 +38,6 @@
       "provider": "anthropic",
       "model": "claude-opus-4-6-thinking-latest",
     },
-  },
-  "features": {
-    "edit_prediction_provider": "zed",
   },
   "theme": "Ayu Dark",
   "vim_mode": true,

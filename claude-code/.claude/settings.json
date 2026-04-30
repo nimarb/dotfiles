@@ -9,6 +9,8 @@
     "beads@beads-marketplace": false
   },
   "alwaysThinkingEnabled": true,
+  "effortLevel": "xhigh",
+  "editorMode": "vim",
   "feedbackSurveyState": {
     "lastShownTime": 1753959093104
   },
