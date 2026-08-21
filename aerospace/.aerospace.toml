@@ -1,5 +1,10 @@
 # Reference: https://github.com/i3/i3/blob/next/etc/config
 
+config-version = 2
+
+# In i3, empty workspaces disappear.
+persistent-workspaces = []
+
 enable-normalization-flatten-containers = false
 enable-normalization-opposite-orientation-for-nested-containers = false
 
