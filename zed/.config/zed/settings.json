@@ -7,6 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "cli_default_open_behavior": "new_window",
   "project_panel": {
     "dock": "left"
   },
@@ -35,8 +36,10 @@
     },
     "model_parameters": [],
     "default_model": {
+      "effort": "high",
+      "enable_thinking": true,
       "provider": "anthropic",
-      "model": "claude-opus-4-6-thinking-latest",
+      "model": "claude-opus-5",
     },
   },
   "theme": "Ayu Dark",
