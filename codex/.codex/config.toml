@@ -1,0 +1,5 @@
+model = "gpt-6-sol"
+model_reasoning_effort = "xhigh"
+personality = "pragmatic"
+service_tier = "default"
+approvals_reviewer = "user"
