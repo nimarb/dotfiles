@@ -14,7 +14,7 @@ complete -cf sudo
 # HISTORY
 ###########
 
-# don't put duplicate lines or lines starting with space in the history.
+# Skip leading-space commands and consecutive duplicates in history and the archive.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
@@ -30,10 +30,8 @@ export HISTFILE=~/.bash_eternal_history
 HISTIGNORE='ls:history:yay:pacdate:exit'
 # save history immediately to file
 # PROMPT_COMMAND='history -a'
-# logs every command also to a date versioned file in .logs
-export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> ~/.logs/bash-history-$(date "+%Y-%m-%d").log; fi'
-# save cmds one cmd per line
-shopt -s cmdhist
+# Preserve multiline commands as one history event, with their original newlines.
+shopt -s cmdhist lithist
 
 ###########
 # END HISTORY
@@ -241,3 +239,6 @@ eval "$(fzf --bash)"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
+
+# write cmd line history to .logs/ dir , seperate from ctrl-r history
+source ~/dotfiles/shell/history-log.bash

@@ -1,12 +1,15 @@
-model = "gpt-6-sol"
+model = "gpt-6-astra"
 model_reasoning_effort = "xhigh"
 personality = "pragmatic"
 service_tier = "default"
 approvals_reviewer = "user"
 
+notify = []
+
 [tui]
 status_line = ["model-name", "project-root", "git-branch", "context-remaining"]
 whimsy = false
+screen_reader_detection_done = true
 
 [tui.model_availability_nux]
 "gpt-5.5" = 4

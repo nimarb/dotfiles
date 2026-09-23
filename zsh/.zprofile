@@ -37,9 +37,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 #
 # HISTORY_IGNORE="(ls|history|yay|pacdate|exit)"
 #
-# # logs every command also to a date versioned file in .logs
-# precmd() { if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> ~/.logs/zsh-history-$(date "+%Y-%m-%d").log; fi }
-# #precmd() { eval “$PROMPT_COMMAND” }
 
 ###########
 # END HISTORY
