@@ -1,7 +1,7 @@
 model = "gpt-6-astra"
 model_reasoning_effort = "xhigh"
 personality = "pragmatic"
-service_tier = "default"
+service_tier = "fast"
 approvals_reviewer = "user"
 
 notify = []
