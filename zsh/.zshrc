@@ -11,6 +11,8 @@ export PATH="/opt/homebrew/opt/bash/bin:$PATH"
 # to run global bun executables such as QMD by tobi
 export PATH="/Users/nb/.bun/bin:$PATH"
 
+# Option+C: include hidden folders, respect ignore files and skip paths containing "cache".
+export FZF_ALT_C_COMMAND='fd --type d --follow --hidden --exclude .git --exclude node_modules --exclude "*[cC][aA][cC][hH][eE]*"'
 
 
 ###########
@@ -45,9 +47,8 @@ HISTFILE=~/.zsh_eternal_history
 
 HISTORY_IGNORE="(ls|history|yay|pacdate|exit|bup)"
 
-# logs every command also to a date versioned file in .logs
-precmd() { if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> ~/.logs/zsh-history-$(date "+%Y-%m-%d").log; fi }
-#precmd() { eval “$PROMPT_COMMAND” }
+# Archive each eligible command once, separately from native Ctrl-R history.
+source ~/dotfiles/shell/history-log.zsh
 
 # save cmds one cmd per line
 #shopt -s cmdhist
