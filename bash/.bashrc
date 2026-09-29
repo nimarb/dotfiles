@@ -233,6 +233,7 @@ fi
 # old way of getting FZF bindings:
 # [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 # Set up fzf key bindings and fuzzy completion
+export FZF_ALT_C_COMMAND='fd --type d --follow --hidden --exclude .git --exclude node_modules --exclude "*[cC][aA][cC][hH][eE]*"'
 eval "$(fzf --bash)"
 
 # by pynecone
