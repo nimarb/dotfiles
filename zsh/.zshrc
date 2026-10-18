@@ -2,8 +2,6 @@ export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
 export PATH="/Users/nb/.local/bin:$PATH"
 
 autoload -Uz compinit && compinit
-export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
-export PATH="/opt/homebrew/opt/go@1.23/bin:$PATH"
 
 # use new bash as default via homebrew
 export PATH="/opt/homebrew/opt/bash/bin:$PATH"
