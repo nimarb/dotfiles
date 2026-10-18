@@ -196,7 +196,7 @@ pdfgrep () { find . -name '*.pdf' -exec bash -c "pdftotext '{}' - | grep -i --wi
 pdfgsmerge () { gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -sOutputFile=merged.pdf $* ;}
 
 # compresses a pdf using ghostcript
-pdfcompress() { ghostscript -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile=compressed.pdf -q -dNOPAUSE -dBATCH -dSAFER -dPDFA=2 -dPDFACompatibilityPolicy=1 -dSimulateOverprint=true -sDEVICE=pdfwrite -dCompatibilityLevel=1.3 -dPDFSETTINGS=/screen -dEmbedAllFonts=true -dSubsetFonts=true -dAutoRotatePages=/None -dColorImageDownsampleType=/Bicubic -dColorImageResolution=150 -dGrayImageDownsampleType=/Bicubic -dGrayImageResolution=150 -dMonoImageDownsampleType=/Bicubic -dMonoImageResolution=150 $1 ;}
+pdfcompress() { gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile=compressed.pdf -q -dNOPAUSE -dBATCH -dSAFER -dPDFA=2 -dPDFACompatibilityPolicy=1 -dSimulateOverprint=true -sDEVICE=pdfwrite -dCompatibilityLevel=1.3 -dPDFSETTINGS=/screen -dEmbedAllFonts=true -dSubsetFonts=true -dAutoRotatePages=/None -dColorImageDownsampleType=/Bicubic -dColorImageResolution=150 -dGrayImageDownsampleType=/Bicubic -dGrayImageResolution=150 -dMonoImageDownsampleType=/Bicubic -dMonoImageResolution=150 $1 ;}
 
 # extracts pages out of a pdf
 pdfextract() { gs -dBATCH -sOutputFile=extracted_p$2-p$3.pdf -dFirstPage=$2 -dLastPage=$3 -sDEVICE=pdfwrite $1 ;}
@@ -321,6 +321,19 @@ gop(){
   fi
   gopass show -n \
     "$(gopass ls --flat | fzf -q "$QUERY" --preview "gopass show {}")"
+}
+
+# server related stuff
+srvupdate() {
+  sudo pacman -Syu || return
+  sudo systemctl daemon-reload
+  sudo systemctl restart mariadb php-fpm-legacy nginx dovecot postfix gitea opendkim
+  sudo env NEXTCLOUD_PHP_CONFIG=/etc/webapps/nextcloud/php.ini occ upgrade
+  sudo env NEXTCLOUD_PHP_CONFIG=/etc/webapps/nextcloud/php.ini occ app:update --all
+  sudo paccache -rk1; sudo paccache -ruk0          # keep 1 old version, drop uninstalled
+  [ "$(pacman -Q linux | cut -d' ' -f2 | sed 's/\.arch/-arch/')" = "$(uname -r)" ] \
+    || echo ">>> new kernel installed: sudo systemctl reboot"
+  echo ">>> pacnew files: $(pacdiff -o | wc -l)"
 }
 
 # eval "$(fzf --bash)"
