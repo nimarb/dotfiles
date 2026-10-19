@@ -29,7 +29,7 @@
   "colorize_brackets": true,
   "agent": {
     "dock": "right",
-    "default_profile": "write",
+    "default_profile": "ask",
     "inline_assistant_model": {
       "provider": "anthropic",
       "model": "claude-opus-4-6-thinking-latest",

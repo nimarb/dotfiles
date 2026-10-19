@@ -81,4 +81,3 @@ let g:nv_search_paths = ['~/nextcloud/notes', '~/nextcloud/thoughtson', '~/nextc
 
 " syntax highlighting for code snippets inlined in markdown
 let g:markdown_fenced_languages = ['html', 'css', 'sh', 'bash', 'javascript', 'typescript', 'python', 'ruby', 'vim']
-
